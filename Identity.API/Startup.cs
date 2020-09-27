@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Identity.API.Contexts;
 using Identity.API.Interfaces;
+using Identity.API.Middlewares;
 using Identity.API.Models;
 using Identity.API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -20,6 +21,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
 namespace Identity.API
@@ -88,7 +90,50 @@ namespace Identity.API
                     },
                 };
             });
-
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IEmailService, EmailService>();
+            services.AddSwaggerGen(c =>
+            {
+                c.IncludeXmlComments(string.Format(@"{0}\Identity.API.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "eRecruitmentOnMicroservices - Identity.API",
+                    Description = "This Api will be responsible for overall data distribution and authorization.",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Ahmed Ayman",
+                        Email = "ahmedayman6038@gmail.com",
+                        Url = new Uri("https://www.linkedin.com/in/ahmedayman6038/"),
+                    }
+                });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    Description = "Input your Bearer token in this format - Bearer {your token here} to access this API",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer",
+                            },
+                            Scheme = "Bearer",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+                        }, new List<string>()
+                    },
+                });
+            });
+            services.AddHealthChecks();
             services.AddControllers();
         }
 
@@ -106,7 +151,13 @@ namespace Identity.API
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.Identity.API");
+            });
+            app.UseMiddleware<ErrorHandlerMiddleware>();
+            app.UseHealthChecks("/health");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

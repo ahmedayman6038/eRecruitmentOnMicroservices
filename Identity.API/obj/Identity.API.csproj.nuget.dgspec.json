@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {}
+    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {
+    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
+        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
         "projectName": "Identity.API",
-        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
-        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\obj\\",
+        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
+        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -88,6 +88,14 @@
             "Serilog.Settings.Configuration": {
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[5.6.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

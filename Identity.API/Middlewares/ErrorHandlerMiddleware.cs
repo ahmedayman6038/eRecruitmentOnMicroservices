@@ -1,5 +1,5 @@
-﻿using Jobs.API.Application.Exceptions;
-using Jobs.API.Application.Wrappers;
+﻿using Identity.API.Exceptions;
+using Identity.API.Models;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Jobs.API.Middlewares
+namespace Identity.API.Middlewares
 {
     public class ErrorHandlerMiddleware
     {
@@ -37,11 +37,11 @@ namespace Jobs.API.Middlewares
                         // custom application error
                         response.StatusCode = (int)HttpStatusCode.BadRequest;
                         break;
-                    case ValidationException e:
-                        // custom application error
-                        response.StatusCode = (int)HttpStatusCode.BadRequest;
-                        responseModel.Errors = e.Errors;
-                        break;
+                    //case ValidationException e:
+                    //    // custom application error
+                    //    response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    //    responseModel.Errors = e.Errors;
+                    //    break;
                     case KeyNotFoundException e:
                         // not found error
                         response.StatusCode = (int)HttpStatusCode.NotFound;

@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jobs.API.Controllers
 {
-    //[Authorize]
+    [Authorize(Roles = "SuperAdmin")]
     public class JobController : BaseApiController
     {
         // GET: api/<controller>

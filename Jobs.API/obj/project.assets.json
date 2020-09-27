@@ -6062,25 +6062,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AhmedAH\\.nuget\\packages\\": {},
+    "C:\\Users\\ahmed\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\Jobs.API\\Jobs.API.csproj",
+      "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Jobs.API\\Jobs.API.csproj",
       "projectName": "Jobs.API",
-      "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Jobs.API\\Jobs.API.csproj",
-      "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
-      "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Jobs.API\\obj\\",
+      "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Jobs.API\\Jobs.API.csproj",
+      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+      "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Jobs.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

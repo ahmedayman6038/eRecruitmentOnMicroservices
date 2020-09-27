@@ -24,5 +24,16 @@ namespace Jobs.API.Infrastructure.Repositories
                 .Where(j => j.Name == name)
                 .ToListAsync();
         }
+
+        public async Task<IReadOnlyList<Job>> GetPagedReponseWithEagerLoadAsync(int pageNumber, int pageSize)
+        {
+            return await _jobs
+                .Include(j => j.City)
+                .ThenInclude(j => j.Country)
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .AsNoTracking()
+                .ToListAsync();
+        }
     }
 }

@@ -9,5 +9,7 @@ namespace Jobs.API.Application.Interfaces
     public interface IJobRepositoryAsync : IGenericRepositoryAsync<Job>
     {
         Task<IReadOnlyList<Job>> GetByNameAsync(string name);
+
+        Task<IReadOnlyList<Job>> GetPagedReponseWithEagerLoadAsync(int pageNumber, int pageSize);
     }
 }

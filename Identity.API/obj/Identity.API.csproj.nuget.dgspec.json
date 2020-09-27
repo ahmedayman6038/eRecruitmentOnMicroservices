@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {}
+    "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {}
   },
   "projects": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {
+    "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
+        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
         "projectName": "Identity.API",
-        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\obj\\",
+        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
+        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
+        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -42,6 +42,58 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.9.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.9.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.1.3, )"
+            },
+            "Serilog.Enrichers.Process": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Serilog.Enrichers.Thread": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Settings.Configuration": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.7.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

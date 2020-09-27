@@ -28,7 +28,7 @@ namespace Jobs.API.Infrastructure.Repositories
                 .Set<T>()
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                //.AsNoTracking()
+                .AsNoTracking()
                 .ToListAsync();
         }
 

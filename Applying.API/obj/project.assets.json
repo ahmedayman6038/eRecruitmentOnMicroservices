@@ -8,25 +8,25 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\ahmed\\.nuget\\packages\\": {},
+    "C:\\Users\\AhmedAH\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Applying.API\\Applying.API.csproj",
+      "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\Applying.API\\Applying.API.csproj",
       "projectName": "Applying.API",
-      "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Applying.API\\Applying.API.csproj",
-      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Applying.API\\obj\\",
+      "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Applying.API\\Applying.API.csproj",
+      "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
+      "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Applying.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

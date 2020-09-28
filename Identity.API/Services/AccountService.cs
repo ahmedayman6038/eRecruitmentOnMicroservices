@@ -25,6 +25,7 @@ namespace Identity.API.Services
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailService _emailService;
         private readonly JWTSettings _jwtSettings;
+
         public AccountService(UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IOptions<JWTSettings> jwtSettings,

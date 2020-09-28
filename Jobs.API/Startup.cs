@@ -1,17 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation;
 using Jobs.API.Application.Behaviors;
 using Jobs.API.Application.Interfaces;
+using Jobs.API.Application.Wrappers;
 using Jobs.API.Infrastructure.Contexts;
 using Jobs.API.Infrastructure.Repositories;
 using Jobs.API.Middlewares;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +23,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace Jobs.API
 {
@@ -85,6 +91,60 @@ namespace Jobs.API
                         }, new List<string>()
                     },
                 });
+            });
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                o.RequireHttpsMetadata = false;
+                o.SaveToken = false;
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero,
+                    ValidIssuer = Configuration["JWTSettings:Issuer"],
+                    ValidAudience = Configuration["JWTSettings:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWTSettings:Key"]))
+                };
+                o.Events = new JwtBearerEvents()
+                {
+                    OnAuthenticationFailed = context =>
+                    {
+                        //context.NoResult();
+                        //context.Response.StatusCode = 500;
+                        //context.Response.ContentType = "text/plain";
+                        //return context.Response.WriteAsync(context.Exception.ToString());
+                        context.Response.OnStarting(async () =>
+                        {
+                            context.NoResult();
+                            context.Response.StatusCode = 500;
+                            context.Response.ContentType = "text/plain";
+                            await context.Response.WriteAsync(context.Exception.ToString());
+                        });
+
+                        return Task.CompletedTask;
+                    },
+                    OnChallenge = context =>
+                    {
+                        context.HandleResponse();
+                        context.Response.StatusCode = 401;
+                        context.Response.ContentType = "application/json";
+                        var result = JsonConvert.SerializeObject(new Response<string>("You are not Authorized"));
+                        return context.Response.WriteAsync(result);
+                    },
+                    OnForbidden = context =>
+                    {
+                        context.Response.StatusCode = 403;
+                        context.Response.ContentType = "application/json";
+                        var result = JsonConvert.SerializeObject(new Response<string>("You are not authorized to access this resource"));
+                        return context.Response.WriteAsync(result);
+                    },
+                };
             });
             services.AddHealthChecks();
             services.AddControllers();

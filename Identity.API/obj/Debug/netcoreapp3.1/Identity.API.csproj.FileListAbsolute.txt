@@ -172,3 +172,9 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.xml
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.xml
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

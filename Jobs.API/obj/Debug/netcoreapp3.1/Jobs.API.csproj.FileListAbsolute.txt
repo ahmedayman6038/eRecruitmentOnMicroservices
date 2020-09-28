@@ -75,9 +75,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\J
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.csprojAssemblyReference.cache
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.AssemblyInfoInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.AssemblyInfo.cs
-D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.csproj.CoreCompileInputs.cache
-D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.dll
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.pdb
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -146,3 +143,7 @@ D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.c
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\staticwebassets\Jobs.API.StaticWebAssets.Manifest.cache
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\staticwebassets\Jobs.API.StaticWebAssets.xml
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.genruntimeconfig.cache
+D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cache

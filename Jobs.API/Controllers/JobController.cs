@@ -21,7 +21,7 @@ namespace Jobs.API.Controllers
         }
 
         // GET api/<controller>/5
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {

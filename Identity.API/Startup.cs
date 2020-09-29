@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Identity.API.Contexts;
@@ -8,6 +9,7 @@ using Identity.API.Interfaces;
 using Identity.API.Middlewares;
 using Identity.API.Models;
 using Identity.API.Services;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -40,9 +42,40 @@ namespace Identity.API
         {
             services.AddDbContext<IdentityContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityContext>()
+                .AddDefaultTokenProviders();
 
             services.AddTransient<IAccountService, AccountService>();
+
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+
+            services.AddIdentityServer(x =>
+            {
+                x.IssuerUri = "null";
+                x.Authentication.CookieLifetime = TimeSpan.FromHours(2);
+            }).AddAspNetIdentity<ApplicationUser>()
+              .AddConfigurationStore(options =>
+              {
+                  options.ConfigureDbContext = builder => builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                      sqlServerOptionsAction: sqlOptions =>
+                      {
+                          sqlOptions.MigrationsAssembly(migrationsAssembly);
+                            //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency 
+                            sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                      });
+              })
+              .AddOperationalStore(options =>
+              {
+                  options.ConfigureDbContext = builder => builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                      sqlServerOptionsAction: sqlOptions =>
+                      {
+                          sqlOptions.MigrationsAssembly(migrationsAssembly);
+                            //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency 
+                            sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                      });
+              }).Services.AddTransient<IProfileService, ProfileService>();
 
             services.Configure<JWTSettings>(Configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>

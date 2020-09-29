@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {}
+    "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {}
   },
   "projects": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {
+    "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
+        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
         "projectName": "Identity.API",
-        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Identity.API\\obj\\",
+        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\Identity.API.csproj",
+        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
+        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\Identity.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -43,6 +43,26 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "IdentityServer4": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "IdentityServer4.AspNetIdentity": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "IdentityServer4.EntityFramework": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "IdentityServer4.EntityFramework.Storage": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "IdentityServer4.Storage": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "MailKit": {
               "target": "Package",
               "version": "[2.9.0, )"

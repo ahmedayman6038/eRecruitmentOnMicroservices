@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Identity.API.Models;
 using Identity.API.Seeds;
+using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace Identity.API
                 .AddJsonFile("appsettings.json")
                 .Build();
 
+
             //Initialize Logger
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(config)
@@ -36,10 +38,13 @@ namespace Identity.API
                 {
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                    var configurationSeed = services.GetRequiredService<ConfigurationDbContext>();
 
                     await DefaultRoles.SeedAsync(userManager, roleManager);
                     await DefaultSuperAdmin.SeedAsync(userManager, roleManager);
                     await DefaultBasicUser.SeedAsync(userManager, roleManager);
+                    await IdentityServerConfiguration.SeedAsync(configurationSeed, config);
+
                     Log.Information("Finished Seeding Default Data");
                     Log.Information("Application Starting");
                 }

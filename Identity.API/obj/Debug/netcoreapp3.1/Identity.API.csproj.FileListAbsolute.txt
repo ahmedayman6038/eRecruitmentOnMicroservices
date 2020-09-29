@@ -186,3 +186,11 @@ D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identi
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityModel.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.AspNetIdentity.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.Storage.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.Storage.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll

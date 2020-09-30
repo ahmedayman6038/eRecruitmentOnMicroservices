@@ -53,9 +53,10 @@ namespace Identity.API
 
             services.AddIdentityServer(x =>
             {
-                x.IssuerUri = "null";
+               // x.IssuerUri = "null";
                 x.Authentication.CookieLifetime = TimeSpan.FromHours(2);
-            }).AddAspNetIdentity<ApplicationUser>()
+            }).AddDeveloperSigningCredential()
+                .AddAspNetIdentity<ApplicationUser>()
               .AddConfigurationStore(options =>
               {
                   options.ConfigureDbContext = builder => builder.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),

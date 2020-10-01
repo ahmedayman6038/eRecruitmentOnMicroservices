@@ -91,7 +91,6 @@ namespace Identity.API.Services
                 {
                     await _userManager.AddToRoleAsync(user, Roles.Basic.ToString());
                     var verificationUri = await SendVerificationEmail(user, origin);
-                    //TODO: Attach Email Service here and configure it via appsettings
                     await _emailService.SendAsync(new EmailRequest() { From = "ahmedayman6038@gmail.com", To = user.Email, Body = $"Please confirm your account by visiting this URL {verificationUri}", Subject = "Confirm Registration" });
                     return new Response<string>(user.Id, message: $"User Registered. Please confirm your account by visiting this URL {verificationUri}");
                 }
@@ -148,7 +147,6 @@ namespace Identity.API.Services
             using var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
             var randomBytes = new byte[40];
             rngCryptoServiceProvider.GetBytes(randomBytes);
-            // convert random bytes to hex string
             return BitConverter.ToString(randomBytes).Replace("-", "");
         }
 
@@ -160,7 +158,6 @@ namespace Identity.API.Services
             var _enpointUri = new Uri(string.Concat($"{origin}/", route));
             var verificationUri = QueryHelpers.AddQueryString(_enpointUri.ToString(), "userId", user.Id);
             verificationUri = QueryHelpers.AddQueryString(verificationUri, "code", code);
-            //Email Service Call Here
             return verificationUri;
         }
 
@@ -194,7 +191,6 @@ namespace Identity.API.Services
         {
             var account = await _userManager.FindByEmailAsync(model.Email);
 
-            // always return ok response to prevent email enumeration
             if (account == null) return;
 
             var code = await _userManager.GeneratePasswordResetTokenAsync(account);

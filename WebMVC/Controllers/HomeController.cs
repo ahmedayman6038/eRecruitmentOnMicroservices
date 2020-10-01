@@ -34,7 +34,7 @@ namespace WebMVC.Controllers
             {
                 Address = disco.TokenEndpoint,
                 ClientId = "mvc",
-                ClientSecret = "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols=",
+                ClientSecret = "secret",
 
                 Scope = "openid profile jobs applying",
                

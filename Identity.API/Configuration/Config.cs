@@ -63,7 +63,7 @@ namespace Identity.API.Configuration
                         new Secret("secret".Sha256())
                     },
                     ClientUri = $"{clientsUrl["Mvc"]}",                             // public uri of the client
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedGrantTypes = GrantTypes.Hybrid,
                     AllowAccessTokensViaBrowser = false,
                     RequireConsent = false,
                     AllowOfflineAccess = true,
@@ -87,7 +87,18 @@ namespace Identity.API.Configuration
                     AccessTokenLifetime = 60*60*2, // 2 hours
                     IdentityTokenLifetime= 60*60*2 // 2 hours
                 },
-             
+                 new Client
+                {
+                    ClientId = "oauthClient",
+                    ClientName = "Example client application using client credentials",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    ClientSecrets = new List<Secret> {new Secret("SuperSecretPassword".Sha256())}, // change me!
+                    //AllowedScopes = new List<string> {"api1.read"}
+                     AllowedScopes = new List<string>
+                    {
+                        "jobs"
+                    },
+                },
                 new Client
                 {
                     ClientId = "jobsswaggerui",

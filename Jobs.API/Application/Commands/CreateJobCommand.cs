@@ -20,9 +20,9 @@ namespace Jobs.API.Application.Commands
 
         public class CreateJobCommandHandler : IRequestHandler<CreateJobCommand, Response<int>>
         {
-            private readonly IJobRepositoryAsync _jobRepository;
+            private readonly IJobRepository _jobRepository;
             private readonly IMapper _mapper;
-            public CreateJobCommandHandler(IJobRepositoryAsync jobRepository, IMapper mapper)
+            public CreateJobCommandHandler(IJobRepository jobRepository, IMapper mapper)
             {
                 _jobRepository = jobRepository;
                 _mapper = mapper;

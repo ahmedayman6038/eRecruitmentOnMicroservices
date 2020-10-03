@@ -133,7 +133,7 @@ namespace Identity.API
                 {
                     Version = "v1",
                     Title = "eRecruitmentOnMicroservices - Identity.API",
-                    Description = "This Api will be responsible for overall data distribution and authorization.",
+                    Description = "This Api will be responsible for overall authorization and authentication for the services.",
                     Contact = new OpenApiContact
                     {
                         Name = "Ahmed Ayman",

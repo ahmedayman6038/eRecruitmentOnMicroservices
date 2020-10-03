@@ -15,8 +15,8 @@ namespace Jobs.API.Application.Commands
         public int Id { get; set; }
         public class DeleteJobByIdCommandHandler : IRequestHandler<DeleteJobByIdCommand, Response<int>>
         {
-            private readonly IJobRepositoryAsync _jobRepository;
-            public DeleteJobByIdCommandHandler(IJobRepositoryAsync jobRepository)
+            private readonly IJobRepository _jobRepository;
+            public DeleteJobByIdCommandHandler(IJobRepository jobRepository)
             {
                 _jobRepository = jobRepository;
             }

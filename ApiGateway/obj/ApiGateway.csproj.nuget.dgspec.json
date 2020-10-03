@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj": {}
+    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj": {
+    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj",
+        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj",
         "projectName": "ApiGateway",
-        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj",
-        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\ApiGateway\\obj\\",
+        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\ApiGateway\\ApiGateway.csproj",
+        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\ApiGateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

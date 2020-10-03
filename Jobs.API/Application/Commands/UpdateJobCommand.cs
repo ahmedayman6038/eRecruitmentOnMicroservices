@@ -20,8 +20,8 @@ namespace Jobs.API.Application.Commands
 
         public class UpdateJobCommandHandler : IRequestHandler<UpdateJobCommand, Response<int>>
         {
-            private readonly IJobRepositoryAsync _jobRepository;
-            public UpdateJobCommandHandler(IJobRepositoryAsync jobRepository)
+            private readonly IJobRepository _jobRepository;
+            public UpdateJobCommandHandler(IJobRepository jobRepository)
             {
                 _jobRepository = jobRepository;
             }

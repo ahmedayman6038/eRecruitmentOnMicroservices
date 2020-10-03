@@ -16,9 +16,9 @@ namespace Jobs.API.Application.Mappings
             CreateMap<Job, GetAllJobsViewModel>()
                 .ForMember(dest => dest.City, source => source.MapFrom(source => source.City.Name))
                 .ForMember(dest => dest.Country, source => source.MapFrom(source => source.City.Country.Name));
-            //CreateMap<GetAllJobsViewModel, Job>()
-            //    .ForMember(dest => dest.City.Name, source => source.MapFrom(source => source.City));
+
             CreateMap<CreateJobCommand, Job>();
+
             CreateMap<GetAllJobsQuery, GetAllJobsParameter>();
         }
     }

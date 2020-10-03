@@ -13,5 +13,6 @@ namespace Jobs.API.Application.Queries
         public string Requirements { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

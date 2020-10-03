@@ -8,5 +8,6 @@ namespace Jobs.API.Application.Queries
 {
     public class GetAllJobsParameter : RequestParameter
     {
+        public int CityId { get; set; }
     }
 }

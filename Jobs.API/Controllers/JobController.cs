@@ -17,7 +17,13 @@ namespace Jobs.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllJobsParameter filter)
         {
-            return Ok(await Mediator.Send(new GetAllJobsQuery() { PageSize = filter.PageSize, PageNumber = filter.PageNumber }));
+            return Ok(await Mediator.Send(
+                new GetAllJobsQuery() 
+                { 
+                    PageSize = filter.PageSize, 
+                    PageNumber = filter.PageNumber, 
+                    CityId = filter.CityId 
+                }));
         }
 
         // GET api/<controller>/5
@@ -51,6 +57,12 @@ namespace Jobs.API.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteJobByIdCommand { Id = id }));
+        }
+
+        [HttpPost("Apply")]
+        public async Task<IActionResult> Apply(ApplyJobCommand command)
+        {
+            return Ok(await Mediator.Send(command));
         }
     }
 }

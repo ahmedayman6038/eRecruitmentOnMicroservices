@@ -23,6 +23,9 @@ namespace Jobs.API.Infrastructure.EntityConfigurations
             builder.HasOne(ci => ci.City)
                 .WithMany()
                 .HasForeignKey(ci => ci.CityId);
+
+            builder.Property(ci => ci.CreatedDate)
+                .HasDefaultValueSql("getdate()");
         }
     }
 }

@@ -16,8 +16,8 @@ namespace Jobs.API.Application.Queries
         public int Id { get; set; }
         public class GetJobByIdQueryHandler : IRequestHandler<GetJobByIdQuery, Response<Job>>
         {
-            private readonly IJobRepositoryAsync _jobRepository;
-            public GetJobByIdQueryHandler(IJobRepositoryAsync jobRepository)
+            private readonly IJobRepository _jobRepository;
+            public GetJobByIdQueryHandler(IJobRepository jobRepository)
             {
                 _jobRepository = jobRepository;
             }

@@ -10,9 +10,9 @@ namespace Jobs.API.Application.Validations
 {
     public class CreateJobCommandValidator : AbstractValidator<CreateJobCommand>
     {
-        private readonly IJobRepositoryAsync jobRepository;
+        private readonly IJobRepository jobRepository;
 
-        public CreateJobCommandValidator(IJobRepositoryAsync jobRepository)
+        public CreateJobCommandValidator(IJobRepository jobRepository)
         {
             this.jobRepository = jobRepository;
 

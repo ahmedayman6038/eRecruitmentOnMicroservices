@@ -36,7 +36,7 @@ namespace Identity.API.Services
             _roleManager = roleManager;
             _jwtSettings = jwtSettings.Value;
             _signInManager = signInManager;
-            this._emailService = emailService;
+            _emailService = emailService;
         }
 
         public async Task<Response<AuthenticationResponse>> AuthenticateAsync(AuthenticationRequest request, string ipAddress)

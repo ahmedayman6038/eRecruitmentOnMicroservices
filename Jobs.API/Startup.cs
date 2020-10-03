@@ -10,7 +10,9 @@ using Jobs.API.Application.Interfaces;
 using Jobs.API.Application.Wrappers;
 using Jobs.API.Infrastructure.Contexts;
 using Jobs.API.Infrastructure.Repositories;
+using Jobs.API.Infrastructure.Services;
 using Jobs.API.Middlewares;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -44,8 +46,8 @@ namespace Jobs.API
             services.AddDbContext<JobContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
-            services.AddTransient<IJobRepositoryAsync, JobRepositoryAsync>();
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IJobRepository, JobRepository>();
 
             services.AddAutoMapper(typeof(Startup));
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
@@ -58,7 +60,7 @@ namespace Jobs.API
                 {
                     Version = "v1",
                     Title = "eRecruitmentOnMicroservices - Jobs.API",
-                    Description = "This Api will be responsible for overall data distribution and authorization.",
+                    Description = "This Api will be responsible for jobs data service.",
                     Contact = new OpenApiContact
                     {
                         Name = "Ahmed Ayman",
@@ -134,18 +136,33 @@ namespace Jobs.API
                         context.HandleResponse();
                         context.Response.StatusCode = 401;
                         context.Response.ContentType = "application/json";
-                        var result = JsonConvert.SerializeObject(new Response<string>("You are not Authorized"));
+                        var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
                         return context.Response.WriteAsync(result);
                     },
                     OnForbidden = context =>
                     {
                         context.Response.StatusCode = 403;
                         context.Response.ContentType = "application/json";
-                        var result = JsonConvert.SerializeObject(new Response<string>("You are not authorized to access this resource"));
+                        var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not authorized to access this resource"));
                         return context.Response.WriteAsync(result);
                     },
                 };
             });
+            services.AddMassTransit(x =>
+            {
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
+                {
+                    config.UseHealthCheck(provider);
+                    config.Host(new Uri("rabbitmq://localhost"), h =>
+                    {
+                        h.Username("guest");
+                        h.Password("guest");
+                    });
+                }));
+            });
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddMassTransitHostedService();
             services.AddHealthChecks();
             services.AddControllers();
         }

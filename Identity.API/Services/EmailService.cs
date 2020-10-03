@@ -43,7 +43,7 @@ namespace Identity.API.Services
                 smtp.Disconnect(true);
 
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex.Message, ex);
                 throw new ApiException(ex.Message);

@@ -26,7 +26,7 @@ namespace Applying.API.Application.Consumers
             var command = new CreateApplyCommand();
             command.JobId = data.JobId;
             command.UserId = data.UserId;
-            command.Status = (int)ApplyStatus.Submitted;
+            command.Status = (int)ApplyStatus.Applied;
             command.CreatedDate = data.CreatedDate;
             await _mediator.Send(command);
         }

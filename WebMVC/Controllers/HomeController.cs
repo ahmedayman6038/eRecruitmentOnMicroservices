@@ -6,49 +6,49 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebMVC.Models;
-using IdentityModel.Client;
 using System.Net.Http;
 
 namespace WebMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult Index()
         {
-            _logger = logger;
+            return View();
         }
 
-        public async Task<IActionResult> IndexAsync()
+        public IActionResult Jobs()
         {
-            var client = new HttpClient();
-            var disco = await client.GetDiscoveryDocumentAsync("https://localhost:5001");
-            if (disco.IsError)
-            {
-                return Ok(disco.Error);
-            }
-
-            // request token
-            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
-            {
-                Address = disco.TokenEndpoint,
-                ClientId = "mvc",
-                ClientSecret = "secret",
-
-                Scope = "openid profile jobs applying",
-               
-            });
-
-            if (tokenResponse.IsError)
-            {
-                Console.WriteLine(tokenResponse.Error);
-                return Ok(tokenResponse.Error);
-            }
-            return Ok(tokenResponse.Json);
+            return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult JobDetails()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        public IActionResult Blog()
+        {
+            return View();
+        }
+
+        public IActionResult BlogDetails()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
         {
             return View();
         }

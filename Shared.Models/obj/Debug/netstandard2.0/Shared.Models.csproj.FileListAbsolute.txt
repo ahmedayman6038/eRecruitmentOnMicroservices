@@ -7,3 +7,12 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandar
 E:\DotNetProjects\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.csproj.CoreCompileInputs.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.pdb
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\bin\Debug\netstandard2.0\Shared.Models.deps.json
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\bin\Debug\netstandard2.0\Shared.Models.dll
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\bin\Debug\netstandard2.0\Shared.Models.pdb
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.csprojAssemblyReference.cache
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.AssemblyInfoInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.AssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.dll
+D:\Codes\eRecruitmentOnMicroservices\Shared.Models\obj\Debug\netstandard2.0\Shared.Models.pdb

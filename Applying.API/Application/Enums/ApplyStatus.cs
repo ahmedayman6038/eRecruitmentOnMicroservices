@@ -7,7 +7,7 @@ namespace Applying.API.Application.Enums
 {
     public enum ApplyStatus
     {
-        Submitted = 1,
+        Applied = 1,
         Viewed = 2,
         Accepted = 3,
         Rejected = 4

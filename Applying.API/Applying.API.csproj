@@ -6,7 +6,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\Applying.API.xml</DocumentationFile>
+    <DocumentationFile>D:\Codes\eRecruitmentOnMicroservices\Applying.API\Applying.API.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

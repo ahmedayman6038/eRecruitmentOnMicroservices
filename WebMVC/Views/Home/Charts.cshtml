@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Charts";
+}
+<!-- HOME -->
+<section class="home-section section-hero inner-page overlay bg-image"
+         style="background-image: url('@Url.Content("~/images/hero_1.jpg")');" id="home-section">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-12">
+                <div class="mb-5 text-center">
+                    <h1 class="text-white font-weight-bold">About Us</h1>
+                    <p>Find your dream jobs in our powerful career website template.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center" data-aos="fade">
+                <h2 class="section-title mb-3">Statistics</h2>
+            </div>
+        </div>
+
+        <div class="row align-items-center block__69944">
+
+            <div class="col-md-6">
+                <canvas id="jobs-statistics-chart1"></canvas>
+            </div>
+
+
+            <div class="col-md-6">
+                <canvas id="jobs-statistics-chart2"></canvas>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+@section Scripts{
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:7001/api/Statistics/getJobAppliedCount",
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGF5bWFuIiwianRpIjoiOWIyMDBlMDAtNWU5Ny00ZTg2LWJkZmQtYmVjNjI0Y2Y3NzhhIiwiZW1haWwiOiJhaG1lZGF5bWFuNjAzOEBnbWFpbC5jb20iLCJ1aWQiOiJjY2U3ZWQxNC1kNzgyLTQwMmMtYjk2Zi1mZTkwMjc3N2MyZmQiLCJpcCI6IjE3Mi4yNC4wLjEiLCJyb2xlcyI6WyJNb2RlcmF0b3IiLCJBZG1pbiIsIkJhc2ljIiwiU3VwZXJBZG1pbiJdLCJleHAiOjE2MDM4NzczMjcsImlzcyI6IkNvcmVJZGVudGl0eSIsImF1ZCI6IkNvcmVJZGVudGl0eVVzZXIifQ._K1YDVZJeXxm1guxgDuYQ-bLjoEJtHCyGOKaflZuW68")
+            },
+            success: function (data, status, xhr) {
+                debugger;
+                BuildBarChart('jobs-statistics-chart1', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Bar Chart', 'Applier')
+                BuildPieChart('jobs-statistics-chart2', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Pie Chart', 'Applier')
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                debugger;
+                alert("An error occured while loading the data");
+            }
+        });       
+    </script>
+}

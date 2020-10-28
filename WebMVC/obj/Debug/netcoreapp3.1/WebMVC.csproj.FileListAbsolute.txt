@@ -404,3 +404,4 @@ D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Jobs.cshtml.g.cs
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Services.cshtml.g.cs
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Charts.cshtml.g.cs

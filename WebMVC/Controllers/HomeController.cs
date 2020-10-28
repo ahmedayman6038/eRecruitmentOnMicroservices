@@ -28,6 +28,11 @@ namespace WebMVC.Controllers
             return View();
         }
 
+        public IActionResult Charts()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             return View();

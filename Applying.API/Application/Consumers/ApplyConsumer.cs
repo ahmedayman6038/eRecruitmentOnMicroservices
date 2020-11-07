@@ -1,6 +1,6 @@
 ﻿using Applying.API.Application.Commands;
 using Applying.API.Application.Enums;
-using Applying.API.Application.Models;
+using Applying.API.Application.Entities;
 using MassTransit;
 using MediatR;
 using Shared.Models;

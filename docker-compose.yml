@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+
+  webmvc:
+    image: ${DOCKER_REGISTRY-}webmvc
+    build:
+      context: .
+      dockerfile: WebMVC/Dockerfile
+
+  jobs.api:
+    image: ${DOCKER_REGISTRY-}jobsapi
+    build:
+      context: .
+      dockerfile: Jobs.API/Dockerfile
+    depends_on:
+      - sqldata
+      - rabbitmq
+
+  identity.api:
+    image: ${DOCKER_REGISTRY-}identityapi
+    build:
+      context: .
+      dockerfile: Identity.API/Dockerfile
+    depends_on:
+      - sqldata
+
+  applying.api:
+    image: ${DOCKER_REGISTRY-}applyingapi
+    build:
+      context: .
+      dockerfile: Applying.API/Dockerfile
+    depends_on:
+      - sqldata
+      - rabbitmq
+
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Jobs.API.Application.Commands;
-using Jobs.API.Application.Models;
+using Jobs.API.Application.Entities;
 using Jobs.API.Application.Queries;
 using System;
 using System.Collections.Generic;

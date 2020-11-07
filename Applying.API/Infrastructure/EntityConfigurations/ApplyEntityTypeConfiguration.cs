@@ -1,4 +1,4 @@
-﻿using Applying.API.Application.Models;
+﻿using Applying.API.Application.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

@@ -1,5 +1,5 @@
 ﻿using Jobs.API.Application.Interfaces;
-using Jobs.API.Application.Models;
+using Jobs.API.Application.Entities;
 using Jobs.API.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
 using System;

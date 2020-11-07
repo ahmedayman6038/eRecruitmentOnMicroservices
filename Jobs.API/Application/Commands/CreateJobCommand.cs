@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Jobs.API.Application.Interfaces;
-using Jobs.API.Application.Models;
+using Jobs.API.Application.Entities;
 using Jobs.API.Application.Wrappers;
 using MediatR;
 using System;

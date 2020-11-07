@@ -45,10 +45,10 @@
     <script>
         $.ajax({
             type: "GET",
-            url: "https://localhost:7001/api/Statistics/getJobAppliedCount",
+            url: "https://localhost:8005/api/Statistics/getJobAppliedCount",
             dataType: 'json',
             beforeSend: function (xhr) {
-                xhr.setRequestHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGF5bWFuIiwianRpIjoiOWIyMDBlMDAtNWU5Ny00ZTg2LWJkZmQtYmVjNjI0Y2Y3NzhhIiwiZW1haWwiOiJhaG1lZGF5bWFuNjAzOEBnbWFpbC5jb20iLCJ1aWQiOiJjY2U3ZWQxNC1kNzgyLTQwMmMtYjk2Zi1mZTkwMjc3N2MyZmQiLCJpcCI6IjE3Mi4yNC4wLjEiLCJyb2xlcyI6WyJNb2RlcmF0b3IiLCJBZG1pbiIsIkJhc2ljIiwiU3VwZXJBZG1pbiJdLCJleHAiOjE2MDM4NzczMjcsImlzcyI6IkNvcmVJZGVudGl0eSIsImF1ZCI6IkNvcmVJZGVudGl0eVVzZXIifQ._K1YDVZJeXxm1guxgDuYQ-bLjoEJtHCyGOKaflZuW68")
+                xhr.setRequestHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGF5bWFuIiwianRpIjoiOGNhNzA3YWQtYmI1Mi00YTVmLWIzNDktYmZjMTI5NTUwMWRiIiwiZW1haWwiOiJhaG1lZGF5bWFuNjAzOEBnbWFpbC5jb20iLCJ1aWQiOiJhMjE5YjI1Yy1lZmFlLTQ2Y2MtYjhiOS0wZjk4N2YwNmM5OWQiLCJpcCI6IjE3Mi4yMi4wLjYiLCJyb2xlcyI6WyJTdXBlckFkbWluIiwiTW9kZXJhdG9yIiwiQWRtaW4iLCJCYXNpYyJdLCJleHAiOjE2MDQ3ODMxNDksImlzcyI6IkNvcmVJZGVudGl0eSIsImF1ZCI6IkNvcmVJZGVudGl0eVVzZXIifQ.L2aRNgLxcBrbkfrkt8guiy7vg5B2BPrjZ-2S_BJquqI")
             },
             success: function (data, status, xhr) {
                 debugger;

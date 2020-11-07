@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Jobs.API.Application.Exceptions;
 using Jobs.API.Application.Interfaces;
-using Jobs.API.Application.Models;
+using Jobs.API.Application.Entities;
 using Jobs.API.Application.Wrappers;
 using MassTransit;
 using MediatR;
@@ -33,7 +33,7 @@ namespace Jobs.API.Application.Commands
             {
                 var job = await _jobRepository.GetByIdAsync(request.Id);
                 if (job == null) throw new ApiException($"Job Not Found.");
-                Uri uri = new Uri("rabbitmq://localhost/applyQueue");
+                Uri uri = new Uri("rabbitmq://rabbitmq/applyQueue");
                 var endPoint = await _bus.GetSendEndpoint(uri);
                 var message = new ApplyMessage()
                 {

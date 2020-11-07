@@ -1,4 +1,4 @@
-﻿using Jobs.API.Application.Models;
+﻿using Jobs.API.Application.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

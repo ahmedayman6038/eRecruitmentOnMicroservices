@@ -19,7 +19,7 @@ namespace Applying.API.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Applying.API.Application.Models.Apply", b =>
+            modelBuilder.Entity("Applying.API.Application.Entities.Apply", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

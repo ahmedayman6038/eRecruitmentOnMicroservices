@@ -19,7 +19,7 @@ namespace Jobs.API.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Jobs.API.Application.Models.City", b =>
+            modelBuilder.Entity("Jobs.API.Application.Entities.City", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,7 +41,7 @@ namespace Jobs.API.Infrastructure.Migrations
                     b.ToTable("City");
                 });
 
-            modelBuilder.Entity("Jobs.API.Application.Models.Country", b =>
+            modelBuilder.Entity("Jobs.API.Application.Entities.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace Jobs.API.Infrastructure.Migrations
                     b.ToTable("Country");
                 });
 
-            modelBuilder.Entity("Jobs.API.Application.Models.Job", b =>
+            modelBuilder.Entity("Jobs.API.Application.Entities.Job", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,12 +68,19 @@ namespace Jobs.API.Infrastructure.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("getdate()");
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -91,18 +98,18 @@ namespace Jobs.API.Infrastructure.Migrations
                     b.ToTable("Job");
                 });
 
-            modelBuilder.Entity("Jobs.API.Application.Models.City", b =>
+            modelBuilder.Entity("Jobs.API.Application.Entities.City", b =>
                 {
-                    b.HasOne("Jobs.API.Application.Models.Country", "Country")
+                    b.HasOne("Jobs.API.Application.Entities.Country", "Country")
                         .WithMany()
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Jobs.API.Application.Models.Job", b =>
+            modelBuilder.Entity("Jobs.API.Application.Entities.Job", b =>
                 {
-                    b.HasOne("Jobs.API.Application.Models.City", "City")
+                    b.HasOne("Jobs.API.Application.Entities.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -166,10 +166,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
-E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
-E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache
-E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.xml
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.xml
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
@@ -194,3 +190,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.Storage.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.Storage.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache

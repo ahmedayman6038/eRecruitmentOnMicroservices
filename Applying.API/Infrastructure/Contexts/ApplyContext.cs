@@ -1,4 +1,4 @@
-﻿using Applying.API.Application.Models;
+﻿using Applying.API.Application.Entities;
 using Applying.API.Infrastructure.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,7 +12,6 @@ namespace Applying.API.Infrastructure.Contexts
     {
         public ApplyContext(DbContextOptions<ApplyContext> options) : base(options)
         {
-            //ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
 
         public DbSet<Apply> Applies { get; set; }

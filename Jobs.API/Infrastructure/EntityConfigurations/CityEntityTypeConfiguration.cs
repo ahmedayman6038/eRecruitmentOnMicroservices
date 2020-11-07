@@ -1,4 +1,4 @@
-﻿using Jobs.API.Application.Models;
+﻿using Jobs.API.Application.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

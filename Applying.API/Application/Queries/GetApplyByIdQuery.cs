@@ -1,6 +1,6 @@
 ﻿using Applying.API.Application.Exceptions;
 using Applying.API.Application.Interfaces;
-using Applying.API.Application.Models;
+using Applying.API.Application.Entities;
 using Applying.API.Application.Wrappers;
 using MediatR;
 using System;

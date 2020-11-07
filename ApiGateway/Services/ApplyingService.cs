@@ -16,14 +16,12 @@ namespace ApiGateway.Services
     public class ApplyingService : IApplyingService
     {
         private readonly UrlsConfig _urls;
-        private readonly ILogger<ApplyingService> _logger;
         private readonly HttpClient _httpClient;
 
-        public ApplyingService(HttpClient httpClient, IOptions<UrlsConfig> config, ILogger<ApplyingService> logger)
+        public ApplyingService(HttpClient httpClient, IOptions<UrlsConfig> config)
         {
             _urls = config.Value;
             _httpClient = httpClient;
-            _logger = logger;
         }
 
         public async Task<IEnumerable<ApplyingData>> GetAll()

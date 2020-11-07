@@ -1,4 +1,4 @@
-﻿using Jobs.API.Application.Models;
+﻿using Jobs.API.Application.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -23,9 +23,6 @@ namespace Jobs.API.Infrastructure.EntityConfigurations
             builder.HasOne(ci => ci.City)
                 .WithMany()
                 .HasForeignKey(ci => ci.CityId);
-
-            builder.Property(ci => ci.CreatedDate)
-                .HasDefaultValueSql("getdate()");
         }
     }
 }

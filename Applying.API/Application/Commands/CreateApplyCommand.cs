@@ -1,5 +1,5 @@
 ﻿using Applying.API.Application.Interfaces;
-using Applying.API.Application.Models;
+using Applying.API.Application.Entities;
 using Applying.API.Application.Wrappers;
 using AutoMapper;
 using MediatR;

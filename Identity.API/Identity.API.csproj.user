@@ -3,9 +3,14 @@
   <PropertyGroup>
     <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Controller</Controller_SelectedScaffolderCategoryPath>
-    <ActiveDebugProfile>Identity.API</ActiveDebugProfile>
+    <ActiveDebugProfile>Docker</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <ItemGroup>
+    <DevSpacesDebugProfileUserSetting Include="Azure Dev Spaces">
+      <LaunchUrl>swagger</LaunchUrl>
+    </DevSpacesDebugProfileUserSetting>
+  </ItemGroup>
 </Project>

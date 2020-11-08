@@ -166,7 +166,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.xml
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -179,9 +178,6 @@ D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identi
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.Storage.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityModel.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.dll
@@ -193,3 +189,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache

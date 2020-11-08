@@ -66,9 +66,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\sta
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.genruntimeconfig.cache
-D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csproj.CoreCompileInputs.cache
-D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cs
-D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cache
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -718,3 +715,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Raz
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csproj.CoreCompileInputs.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cache
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cache

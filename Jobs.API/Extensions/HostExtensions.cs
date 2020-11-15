@@ -1,4 +1,5 @@
 ﻿using Jobs.API.Infrastructure.Contexts;
+using Jobs.API.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,12 +23,13 @@ namespace Jobs.API.Extensions
                     var context = services.GetRequiredService<JobContext>();
 
                     context.Database.MigrateAsync().Wait();
+                    DefaultCountries.SeedAsync(context).Wait();
 
-                    Log.Information("Finished Seeding Default Data");
+                    Log.Information("Finished Database Migration And Seeding");
                 }
                 catch (Exception ex)
                 {
-                    Log.Warning(ex, "An error occurred seeding the DB");
+                    Log.Warning(ex, "An error occurred while seeding and migrate the DB");
                 }
                 finally
                 {

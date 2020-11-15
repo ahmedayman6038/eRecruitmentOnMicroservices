@@ -17,7 +17,7 @@ namespace Jobs.API.Infrastructure.Contexts
 
         public JobContext(DbContextOptions<JobContext> options, IDateTimeService dateTimeService, IIdentityService identityService) : base(options)
         {
-            ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+            //ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             _dateTimeService = dateTimeService;
             _identityService = identityService;
         }

@@ -32,11 +32,11 @@ namespace Identity.API.Extensions
                     DefaultSuperAdmin.SeedAsync(userManager).Wait();
                     DefaultBasicUser.SeedAsync(userManager).Wait();
 
-                    Log.Information("Finished Seeding Default Data");
+                    Log.Information("Finished Database Migration And Seeding");
                 }
                 catch (Exception ex)
                 {
-                    Log.Warning(ex, "An error occurred seeding the DB");
+                    Log.Warning(ex, "An error occurred while seeding and migrate the DB");
                 }
                 finally
                 {

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dGxZc35tRnhNJTbfuNc6L512ir/BcTNAaJcVve1fVOAEcuZYA2Uh4hxxpgaWEuGOs37ExjgSmM9ABA/lxtbbcQ==",
+  "dgSpecHash": "eZJjj/suA5Pykw4BHXFnP519J7nQdpFGhztQSgvwmhxnM8mEzlSG6IPzYyxCaf7lyyVJSRuarNVPPsfjeVysKw==",
   "success": true,
-  "projectFilePath": "D:\\Codes\\eRecruitmentOnMicroservices\\Shared.Models\\Shared.Models.csproj",
+  "projectFilePath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\Shared.Models\\Shared.Models.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\AhmedAH\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

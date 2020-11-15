@@ -25,6 +25,8 @@ namespace ApiGateway
             CreateHostBuilder(args)
                 .Build()
                 .Run();
+
+            Log.Information("Application is running");
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

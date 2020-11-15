@@ -29,7 +29,6 @@ D:\Codes\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGatew
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\configuration.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\appsettings.json
-E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\configuration.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.exe
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.deps.json
@@ -128,3 +127,4 @@ D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\Serilog.
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.MvcApplicationPartsAssemblyInfo.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\scopedcss\bundle\ApiGateway.styles.css

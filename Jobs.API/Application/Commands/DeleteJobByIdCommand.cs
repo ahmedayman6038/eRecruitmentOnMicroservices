@@ -15,16 +15,17 @@ namespace Jobs.API.Application.Commands
         public int Id { get; set; }
         public class DeleteJobByIdCommandHandler : IRequestHandler<DeleteJobByIdCommand, Response<int>>
         {
-            private readonly IJobRepository _jobRepository;
-            public DeleteJobByIdCommandHandler(IJobRepository jobRepository)
+            private readonly IUnitOfWork _unitOfWork;
+            public DeleteJobByIdCommandHandler(IUnitOfWork unitOfWork)
             {
-                _jobRepository = jobRepository;
+                _unitOfWork = unitOfWork;
             }
             public async Task<Response<int>> Handle(DeleteJobByIdCommand command, CancellationToken cancellationToken)
             {
-                var job = await _jobRepository.GetByIdAsync(command.Id);
+                var job = await _unitOfWork.Jobs.GetByIdAsync(command.Id);
                 if (job == null) throw new ApiException($"Job Not Found.");
-                await _jobRepository.DeleteAsync(job);
+                _unitOfWork.Jobs.Delete(job);
+                await _unitOfWork.CommitAsync();
                 return new Response<int>(job.Id);
             }
         }

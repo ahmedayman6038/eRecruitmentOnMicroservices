@@ -5,7 +5,7 @@ fullnameOverride: webmvc
 replicaCount: 1
 image:
   repository: webmvc
-  tag: stable
+  tag: latest
   pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.
@@ -15,7 +15,7 @@ imagePullSecrets: []
   # This uses credentials from secret "myRegistryKeySecretName".
   # - name: myRegistryKeySecretName
 service:
-  type: ClusterIP
+  type: NodePort
   port: 80
 
 deployment:

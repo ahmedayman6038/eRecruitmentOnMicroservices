@@ -18,14 +18,7 @@ namespace Jobs.API.Infrastructure.Repositories
             _jobs = dbContext.Set<Job>();
         }
 
-        public async Task<IReadOnlyList<Job>> SearchJobByNameAsync(string name)
-        {
-            return await _jobs
-                .Where(j => j.Name == name)
-                .ToListAsync();
-        }
-
-        public async Task<IReadOnlyList<Job>> GetPagedReponseWithEagerLoadAsync(int pageNumber, int pageSize, int cityId)
+        public async Task<IReadOnlyList<Job>> GetPagedReponseAsync(int pageNumber, int pageSize, int cityId)
         {
             var jobs = _jobs
                 .Include(j => j.City)

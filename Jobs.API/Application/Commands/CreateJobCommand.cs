@@ -20,18 +20,19 @@ namespace Jobs.API.Application.Commands
 
         public class CreateJobCommandHandler : IRequestHandler<CreateJobCommand, Response<int>>
         {
-            private readonly IJobRepository _jobRepository;
+            private readonly IUnitOfWork _unitOfWork;
             private readonly IMapper _mapper;
-            public CreateJobCommandHandler(IJobRepository jobRepository, IMapper mapper)
+            public CreateJobCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
             {
-                _jobRepository = jobRepository;
+                _unitOfWork = unitOfWork;
                 _mapper = mapper;
             }
 
             public async Task<Response<int>> Handle(CreateJobCommand request, CancellationToken cancellationToken)
             {
                 var job = _mapper.Map<Job>(request);
-                await _jobRepository.AddAsync(job);
+                await _unitOfWork.Jobs.AddAsync(job);
+                await _unitOfWork.CommitAsync();
                 return new Response<int>(job.Id);
             }
         }

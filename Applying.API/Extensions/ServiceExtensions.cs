@@ -148,7 +148,7 @@ namespace Applying.API.Extensions
             });
         }
 
-        public static void AddMassTransitExtension(this IServiceCollection services)
+        public static void AddEventBusExtension(this IServiceCollection services)
         {
             services.AddMassTransit(x =>
             {

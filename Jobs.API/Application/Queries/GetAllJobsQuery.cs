@@ -19,18 +19,18 @@ namespace Jobs.API.Application.Queries
 
     public class GetAllJobsQueryHandler : IRequestHandler<GetAllJobsQuery, PagedResponse<IEnumerable<GetAllJobsViewModel>>>
     {
-        private readonly IJobRepository _jobRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public GetAllJobsQueryHandler(IJobRepository jobRepository, IMapper mapper)
+        public GetAllJobsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _jobRepository = jobRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
         public async Task<PagedResponse<IEnumerable<GetAllJobsViewModel>>> Handle(GetAllJobsQuery request, CancellationToken cancellationToken)
         {
             var validFilter = _mapper.Map<GetAllJobsParameter>(request);
-            var job = await _jobRepository.GetPagedReponseWithEagerLoadAsync(validFilter.PageNumber, validFilter.PageSize, validFilter.CityId);
+            var job = await _unitOfWork.Jobs.GetPagedReponseAsync(validFilter.PageNumber, validFilter.PageSize, validFilter.CityId);
             var jobViewModel = _mapper.Map<IEnumerable<GetAllJobsViewModel>>(job);
             return new PagedResponse<IEnumerable<GetAllJobsViewModel>>(jobViewModel, validFilter.PageNumber, validFilter.PageSize);
         }

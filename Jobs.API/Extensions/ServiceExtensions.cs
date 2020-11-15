@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Jobs.API.Application.Behaviors;
+using Jobs.API.Application.IntegrationEvents;
 using Jobs.API.Application.Interfaces;
 using Jobs.API.Infrastructure.Contexts;
 using Jobs.API.Infrastructure.Repositories;
@@ -40,8 +41,9 @@ namespace Jobs.API.Extensions
             services.AddDbContext<JobContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            //services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IJobRepository, JobRepository>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
         public static void AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
@@ -147,21 +149,11 @@ namespace Jobs.API.Extensions
             });
         }
 
-        public static void AddMassTransitExtension(this IServiceCollection services)
+        public static void AddIntegrationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMassTransit(x =>
-            {
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(config =>
-                {
-                    config.UseHealthCheck(provider);
-                    config.Host(new Uri("rabbitmq://rabbitmq"), h =>
-                    {
-                        h.Username("guest");
-                        h.Password("guest");
-                    });
-                }));
-            });
-            services.AddMassTransitHostedService();
+            services.AddTransient<IJobIntegrationEventService, JobIntegrationEventService>();
+
+            services.Configure<RabbitMqConfiguration>(configuration.GetSection("RabbitMq"));
         }
     }
 }

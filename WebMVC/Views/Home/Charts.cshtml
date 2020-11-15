@@ -43,22 +43,25 @@
 
 @section Scripts{
     <script>
-        $.ajax({
-            type: "GET",
-            url: "https://localhost:8005/api/Statistics/getJobAppliedCount",
-            dataType: 'json',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("Authorization", "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhaG1lZGF5bWFuIiwianRpIjoiOGNhNzA3YWQtYmI1Mi00YTVmLWIzNDktYmZjMTI5NTUwMWRiIiwiZW1haWwiOiJhaG1lZGF5bWFuNjAzOEBnbWFpbC5jb20iLCJ1aWQiOiJhMjE5YjI1Yy1lZmFlLTQ2Y2MtYjhiOS0wZjk4N2YwNmM5OWQiLCJpcCI6IjE3Mi4yMi4wLjYiLCJyb2xlcyI6WyJTdXBlckFkbWluIiwiTW9kZXJhdG9yIiwiQWRtaW4iLCJCYXNpYyJdLCJleHAiOjE2MDQ3ODMxNDksImlzcyI6IkNvcmVJZGVudGl0eSIsImF1ZCI6IkNvcmVJZGVudGl0eVVzZXIifQ.L2aRNgLxcBrbkfrkt8guiy7vg5B2BPrjZ-2S_BJquqI")
-            },
-            success: function (data, status, xhr) {
-                debugger;
-                BuildBarChart('jobs-statistics-chart1', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Bar Chart', 'Applier')
-                BuildPieChart('jobs-statistics-chart2', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Pie Chart', 'Applier')
-            },
-            error: function (jqXhr, textStatus, errorMessage) {
-                debugger;
-                alert("An error occured while loading the data");
-            }
-        });       
+        var token = prompt("Please enter your token:", "");
+        if (token != null && token != "") {
+            $.ajax({
+                type: "GET",
+                url: "https://localhost:5005/api/Statistics/getJobAppliedCount",
+                dataType: 'json',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "bearer " + token)
+                },
+                success: function (data, status, xhr) {
+                    debugger;
+                    BuildBarChart('jobs-statistics-chart1', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Bar Chart', 'Applier')
+                    BuildPieChart('jobs-statistics-chart2', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Pie Chart', 'Applier')
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    debugger;
+                    alert("An error occured while loading the data");
+                }
+            });  
+        }     
     </script>
 }

@@ -23,7 +23,7 @@ namespace Applying.API
             services.AddApplicationServices();
             services.AddSwaggerExtension();
             services.AddIdentityInfrastructure(Configuration);
-            services.AddMassTransitExtension();
+            services.AddEventBusExtension();
             services.AddHealthChecks();
             services.AddCors(options =>
             {

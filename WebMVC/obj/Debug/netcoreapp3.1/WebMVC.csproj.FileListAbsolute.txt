@@ -34,7 +34,6 @@ D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.genru
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csproj.CopyComplete
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\appsettings.json
-E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.exe
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.deps.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.runtimeconfig.json
@@ -718,3 +717,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Web
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebMVC.styles.css

@@ -1,13 +1,11 @@
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\appsettings.json
-E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.exe
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.deps.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.runtimeconfig.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.runtimeconfig.dev.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.pdb
-E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csprojAssemblyReference.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.AssemblyInfoInputs.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.AssemblyInfo.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.RazorTargetAssemblyInfo.cache
@@ -192,3 +190,5 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.MvcApplicationPartsAssemblyInfo.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Identity.API.styles.css
+E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.csprojAssemblyReference.cache

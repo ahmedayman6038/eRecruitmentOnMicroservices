@@ -23,6 +23,8 @@ namespace Applying.API
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
 
+            Log.Information("Application is starting");
+
             CreateHostBuilder(args)
                 .Build()
                 .MigrateAndSeedDb()

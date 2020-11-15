@@ -48,7 +48,7 @@ namespace Jobs.API
             services.AddApplicationServices();
             services.AddSwaggerExtension();
             services.AddIdentityInfrastructure(Configuration);
-            services.AddMassTransitExtension();       
+            services.AddIntegrationServices(Configuration);       
             services.AddHealthChecks();
             services.AddCors(options =>
             {

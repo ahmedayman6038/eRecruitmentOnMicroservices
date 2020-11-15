@@ -1,6 +1,5 @@
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\appsettings.json
-E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Jobs.API.exe
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.csprojAssemblyReference.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.AssemblyInfoInputs.cache
@@ -206,3 +205,4 @@ D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Serilog.Si
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Jobs.API.styles.css

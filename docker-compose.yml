@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  sqldata:
-    image: mcr.microsoft.com/mssql/server:2017-latest
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-latest
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -19,7 +19,7 @@ services:
       context: .
       dockerfile: Jobs.API/Dockerfile
     depends_on:
-      - sqldata
+      - mssql
       - rabbitmq
 
   identity.api:
@@ -28,7 +28,7 @@ services:
       context: .
       dockerfile: Identity.API/Dockerfile
     depends_on:
-      - sqldata
+      - mssql
 
   applying.api:
     image: ${DOCKER_REGISTRY-}applyingapi
@@ -36,7 +36,7 @@ services:
       context: .
       dockerfile: Applying.API/Dockerfile
     depends_on:
-      - sqldata
+      - mssql
       - rabbitmq
 
   apigateway:

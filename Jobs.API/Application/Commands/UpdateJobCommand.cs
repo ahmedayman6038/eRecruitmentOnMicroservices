@@ -20,14 +20,14 @@ namespace Jobs.API.Application.Commands
 
         public class UpdateJobCommandHandler : IRequestHandler<UpdateJobCommand, Response<int>>
         {
-            private readonly IJobRepository _jobRepository;
-            public UpdateJobCommandHandler(IJobRepository jobRepository)
+            private readonly IUnitOfWork _unitOfWork;
+            public UpdateJobCommandHandler(IUnitOfWork unitOfWork)
             {
-                _jobRepository = jobRepository;
+                _unitOfWork = unitOfWork;
             }
             public async Task<Response<int>> Handle(UpdateJobCommand command, CancellationToken cancellationToken)
             {
-                var job = await _jobRepository.GetByIdAsync(command.Id);
+                var job = await _unitOfWork.Jobs.GetByIdAsync(command.Id);
 
                 if (job == null)
                 {
@@ -39,7 +39,8 @@ namespace Jobs.API.Application.Commands
                     job.Description = command.Description;
                     job.Requirements = command.Requirements;
                     job.CityId = command.CityId;
-                    await _jobRepository.UpdateAsync(job);
+                    _unitOfWork.Jobs.Update(job);
+                    await _unitOfWork.CommitAsync();
                     return new Response<int>(job.Id);
                 }
             }

@@ -1,6 +1,5 @@
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\appsettings.Development.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\appsettings.json
-E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Properties\launchSettings.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Applying.API.exe
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Identity.API.exe
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Jobs.API.exe

@@ -42,5 +42,9 @@
     <ProjectReference Include="..\Shared.Models\Shared.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\IntegrationEvents\EventHandling\" />
+  </ItemGroup>
+
 
 </Project>

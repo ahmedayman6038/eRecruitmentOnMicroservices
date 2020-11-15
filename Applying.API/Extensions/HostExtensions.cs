@@ -23,11 +23,11 @@ namespace Applying.API.Extensions
 
                     context.Database.MigrateAsync().Wait();
 
-                    Log.Information("Finished Migration");
+                    Log.Information("Finished Database Migration And Seeding");
                 }
                 catch (Exception ex)
                 {
-                    Log.Warning(ex, "An error occurred migrate the DB");
+                    Log.Warning(ex, "An error occurred while seeding and migrate the DB");
                 }
                 finally
                 {

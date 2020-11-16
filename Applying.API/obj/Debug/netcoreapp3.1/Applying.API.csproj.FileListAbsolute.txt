@@ -104,15 +104,9 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Shared.Models.pdb
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Automatonymous.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\FluentValidation.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\GreenPipes.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\MassTransit.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\MassTransit.AspNetCoreIntegration.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\MassTransit.ExtensionsDependencyInjectionIntegration.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\MassTransit.RabbitMqTransport.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\MediatR.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -131,10 +125,6 @@ D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Micros
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
@@ -146,10 +136,7 @@ D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Micros
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\NewId.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -159,7 +146,6 @@ D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\System
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
@@ -202,7 +188,4 @@ D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Serilo
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Serilog.Sinks.Debug.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.csproj.CoreCompileInputs.cache
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.MvcApplicationPartsAssemblyInfo.cs
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.MvcApplicationPartsAssemblyInfo.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Applying.API.styles.css

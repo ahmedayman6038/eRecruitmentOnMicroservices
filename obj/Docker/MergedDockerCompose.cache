@@ -1,7 +1,7 @@
 services:
   apigateway:
     build:
-      context: E:\DotNetProjects\eRecruitmentOnMicroservices
+      context: D:\Codes\eRecruitmentOnMicroservices
       dockerfile: ApiGateway/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -16,11 +16,11 @@ services:
     - published: 5005
       target: 443
     volumes:
-    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   applying.api:
     build:
-      context: E:\DotNetProjects\eRecruitmentOnMicroservices
+      context: D:\Codes\eRecruitmentOnMicroservices
       dockerfile: Applying.API/Dockerfile
     depends_on:
       mssql:
@@ -37,11 +37,11 @@ services:
     - published: 5004
       target: 443
     volumes:
-    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   identity.api:
     build:
-      context: E:\DotNetProjects\eRecruitmentOnMicroservices
+      context: D:\Codes\eRecruitmentOnMicroservices
       dockerfile: Identity.API/Dockerfile
     depends_on:
       mssql:
@@ -56,11 +56,11 @@ services:
     - published: 5003
       target: 443
     volumes:
-    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   jobs.api:
     build:
-      context: E:\DotNetProjects\eRecruitmentOnMicroservices
+      context: D:\Codes\eRecruitmentOnMicroservices
       dockerfile: Jobs.API/Dockerfile
     depends_on:
       mssql:
@@ -77,8 +77,8 @@ services:
     - published: 5002
       target: 443
     volumes:
-    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   mssql:
     environment:
       ACCEPT_EULA: "Y"
@@ -96,7 +96,7 @@ services:
       target: 15672
   webmvc:
     build:
-      context: E:\DotNetProjects\eRecruitmentOnMicroservices
+      context: D:\Codes\eRecruitmentOnMicroservices
       dockerfile: WebMVC/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -108,6 +108,6 @@ services:
     - published: 5001
       target: 443
     volumes:
-    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
 version: '3.4'

@@ -1,0 +1,5 @@
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.deps.json
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.dll
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csprojAssemblyReference.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.AssemblyInfoInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.AssemblyInfo.cs

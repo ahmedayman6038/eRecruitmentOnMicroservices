@@ -1,0 +1,6 @@
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBusRabbitMQ.deps.json
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBusRabbitMQ.dll
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csprojAssemblyReference.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.AssemblyInfoInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.AssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBus.dll

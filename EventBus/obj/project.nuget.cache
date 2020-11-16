@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "W80bT8mfM7okK87Ic7itBWyY4WBhBE756H1j22ElfJYjQ8lCQoRvgsezt6ZSzANKeJ6ceX+krW6lzlFmRptRig==",
+  "success": true,
+  "projectFilePath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\AhmedAH\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\AhmedAH\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

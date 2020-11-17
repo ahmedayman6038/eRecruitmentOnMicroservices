@@ -24,7 +24,6 @@ namespace EventBusRabbitMQ
         const string BROKER_NAME = "erecruitment_event_bus";
 
         private readonly IRabbitMQPersistentConnection _persistentConnection;
-        private readonly ILogger<EventBusRabbitMQ> _logger;
         private readonly IEventBusSubscriptionsManager _subsManager;
         private readonly ILifetimeScope _autofac;
         private readonly string AUTOFAC_SCOPE_NAME = "erecruitment_event_bus";
@@ -33,11 +32,13 @@ namespace EventBusRabbitMQ
         private IModel _consumerChannel;
         private string _queueName;
 
-        public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection, ILogger<EventBusRabbitMQ> logger,
-            ILifetimeScope autofac, IEventBusSubscriptionsManager subsManager, string queueName = null, int retryCount = 5)
+        public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection,
+            ILifetimeScope autofac, 
+            IEventBusSubscriptionsManager subsManager, 
+            string queueName = null, 
+            int retryCount = 5)
         {
             _persistentConnection = persistentConnection ?? throw new ArgumentNullException(nameof(persistentConnection));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _subsManager = subsManager ?? new InMemoryEventBusSubscriptionsManager();
             _queueName = queueName;
             _consumerChannel = CreateConsumerChannel();
@@ -76,19 +77,12 @@ namespace EventBusRabbitMQ
 
             var policy = RetryPolicy.Handle<BrokerUnreachableException>()
                 .Or<SocketException>()
-                .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) =>
-                {
-                    _logger.LogWarning(ex, "Could not publish event: {EventId} after {Timeout}s ({ExceptionMessage})", @event.Id, $"{time.TotalSeconds:n1}", ex.Message);
-                });
+                .WaitAndRetry(_retryCount, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (ex, time) => { });
 
             var eventName = @event.GetType().Name;
 
-            _logger.LogTrace("Creating RabbitMQ channel to publish event: {EventId} ({EventName})", @event.Id, eventName);
-
             using (var channel = _persistentConnection.CreateModel())
             {
-
-                _logger.LogTrace("Declaring RabbitMQ exchange to publish event: {EventId}", @event.Id);
 
                 channel.ExchangeDeclare(exchange: BROKER_NAME, type: "direct");
 
@@ -99,8 +93,6 @@ namespace EventBusRabbitMQ
                 {
                     var properties = channel.CreateBasicProperties();
                     properties.DeliveryMode = 2; // persistent
-
-                    _logger.LogTrace("Publishing event to RabbitMQ: {EventId}", @event.Id);
 
                     channel.BasicPublish(
                         exchange: BROKER_NAME,
@@ -115,8 +107,6 @@ namespace EventBusRabbitMQ
         public void SubscribeDynamic<TH>(string eventName)
             where TH : IDynamicIntegrationEventHandler
         {
-            _logger.LogInformation("Subscribing to dynamic event {EventName} with {EventHandler}", eventName, typeof(TH).GetGenericTypeName());
-
             DoInternalSubscription(eventName);
             _subsManager.AddDynamicSubscription<TH>(eventName);
             StartBasicConsume();
@@ -128,8 +118,6 @@ namespace EventBusRabbitMQ
         {
             var eventName = _subsManager.GetEventKey<T>();
             DoInternalSubscription(eventName);
-
-            _logger.LogInformation("Subscribing to event {EventName} with {EventHandler}", eventName, typeof(TH).GetGenericTypeName());
 
             _subsManager.AddSubscription<T, TH>();
             StartBasicConsume();
@@ -158,10 +146,6 @@ namespace EventBusRabbitMQ
             where T : IntegrationEvent
             where TH : IIntegrationEventHandler<T>
         {
-            var eventName = _subsManager.GetEventKey<T>();
-
-            _logger.LogInformation("Unsubscribing from event {EventName}", eventName);
-
             _subsManager.RemoveSubscription<T, TH>();
         }
 
@@ -183,8 +167,6 @@ namespace EventBusRabbitMQ
 
         private void StartBasicConsume()
         {
-            _logger.LogTrace("Starting RabbitMQ basic consume");
-
             if (_consumerChannel != null)
             {
                 var consumer = new AsyncEventingBasicConsumer(_consumerChannel);
@@ -195,10 +177,6 @@ namespace EventBusRabbitMQ
                     queue: _queueName,
                     autoAck: false,
                     consumer: consumer);
-            }
-            else
-            {
-                _logger.LogError("StartBasicConsume can't call on _consumerChannel == null");
             }
         }
 
@@ -218,12 +196,9 @@ namespace EventBusRabbitMQ
             }
             catch (Exception ex)
             {
-                _logger.LogWarning(ex, "----- ERROR Processing message \"{Message}\"", message);
+
             }
 
-            // Even on exception we take the message off the queue.
-            // in a REAL WORLD app this should be handled with a Dead Letter Exchange (DLX). 
-            // For more information see: https://www.rabbitmq.com/dlx.html
             _consumerChannel.BasicAck(eventArgs.DeliveryTag, multiple: false);
         }
 
@@ -233,8 +208,6 @@ namespace EventBusRabbitMQ
             {
                 _persistentConnection.TryConnect();
             }
-
-            _logger.LogTrace("Creating RabbitMQ consumer channel");
 
             var channel = _persistentConnection.CreateModel();
 
@@ -249,8 +222,6 @@ namespace EventBusRabbitMQ
 
             channel.CallbackException += (sender, ea) =>
             {
-                _logger.LogWarning(ea.Exception, "Recreating RabbitMQ consumer channel");
-
                 _consumerChannel.Dispose();
                 _consumerChannel = CreateConsumerChannel();
                 StartBasicConsume();
@@ -261,8 +232,6 @@ namespace EventBusRabbitMQ
 
         private async Task ProcessEvent(string eventName, string message)
         {
-            _logger.LogTrace("Processing RabbitMQ event: {EventName}", eventName);
-
             if (_subsManager.HasSubscriptionsForEvent(eventName))
             {
                 using (var scope = _autofac.BeginLifetimeScope(AUTOFAC_SCOPE_NAME))
@@ -292,10 +261,6 @@ namespace EventBusRabbitMQ
                         }
                     }
                 }
-            }
-            else
-            {
-                _logger.LogWarning("No subscription for RabbitMQ event: {EventName}", eventName);
             }
         }
     }

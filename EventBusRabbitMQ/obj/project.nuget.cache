@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "E206f7FXbfrlfLpRVe/zcjNqJHhFq1qwLtq9ul7msoy3aqX5CrJkE/smL7ThZR4k1Js/voMXd7FbWqyiOnWaxg==",
+  "dgSpecHash": "jhXTf5XcsrnbqvVl53h0KkBO5e1TVQQdk1l+O0KJRM4TbkQnWDzL0VYliHKJe4pe5vT4z/ph67zGik1eBdTsgQ==",
   "success": true,
   "projectFilePath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AhmedAH\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+    "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EIMhi5oi40EAUJhACGlCM/rrwhY4WqLKCKbRkJYmWhgke4OFwY01rWyh3uAQv6zoFhvYknQ2XKlD7ZkrG9BhEQ==",
+  "dgSpecHash": "C/c8WydcNJI4MqVUHL+2Wm9ONAwpCKbGh5P95h6So1K1mo86jZOpq99XCybSX7CS4lPpo7CGvMAIyYPm6ieNFA==",
   "success": true,
   "projectFilePath": "D:\\Codes\\eRecruitmentOnMicroservices\\Jobs.API\\Jobs.API.csproj",
   "expectedPackageFiles": [
@@ -32,7 +32,7 @@
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.8\\microsoft.extensions.configuration.abstractions.3.1.8.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.8\\microsoft.extensions.configuration.binder.3.1.8.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.8\\microsoft.extensions.dependencyinjection.3.1.8.nupkg.sha512",
-    "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.8\\microsoft.extensions.dependencyinjection.abstractions.3.1.8.nupkg.sha512",
+    "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.0.4\\microsoft.extensions.dependencymodel.2.0.4.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.1.0\\microsoft.extensions.fileproviders.abstractions.2.1.0.nupkg.sha512",
     "C:\\Users\\AhmedAH\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.1.0\\microsoft.extensions.hosting.abstractions.2.1.0.nupkg.sha512",

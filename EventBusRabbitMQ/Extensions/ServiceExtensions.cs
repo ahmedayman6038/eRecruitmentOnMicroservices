@@ -12,7 +12,7 @@ namespace EventBusRabbitMQ.Extensions
 {
     public static class ServiceExtensions
     {
-        public static IServiceCollection AddRabbitMQConnection(this IServiceCollection services, RabbitMqOptions options)
+        public static IServiceCollection AddRabbitMQConnection(this IServiceCollection services, RabbitMQOptions options)
         {
             services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
             {
@@ -21,13 +21,8 @@ namespace EventBusRabbitMQ.Extensions
                 var factory = new ConnectionFactory
                 {
                     HostName = options.Host,
-                    DispatchConsumersAsync = options.DispatchConsumersAsync
+                    DispatchConsumersAsync = true
                 };
-
-                if (!string.IsNullOrEmpty(options.VirtualHost))
-                {
-                    factory.VirtualHost = options.VirtualHost;
-                }
 
                 if (!string.IsNullOrEmpty(options.Username))
                 {
@@ -50,7 +45,7 @@ namespace EventBusRabbitMQ.Extensions
             return services;
         }
 
-        public static IServiceCollection AddRabbitMQRegistration(this IServiceCollection services, RabbitMqOptions options)
+        public static IServiceCollection AddRabbitMQRegistration(this IServiceCollection services, RabbitMQOptions options)
         {
             services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
             {
@@ -59,7 +54,6 @@ namespace EventBusRabbitMQ.Extensions
                 var eventBusSubscriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
 
                 var brokerName = options.BrokerName;
-                var autofacScopeName = options.AutofacScopeName;
                 var queueName = options.QueueName;
                 var retryCount = 5;
 
@@ -72,12 +66,11 @@ namespace EventBusRabbitMQ.Extensions
                     lifetimeScope,
                     eventBusSubscriptionsManager,
                     brokerName,
-                    autofacScopeName,
                     queueName,
                     retryCount);
             });
 
-            services.AddSingleton<IEventBusSubscriptionManager, InMemoryEventBusSubscriptionManager>();
+            services.AddSingleton<IEventBusSubscriptionsManager, InMemoryEventBusSubscriptionsManager>();
 
             return services;
         }

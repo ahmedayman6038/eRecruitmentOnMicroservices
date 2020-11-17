@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using EventBus.Abstractions;
 using EventBusRabbitMQ;
+using EventBusRabbitMQ.Extensions;
+using EventBusRabbitMQ.Options;
 using FluentValidation;
 using Jobs.API.Application.Behaviors;
 using Jobs.API.Application.IntegrationEvents;
@@ -29,7 +31,7 @@ namespace Jobs.API.Extensions
 {
     public static class ServiceExtensions
     {
-        public static void AddApplicationServices(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
@@ -37,9 +39,13 @@ namespace Jobs.API.Extensions
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IDateTimeService, DateTimeService>();
+            var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
+            services.AddRabbitMQConnection(rabbitMQOptions);
+            services.AddRabbitMQRegistration(rabbitMQOptions);
+            return services;
         }
 
-        public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<JobContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
@@ -47,9 +53,10 @@ namespace Jobs.API.Extensions
             //services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IJobRepository, JobRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            return services;
         }
 
-        public static void AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAuthentication(options =>
             {
@@ -106,9 +113,10 @@ namespace Jobs.API.Extensions
                 };
             });
             services.AddScoped<IIdentityService, IdentityService>();
+            return services;
         }
 
-        public static void AddSwaggerExtension(this IServiceCollection services)
+        public static IServiceCollection AddSwaggerExtension(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {
@@ -150,55 +158,7 @@ namespace Jobs.API.Extensions
                     },
                 });
             });
-        }
-
-        public static void AddIntegrationServices(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddSingleton<IRabbitMQPersistentConnection>(sp =>
-            {
-                var logger = sp.GetRequiredService<ILogger<DefaultRabbitMQPersistentConnection>>();
-
-                var factory = new ConnectionFactory()
-                {
-                    HostName = configuration["EventBusConnection"],
-                    DispatchConsumersAsync = true
-                };
-
-                if (!string.IsNullOrEmpty(configuration["EventBusUserName"]))
-                {
-                    factory.UserName = configuration["EventBusUserName"];
-                }
-
-                if (!string.IsNullOrEmpty(configuration["EventBusPassword"]))
-                {
-                    factory.Password = configuration["EventBusPassword"];
-                }
-
-                var retryCount = 5;
-                if (!string.IsNullOrEmpty(configuration["EventBusRetryCount"]))
-                {
-                    retryCount = int.Parse(configuration["EventBusRetryCount"]);
-                }
-
-                return new DefaultRabbitMQPersistentConnection(factory, logger, retryCount);
-            });
-
-            services.AddSingleton<IEventBus, EventBusRabbitMQ>(sp =>
-            {
-                var rabbitMQPersistentConnection = sp.GetRequiredService<IRabbitMQPersistentConnection>();
-                var iLifetimeScope = sp.GetRequiredService<ILifetimeScope>();
-                var logger = sp.GetRequiredService<ILogger<EventBusRabbitMQ>>();
-                var eventBusSubcriptionsManager = sp.GetRequiredService<IEventBusSubscriptionsManager>();
-
-                var retryCount = 5;
-                if (!string.IsNullOrEmpty(Configuration["EventBusRetryCount"]))
-                {
-                    retryCount = int.Parse(Configuration["EventBusRetryCount"]);
-                }
-
-                return new EventBusRabbitMQ(rabbitMQPersistentConnection, logger, iLifetimeScope, eventBusSubcriptionsManager, subscriptionClientName, retryCount);
-            });
-            services.Configure<RabbitMqConfiguration>(configuration.GetSection("RabbitMq"));
+            return services;
         }
     }
 }

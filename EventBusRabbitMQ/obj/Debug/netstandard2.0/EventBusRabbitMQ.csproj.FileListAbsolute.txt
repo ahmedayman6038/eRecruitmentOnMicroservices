@@ -4,3 +4,15 @@ D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\E
 D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.AssemblyInfoInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.AssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBus.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csprojAssemblyReference.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.AssemblyInfoInputs.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.AssemblyInfo.cs
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csproj.CoreCompileInputs.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBusRabbitMQ.deps.json
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBusRabbitMQ.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBusRabbitMQ.pdb
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBus.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBus.pdb
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csproj.CopyComplete
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.pdb

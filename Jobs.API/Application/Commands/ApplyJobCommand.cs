@@ -1,16 +1,10 @@
-﻿using AutoMapper;
-using Jobs.API.Application.Exceptions;
+﻿using Jobs.API.Application.Exceptions;
 using Jobs.API.Application.Interfaces;
-using Jobs.API.Application.Entities;
 using Jobs.API.Application.Wrappers;
 using MediatR;
-using Shared.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Jobs.API.Application.IntegrationEvents;
 using Jobs.API.Application.IntegrationEvents.Events;
 using EventBus.Abstractions;
 

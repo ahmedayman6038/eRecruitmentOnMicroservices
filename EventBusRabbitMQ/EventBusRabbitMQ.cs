@@ -21,12 +21,12 @@ namespace EventBusRabbitMQ
 {
     public class EventBusRabbitMQ : IEventBus, IDisposable
     {
-        const string BROKER_NAME = "erecruitment_event_bus";
+        const string AUTOFAC_SCOPE_NAME = "event_bus";
 
         private readonly IRabbitMQPersistentConnection _persistentConnection;
         private readonly IEventBusSubscriptionsManager _subsManager;
         private readonly ILifetimeScope _autofac;
-        private readonly string AUTOFAC_SCOPE_NAME = "erecruitment_event_bus";
+        private readonly string _brokerName;
         private readonly int _retryCount;
 
         private IModel _consumerChannel;
@@ -34,12 +34,14 @@ namespace EventBusRabbitMQ
 
         public EventBusRabbitMQ(IRabbitMQPersistentConnection persistentConnection,
             ILifetimeScope autofac, 
-            IEventBusSubscriptionsManager subsManager, 
+            IEventBusSubscriptionsManager subsManager,
+            string brokerName,
             string queueName = null, 
             int retryCount = 5)
         {
             _persistentConnection = persistentConnection ?? throw new ArgumentNullException(nameof(persistentConnection));
             _subsManager = subsManager ?? new InMemoryEventBusSubscriptionsManager();
+            _brokerName = brokerName;
             _queueName = queueName;
             _consumerChannel = CreateConsumerChannel();
             _autofac = autofac;
@@ -57,7 +59,7 @@ namespace EventBusRabbitMQ
             using (var channel = _persistentConnection.CreateModel())
             {
                 channel.QueueUnbind(queue: _queueName,
-                    exchange: BROKER_NAME,
+                    exchange: _brokerName,
                     routingKey: eventName);
 
                 if (_subsManager.IsEmpty)
@@ -84,7 +86,7 @@ namespace EventBusRabbitMQ
             using (var channel = _persistentConnection.CreateModel())
             {
 
-                channel.ExchangeDeclare(exchange: BROKER_NAME, type: "direct");
+                channel.ExchangeDeclare(exchange: _brokerName, type: "direct");
 
                 var message = JsonConvert.SerializeObject(@event);
                 var body = Encoding.UTF8.GetBytes(message);
@@ -92,10 +94,10 @@ namespace EventBusRabbitMQ
                 policy.Execute(() =>
                 {
                     var properties = channel.CreateBasicProperties();
-                    properties.DeliveryMode = 2; // persistent
+                    properties.DeliveryMode = 2;
 
                     channel.BasicPublish(
-                        exchange: BROKER_NAME,
+                        exchange: _brokerName,
                         routingKey: eventName,
                         mandatory: true,
                         basicProperties: properties,
@@ -136,7 +138,7 @@ namespace EventBusRabbitMQ
                 using (var channel = _persistentConnection.CreateModel())
                 {
                     channel.QueueBind(queue: _queueName,
-                                      exchange: BROKER_NAME,
+                                      exchange: _brokerName,
                                       routingKey: eventName);
                 }
             }
@@ -211,7 +213,7 @@ namespace EventBusRabbitMQ
 
             var channel = _persistentConnection.CreateModel();
 
-            channel.ExchangeDeclare(exchange: BROKER_NAME,
+            channel.ExchangeDeclare(exchange: _brokerName,
                                     type: "direct");
 
             channel.QueueDeclare(queue: _queueName,

@@ -1,13 +1,13 @@
 ﻿using Applying.API.Application.Behaviors;
-using Applying.API.Application.Consumers;
+using Applying.API.Application.IntegrationEvents.EventHandling;
 using Applying.API.Application.Interfaces;
 using Applying.API.Infrastructure.Contexts;
 using Applying.API.Infrastructure.Repositories;
 using Applying.API.Infrastructure.Services;
 using AutoMapper;
+using EventBusRabbitMQ.Extensions;
+using EventBusRabbitMQ.Options;
 using FluentValidation;
-using GreenPipes;
-using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
@@ -27,25 +27,30 @@ namespace Applying.API.Extensions
 {
     public static class ServiceExtensions
     {
-        public static void AddApplicationServices(this IServiceCollection services)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAutoMapper(typeof(Startup));
             services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             services.AddMediatR(typeof(Startup));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
+            services.AddRabbitMQConnection(rabbitMQOptions);
+            services.AddRabbitMQRegistration(rabbitMQOptions);
+            return services;
         }
 
-        public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplyContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IApplyRepository, ApplyRepository>();
+            return services;
         }
 
-        public static void AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddAuthentication(options =>
             {
@@ -102,9 +107,10 @@ namespace Applying.API.Extensions
                 };
             });
             services.AddScoped<IIdentityService, IdentityService>();
+            return services;
         }
 
-        public static void AddSwaggerExtension(this IServiceCollection services)
+        public static IServiceCollection AddSwaggerExtension(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {
@@ -146,30 +152,13 @@ namespace Applying.API.Extensions
                     },
                 });
             });
+            return services;
         }
 
-        public static void AddEventBusExtension(this IServiceCollection services)
+        public static IServiceCollection AddEventBusHandling(this IServiceCollection services)
         {
-            services.AddMassTransit(x =>
-            {
-                x.AddConsumer<ApplyConsumer>();
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
-                {
-                    cfg.UseHealthCheck(provider);
-                    cfg.Host(new Uri("rabbitmq://rabbitmq"), h =>
-                    {
-                        h.Username("guest");
-                        h.Password("guest");
-                    });
-                    cfg.ReceiveEndpoint("applyQueue", ep =>
-                    {
-                        ep.PrefetchCount = 16;
-                        ep.UseMessageRetry(r => r.Interval(2, 100));
-                        ep.ConfigureConsumer<ApplyConsumer>(provider);
-                    });
-                }));
-            });
-            services.AddMassTransitHostedService();
+            services.AddTransient<ApplyToJobEventHandler>();
+            return services;
         }
     }
 }

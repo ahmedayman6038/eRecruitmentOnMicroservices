@@ -20,10 +20,9 @@ namespace Jobs.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPersistenceInfrastructure(Configuration);
-            services.AddApplicationServices();
+            services.AddApplicationServices(Configuration);
             services.AddSwaggerExtension();
             services.AddIdentityInfrastructure(Configuration);
-            services.AddIntegrationServices(Configuration);       
             services.AddHealthChecks();
             services.AddCors(options =>
             {

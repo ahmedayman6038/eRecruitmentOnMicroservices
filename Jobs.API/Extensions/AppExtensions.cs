@@ -9,18 +9,20 @@ namespace Jobs.API.Extensions
 {
     public static class AppExtensions
     {
-        public static void UseSwaggerExtension(this IApplicationBuilder app)
+        public static IApplicationBuilder UseSwaggerExtension(this IApplicationBuilder app)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.Job.API");
             });
+            return app;
         }
 
-        public static void UseErrorHandlingMiddleware(this IApplicationBuilder app)
+        public static IApplicationBuilder UseErrorHandlingMiddleware(this IApplicationBuilder app)
         {
             app.UseMiddleware<ErrorHandlerMiddleware>();
+            return app;
         }
     }
 }

@@ -20,10 +20,10 @@ namespace Applying.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddPersistenceInfrastructure(Configuration);
-            services.AddApplicationServices();
+            services.AddApplicationServices(Configuration);
             services.AddSwaggerExtension();
             services.AddIdentityInfrastructure(Configuration);
-            services.AddEventBusExtension();
+            services.AddEventBusHandling();
             services.AddHealthChecks();
             services.AddCors(options =>
             {
@@ -48,6 +48,7 @@ namespace Applying.API
             app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
+            app.SubscribeToEvents();
             app.UseSwaggerExtension();
             app.UseErrorHandlingMiddleware();
             app.UseHealthChecks("/health");

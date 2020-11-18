@@ -191,3 +191,4 @@ D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Autofac.Ex
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.MvcApplicationPartsAssemblyInfo.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll

@@ -53,7 +53,7 @@ spec:
                   key: {{ $key }}
             {{- end }}
             {{- end }}
-            {{ range $k, $v := .Values.env }}
+            {{- range $k, $v := .Values.env }}
             - name: {{ $k | quote }}
               value: {{ $v | quote }}
             {{- end }}

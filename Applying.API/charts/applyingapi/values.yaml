@@ -3,10 +3,6 @@
 # Declare variables to be passed into your templates.
 fullnameOverride: applyingapi
 replicaCount: 1
-env: 
-  "RabbitMq__Host": "rabbitmq.rabbitmq"
-  "RabbitMq__Username": "user"
-  "RabbitMq__Password": "UtxK5TuKv8"
 image:
   repository: applyingapi
   tag: latest
@@ -67,3 +63,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env: 
+  "RabbitMq__Host": "rabbitmq.rabbitmq"
+  "RabbitMq__Username": "user"
+  "RabbitMq__Password": "9aZWchCgKg"

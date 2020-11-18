@@ -252,3 +252,4 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Autofac.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\EventBus.pdb
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\EventBusRabbitMQ.pdb
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Autofac.Extensions.DependencyInjection.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Autofac.Extensions.DependencyInjection.dll

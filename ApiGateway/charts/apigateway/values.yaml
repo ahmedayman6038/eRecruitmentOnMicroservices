@@ -63,3 +63,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env: 
+  "Urls__applying": "http://applyingapi"
+  "Urls__jobs": "http://jobsapi"
+  "Urls__identity": "http://identityapi"

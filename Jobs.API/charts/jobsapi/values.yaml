@@ -63,3 +63,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+env: 
+  "RabbitMq__Host": "rabbitmq.rabbitmq"
+  "RabbitMq__Username": "user"
+  "RabbitMq__Password": "9aZWchCgKg"

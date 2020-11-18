@@ -21,6 +21,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +41,12 @@ namespace Jobs.API.Extensions
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+               .CreateLogger();
+            Log.Information("Host -> " +rabbitMQOptions.Host);
+            Log.Information("Username -> " +rabbitMQOptions.Username);
+            Log.Information("Password -> "+rabbitMQOptions.Password);
             services.AddRabbitMQConnection(rabbitMQOptions);
             services.AddRabbitMQRegistration(rabbitMQOptions);
             return services;

@@ -1,7 +1,7 @@
 services:
   apigateway:
     build:
-      context: D:\Codes\eRecruitmentOnMicroservices
+      context: E:\DotNetProjects\eRecruitmentOnMicroservices
       dockerfile: ApiGateway/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -16,11 +16,11 @@ services:
     - published: 5005
       target: 443
     volumes:
-    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   applying.api:
     build:
-      context: D:\Codes\eRecruitmentOnMicroservices
+      context: E:\DotNetProjects\eRecruitmentOnMicroservices
       dockerfile: Applying.API/Dockerfile
     depends_on:
       mssql:
@@ -30,6 +30,9 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Password: guest
+      RabbitMq__Username: guest
     image: applyingapi
     ports:
     - published: 4004
@@ -37,11 +40,11 @@ services:
     - published: 5004
       target: 443
     volumes:
-    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   identity.api:
     build:
-      context: D:\Codes\eRecruitmentOnMicroservices
+      context: E:\DotNetProjects\eRecruitmentOnMicroservices
       dockerfile: Identity.API/Dockerfile
     depends_on:
       mssql:
@@ -56,11 +59,11 @@ services:
     - published: 5003
       target: 443
     volumes:
-    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   jobs.api:
     build:
-      context: D:\Codes\eRecruitmentOnMicroservices
+      context: E:\DotNetProjects\eRecruitmentOnMicroservices
       dockerfile: Jobs.API/Dockerfile
     depends_on:
       mssql:
@@ -70,6 +73,9 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Password: guest
+      RabbitMq__Username: guest
     image: jobsapi
     ports:
     - published: 4002
@@ -77,8 +83,8 @@ services:
     - published: 5002
       target: 443
     volumes:
-    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   mssql:
     environment:
       ACCEPT_EULA: "Y"
@@ -96,7 +102,7 @@ services:
       target: 15672
   webmvc:
     build:
-      context: D:\Codes\eRecruitmentOnMicroservices
+      context: E:\DotNetProjects\eRecruitmentOnMicroservices
       dockerfile: WebMVC/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -108,6 +114,6 @@ services:
     - published: 5001
       target: 443
     volumes:
-    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
-    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+    - C:\Users\ahmed\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\ahmed\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
 version: '3.4'

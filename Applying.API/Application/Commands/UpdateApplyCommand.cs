@@ -19,15 +19,15 @@ namespace Applying.API.Application.Commands
 
         public class UpdateApplyCommandHandler : IRequestHandler<UpdateApplyCommand, Response<int>>
         {
-            private readonly IApplyRepository _applyRepository;
-            public UpdateApplyCommandHandler(IApplyRepository applyRepository)
+            private readonly IUnitOfWork _unitOfWork;
+            public UpdateApplyCommandHandler(IUnitOfWork unitOfWork)
             {
-                _applyRepository = applyRepository;
+                _unitOfWork = unitOfWork;
             }
 
             public async Task<Response<int>> Handle(UpdateApplyCommand command, CancellationToken cancellationToken)
             {
-                var apply = await _applyRepository.GetApplyByIdAsync(command.Id);
+                var apply = await _unitOfWork.Applies.GetApplyByIdAsync(command.Id);
 
                 if (apply == null)
                 {
@@ -38,7 +38,8 @@ namespace Applying.API.Application.Commands
                     apply.UserId = command.UserId;
                     apply.JobId = command.JobId;
                     apply.Status = command.Status;
-                    await _applyRepository.UpdateAsync(apply);
+                    _unitOfWork.Applies.Update(apply);
+                    await _unitOfWork.CommitAsync();
                     return new Response<int>(apply.Id);
                 }
             }

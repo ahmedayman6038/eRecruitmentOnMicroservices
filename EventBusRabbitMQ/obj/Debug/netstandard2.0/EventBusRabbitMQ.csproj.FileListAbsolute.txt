@@ -16,3 +16,9 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstan
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csproj.CopyComplete
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBusRabbitMQ.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\bin\Debug\netstandard2.0\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.csproj.CopyComplete
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.dll
+D:\Codes\eRecruitmentOnMicroservices\EventBusRabbitMQ\obj\Debug\netstandard2.0\EventBusRabbitMQ.pdb

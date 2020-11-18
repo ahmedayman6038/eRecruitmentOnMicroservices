@@ -101,7 +101,7 @@ namespace Jobs.API.Infrastructure.Migrations
             modelBuilder.Entity("Jobs.API.Application.Entities.City", b =>
                 {
                     b.HasOne("Jobs.API.Application.Entities.Country", "Country")
-                        .WithMany()
+                        .WithMany("Cities")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

@@ -9,7 +9,6 @@ D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.dll
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.pdb
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.Views.dll
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.Views.pdb
-D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csprojAssemblyReference.cache
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.AssemblyInfoInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.AssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.RazorAssemblyInfo.cache
@@ -718,3 +717,4 @@ D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.cspro
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.MvcApplicationPartsAssemblyInfo.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebMVC.styles.css
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.csprojAssemblyReference.cache

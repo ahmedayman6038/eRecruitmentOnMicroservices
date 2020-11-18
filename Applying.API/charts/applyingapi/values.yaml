@@ -3,9 +3,13 @@
 # Declare variables to be passed into your templates.
 fullnameOverride: applyingapi
 replicaCount: 1
+env: 
+  "RabbitMq__Host": "rabbitmq.rabbitmq"
+  "RabbitMq__Username": "user"
+  "RabbitMq__Password": "UtxK5TuKv8"
 image:
   repository: applyingapi
-  tag: stable
+  tag: latest
   pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.

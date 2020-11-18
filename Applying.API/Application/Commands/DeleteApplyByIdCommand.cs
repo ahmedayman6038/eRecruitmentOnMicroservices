@@ -15,16 +15,17 @@ namespace Applying.API.Application.Commands
         public int Id { get; set; }
         public class DeleteApplyByIdCommandHandler : IRequestHandler<DeleteApplyByIdCommand, Response<int>>
         {
-            private readonly IApplyRepository _applyRepository;
-            public DeleteApplyByIdCommandHandler(IApplyRepository applyRepository)
+            private readonly IUnitOfWork _unitOfWork;
+            public DeleteApplyByIdCommandHandler(IUnitOfWork unitOfWork)
             {
-                _applyRepository = applyRepository;
+                _unitOfWork = unitOfWork;
             }
             public async Task<Response<int>> Handle(DeleteApplyByIdCommand command, CancellationToken cancellationToken)
             {
-                var apply = await _applyRepository.GetApplyByIdAsync(command.Id);
+                var apply = await _unitOfWork.Applies.GetApplyByIdAsync(command.Id);
                 if (apply == null) throw new ApiException($"Apply Not Found.");
-                await _applyRepository.DeleteAsync(apply);
+                _unitOfWork.Applies.Delete(apply);
+                await _unitOfWork.CommitAsync();
                 return new Response<int>(apply.Id);
             }
         }

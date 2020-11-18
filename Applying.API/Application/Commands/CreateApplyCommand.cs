@@ -20,18 +20,19 @@ namespace Applying.API.Application.Commands
 
         public class CreateApplyCommandHandler : IRequestHandler<CreateApplyCommand, Response<int>>
         {
-            private readonly IApplyRepository _applyRepository;
+            private readonly IUnitOfWork _unitOfWork;
             private readonly IMapper _mapper;
-            public CreateApplyCommandHandler(IApplyRepository applyRepository, IMapper mapper)
+            public CreateApplyCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
             {
-                _applyRepository = applyRepository;
+                _unitOfWork = unitOfWork;
                 _mapper = mapper;
             }
 
             public async Task<Response<int>> Handle(CreateApplyCommand request, CancellationToken cancellationToken)
             {
                 var apply = _mapper.Map<Apply>(request);
-                await _applyRepository.AddAsync(apply);
+                await _unitOfWork.Applies.AddAsync(apply);
+                await _unitOfWork.CommitAsync();
                 return new Response<int>(apply.Id);
             }
         }

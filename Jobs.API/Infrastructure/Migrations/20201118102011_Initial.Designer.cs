@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jobs.API.Infrastructure.Migrations
 {
     [DbContext(typeof(JobContext))]
-    [Migration("20201107141334_Initial")]
+    [Migration("20201118102011_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,7 +103,7 @@ namespace Jobs.API.Infrastructure.Migrations
             modelBuilder.Entity("Jobs.API.Application.Entities.City", b =>
                 {
                     b.HasOne("Jobs.API.Application.Entities.Country", "Country")
-                        .WithMany()
+                        .WithMany("Cities")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

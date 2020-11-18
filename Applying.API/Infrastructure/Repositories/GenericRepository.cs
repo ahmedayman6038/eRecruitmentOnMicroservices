@@ -17,7 +17,7 @@ namespace Applying.API.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
         }
@@ -32,29 +32,26 @@ namespace Applying.API.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<T> AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
             await _dbContext.Set<T>().AddAsync(entity);
-            await _dbContext.SaveChangesAsync();
-            return entity;
         }
 
-        public async Task UpdateAsync(T entity)
+        public void Update(T entity)
         {
-            _dbContext.Entry(entity).State = EntityState.Modified;
-            await _dbContext.SaveChangesAsync();
+            _dbContext.Set<T>().Update(entity);
         }
 
-        public async Task DeleteAsync(T entity)
+        public void Delete(T entity)
         {
             _dbContext.Set<T>().Remove(entity);
-            await _dbContext.SaveChangesAsync();
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync()
         {
             return await _dbContext
                  .Set<T>()
+                 .AsNoTracking()
                  .ToListAsync();
         }
     }

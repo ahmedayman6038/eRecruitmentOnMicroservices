@@ -37,6 +37,7 @@ namespace Jobs.API.Infrastructure.Seeds
             if (!dbContext.Countries.Any())
             {
                 await dbContext.Countries.AddRangeAsync(countries);
+                await dbContext.SaveChangesAsync();
             }
         }
     }

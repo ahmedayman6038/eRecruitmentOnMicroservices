@@ -20,9 +20,8 @@ namespace Jobs.API.Infrastructure.EntityConfigurations
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.HasOne(ci => ci.Country)
-                .WithMany()
-                .HasForeignKey(ci => ci.CountryId);
+            builder.HasOne(p => p.Country)
+                .WithMany(b => b.Cities);
         }
     }
 }

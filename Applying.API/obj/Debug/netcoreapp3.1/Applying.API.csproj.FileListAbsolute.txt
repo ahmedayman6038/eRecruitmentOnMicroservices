@@ -140,8 +140,6 @@ D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtim
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Shared.Models.dll
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Shared.Models.pdb
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.csproj.CopyComplete
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
@@ -181,3 +179,15 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Autofac.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Polly.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\RabbitMQ.Client.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\System.Threading.Channels.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBus.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBusRabbitMQ.pdb
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.MvcApplicationPartsAssemblyInfo.cache

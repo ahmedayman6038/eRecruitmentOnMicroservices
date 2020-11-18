@@ -11,6 +11,7 @@ namespace Jobs.API.Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly JobContext _dbContext;
+
         public IJobRepository Jobs { get; }
 
         public UnitOfWork(JobContext dbContext,
@@ -27,6 +28,18 @@ namespace Jobs.API.Infrastructure.Repositories
                 await _dbContext.SaveChangesAsync();
             }
             catch(Exception ex)
+            {
+                throw new ApiException(ex.Message);
+            }
+        }
+
+        public void Commit()
+        {
+            try
+            {
+                _dbContext.SaveChanges();
+            }
+            catch (Exception ex)
             {
                 throw new ApiException(ex.Message);
             }

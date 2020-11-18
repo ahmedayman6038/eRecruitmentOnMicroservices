@@ -12,3 +12,7 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csproj.CoreCompileInputs.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.dll
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.pdb

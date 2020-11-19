@@ -1,8 +1,3 @@
-D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.deps.json
-D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.dll
-D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csprojAssemblyReference.cache
-D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.AssemblyInfoInputs.cache
-D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.AssemblyInfo.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.deps.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.pdb
@@ -11,7 +6,11 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csproj.CoreCompileInputs.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.deps.json
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.dll
 D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Debug\netstandard2.0\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.AssemblyInfoInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.AssemblyInfo.cs
 D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.dll
 D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.pdb

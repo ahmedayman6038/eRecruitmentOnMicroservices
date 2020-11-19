@@ -57,6 +57,11 @@ spec:
             - name: {{ $k | quote }}
               value: {{ $v | quote }}
             {{- end }}
+            - name: RabbitMq__Password
+              valueFrom:
+                secretKeyRef:
+                  name: rabbitmq
+                  key: password
           resources:
 {{ toYaml .Values.resources | indent 12 }}
     {{- with .Values.imagePullSecrets }}

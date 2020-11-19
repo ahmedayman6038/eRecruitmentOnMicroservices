@@ -47,7 +47,7 @@
         if (token != null && token != "") {
             $.ajax({
                 type: "GET",
-                url: "https://localhost:5005/api/Statistics/getJobAppliedCount",
+                url: "http://dev-ahmedah:31680/api/Statistics/getJobAppliedCount",
                 dataType: 'json',
                 beforeSend: function (xhr) {
                     xhr.setRequestHeader("Authorization", "bearer " + token)

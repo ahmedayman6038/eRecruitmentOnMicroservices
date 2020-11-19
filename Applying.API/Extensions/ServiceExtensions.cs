@@ -45,7 +45,6 @@ namespace Applying.API.Extensions
             services.AddDbContext<ApplyContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            //services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IApplyRepository, ApplyRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
@@ -76,10 +75,6 @@ namespace Applying.API.Extensions
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        //context.NoResult();
-                        //context.Response.StatusCode = 500;
-                        //context.Response.ContentType = "text/plain";
-                        //return context.Response.WriteAsync(context.Exception.ToString());
                         context.Response.OnStarting(async () =>
                         {
                             context.NoResult();

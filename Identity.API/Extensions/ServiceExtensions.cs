@@ -38,7 +38,6 @@ namespace Identity.API.Extensions
 
             services.AddIdentityServer(x =>
             {
-                // x.IssuerUri = "null";
                 x.Authentication.CookieLifetime = TimeSpan.FromHours(2);
             }).AddDeveloperSigningCredential()
                 .AddAspNetIdentity<ApplicationUser>()

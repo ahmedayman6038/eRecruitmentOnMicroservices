@@ -41,12 +41,6 @@ namespace Jobs.API.Extensions
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(configuration)
-               .CreateLogger();
-            Log.Information("Host -> " +rabbitMQOptions.Host);
-            Log.Information("Username -> " +rabbitMQOptions.Username);
-            Log.Information("Password -> "+rabbitMQOptions.Password);
             services.AddRabbitMQConnection(rabbitMQOptions);
             services.AddRabbitMQRegistration(rabbitMQOptions);
             return services;
@@ -57,7 +51,6 @@ namespace Jobs.API.Extensions
             services.AddDbContext<JobContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            //services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IJobRepository, JobRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
@@ -88,10 +81,6 @@ namespace Jobs.API.Extensions
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        //context.NoResult();
-                        //context.Response.StatusCode = 500;
-                        //context.Response.ContentType = "text/plain";
-                        //return context.Response.WriteAsync(context.Exception.ToString());
                         context.Response.OnStarting(async () =>
                         {
                             context.NoResult();

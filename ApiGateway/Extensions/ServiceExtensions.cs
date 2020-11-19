@@ -45,10 +45,6 @@ namespace ApiGateway.Extensions
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        //context.NoResult();
-                        //context.Response.StatusCode = 500;
-                        //context.Response.ContentType = "text/plain";
-                        //return context.Response.WriteAsync(context.Exception.ToString());
                         context.Response.OnStarting(async () =>
                         {
                             context.NoResult();

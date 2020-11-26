@@ -129,7 +129,6 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\appsettings.json
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Applying.API.exe
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Identity.API.exe
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Jobs.API.exe
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\WebMVC.Views.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\WebMVC.Views.pdb
@@ -138,7 +137,6 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\configuration.json
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\ApiGateway.exe
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\ApiGateway.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Applying.API.dll
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Identity.API.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Jobs.API.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\WebMVC.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -218,7 +216,6 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\System.Threading.Channels.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.JsonPatch.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Newtonsoft.Json.Bson.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Applying.API.pdb
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Identity.API.pdb
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Jobs.API.pdb
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\WebMVC.pdb
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\ApiGateway.pdb
@@ -253,3 +250,6 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.CS
 D:\Codes\eRecruitmentOnMicroservices\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 D:\Codes\eRecruitmentOnMicroservices\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\obj\Debug\docker-compose.dcproj.CopyComplete
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityOld.API.exe
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityOld.API.dll
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityOld.API.pdb

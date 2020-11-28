@@ -1,11 +1,19 @@
+using IdentityServer4.Models;
 using System;
 
 namespace IdentityServer.API.Models
 {
     public class ErrorViewModel
     {
-        public string RequestId { get; set; }
+        public ErrorViewModel()
+        {
+        }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public ErrorViewModel(string error)
+        {
+            Error = new ErrorMessage { Error = error };
+        }
+
+        public ErrorMessage Error { get; set; }
     }
 }

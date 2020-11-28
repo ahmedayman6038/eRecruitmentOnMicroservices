@@ -15,3 +15,4 @@ D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.
 D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.dll
 D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.pdb
 D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csprojAssemblyReference.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\EventBus\obj\Debug\netstandard2.0\EventBus.csprojAssemblyReference.cache

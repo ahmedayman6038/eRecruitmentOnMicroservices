@@ -15,11 +15,11 @@ namespace IdentityServer.API.Configuration
                         new IdentityResources.Profile(),
                    };
 
-        public static IEnumerable<ApiScope> ApiScopes =>
-            new ApiScope[]
+        public static IEnumerable<ApiResource> ApiResources =>
+            new ApiResource[]
             {
-                new ApiScope("scope1"),
-                new ApiScope("scope2"),
+                new ApiResource("jobs", "Jobs Service"),
+                new ApiResource("applying", "Applying Service"),
             };
 
         public static IEnumerable<Client> Clients(Dictionary<string, string> clientsUrl) =>

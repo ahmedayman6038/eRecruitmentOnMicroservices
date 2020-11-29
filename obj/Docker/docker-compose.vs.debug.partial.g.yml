@@ -14,9 +14,9 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_apigateway$
     volumes:
-      - E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway:/app
-      - E:\DotNetProjects\eRecruitmentOnMicroservices:/src
-      - C:\Users\ahmed\vsdbg\vs2017u5:/remote_debugger:rw
+      - D:\Codes\eRecruitmentOnMicroservices\ApiGateway:/app
+      - D:\Codes\eRecruitmentOnMicroservices:/src
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_apigateway$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -24,7 +24,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_apigateway$ \"D:/Codes/eRecruitmentOnMicroservices/ApiGateway/bin/Debug/netcoreapp3.1/ApiGateway.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_apigateway$ \"/app/bin/Debug/netcoreapp3.1/ApiGateway.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -41,9 +41,9 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_applying.api$
     volumes:
-      - E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API:/app
-      - E:\DotNetProjects\eRecruitmentOnMicroservices:/src
-      - C:\Users\ahmed\vsdbg\vs2017u5:/remote_debugger:rw
+      - D:\Codes\eRecruitmentOnMicroservices\Applying.API:/app
+      - D:\Codes\eRecruitmentOnMicroservices:/src
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_applying.api$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -51,7 +51,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_applying.api$ \"D:/Codes/eRecruitmentOnMicroservices/Applying.API/bin/Debug/netcoreapp3.1/Applying.API.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_applying.api$ \"/app/bin/Debug/netcoreapp3.1/Applying.API.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -69,9 +69,9 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_identity.api$
     volumes:
-      - E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API:/app
-      - E:\DotNetProjects\eRecruitmentOnMicroservices:/src
-      - C:\Users\ahmed\vsdbg\vs2017u5:/remote_debugger:rw
+      - D:\Codes\eRecruitmentOnMicroservices\Identity.API:/app
+      - D:\Codes\eRecruitmentOnMicroservices:/src
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_identity.api$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -79,7 +79,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_identity.api$ \"D:/Codes/eRecruitmentOnMicroservices/Identity.API/bin/Debug/netcoreapp3.1/Identity.API.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_identity.api$ \"/app/bin/Debug/netcoreapp3.1/Identity.API.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -97,9 +97,9 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_jobs.api$
     volumes:
-      - E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API:/app
-      - E:\DotNetProjects\eRecruitmentOnMicroservices:/src
-      - C:\Users\ahmed\vsdbg\vs2017u5:/remote_debugger:rw
+      - D:\Codes\eRecruitmentOnMicroservices\Jobs.API:/app
+      - D:\Codes\eRecruitmentOnMicroservices:/src
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_jobs.api$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -107,7 +107,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_jobs.api$ \"D:/Codes/eRecruitmentOnMicroservices/Jobs.API/bin/Debug/netcoreapp3.1/Jobs.API.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_jobs.api$ \"/app/bin/Debug/netcoreapp3.1/Jobs.API.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
@@ -125,9 +125,9 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_webmvc$
     volumes:
-      - E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC:/app
-      - E:\DotNetProjects\eRecruitmentOnMicroservices:/src
-      - C:\Users\ahmed\vsdbg\vs2017u5:/remote_debugger:rw
+      - D:\Codes\eRecruitmentOnMicroservices\WebMVC:/app
+      - D:\Codes\eRecruitmentOnMicroservices:/src
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_webmvc$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
@@ -135,7 +135,7 @@ services:
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_webmvc$ \"D:/Codes/eRecruitmentOnMicroservices/WebMVC/bin/Debug/netcoreapp3.1/WebMVC.dll\""
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_webmvc$ \"/app/bin/Debug/netcoreapp3.1/WebMVC.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

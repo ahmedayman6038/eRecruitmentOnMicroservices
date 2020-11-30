@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using IdentityServer.API.Contexts;
 using IdentityServer.API.Models;
@@ -29,6 +30,7 @@ namespace IdentityServer.API
         public void ConfigureServices(IServiceCollection services)
         {
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(connectionString));
@@ -47,11 +49,13 @@ namespace IdentityServer.API
             })
                .AddConfigurationStore(options =>
                {
-                   options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString);
+                   options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString,
+                    sql => sql.MigrationsAssembly(migrationsAssembly));
                })
                .AddOperationalStore(options =>
                {
-                   options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString);
+                   options.ConfigureDbContext = builder => builder.UseSqlServer(connectionString,
+                    sql => sql.MigrationsAssembly(migrationsAssembly));
                    options.EnableTokenCleanup = true;
                })
                .AddAspNetIdentity<ApplicationUser>();

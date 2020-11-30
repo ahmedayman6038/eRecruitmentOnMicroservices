@@ -250,6 +250,6 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\zh-Hant\Microsoft.CodeAnalysis.CS
 D:\Codes\eRecruitmentOnMicroservices\obj\Debug\docker-compose.dcprojAssemblyReference.cache
 D:\Codes\eRecruitmentOnMicroservices\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\obj\Debug\docker-compose.dcproj.CopyComplete
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityOld.API.exe
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityOld.API.dll
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityOld.API.pdb
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Identity.API.exe
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Identity.API.dll
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Identity.API.pdb

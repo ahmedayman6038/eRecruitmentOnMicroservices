@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer.API.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -22,9 +23,13 @@ namespace IdentityServer.API
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
 
-            Log.Information("Application is starting");
+            var host = CreateHostBuilder(args)
+                .Build()
+                .MigrateAndSeedDb(config);
 
-            CreateHostBuilder(args).Build().Run();
+            Log.Information("Starting host...");
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

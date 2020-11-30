@@ -18,12 +18,13 @@ namespace Identity.API
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
 
-            Log.Information("Application is starting");
+            var host = CreateHostBuilder(args)
+             .Build()
+             .MigrateAndSeedDb();
 
-            CreateHostBuilder(args)
-                .Build()
-                .MigrateAndSeedDb()
-                .Run();
+            Log.Information("Starting host...");
+
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -12,9 +12,11 @@ namespace Jobs.API.Extensions
         public static IApplicationBuilder UseSwaggerExtension(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI(setup =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.Job.API");
+                setup.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.Jobs.API");
+                setup.OAuthClientId("jobsswaggerui");
+                setup.OAuthAppName("Jobs Swagger UI");
             });
             return app;
         }

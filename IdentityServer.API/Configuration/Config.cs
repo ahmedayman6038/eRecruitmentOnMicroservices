@@ -16,6 +16,29 @@ namespace IdentityServer.API.Configuration
                         new IdentityResources.Profile(),
                    };
 
+        public static IEnumerable<ApiResource> GetApiResources() =>
+          new ApiResource[]
+          {
+              new ApiResource
+              {
+                  Name = "jobs",
+                  DisplayName = "Jobs Service",
+                  Scopes =
+                  {
+                      "jobs",
+                  }
+              },
+              new ApiResource
+              {
+                  Name = "applying",
+                  DisplayName = "Applying Service",
+                  Scopes =
+                  {
+                      "applying",
+                  }
+              }
+          };
+
         public static IEnumerable<ApiScope> GetApiScopes() =>
            new ApiScope[]
            {

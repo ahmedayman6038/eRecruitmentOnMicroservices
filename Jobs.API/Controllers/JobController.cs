@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jobs.API.Controllers
 {
-    [Authorize(Roles = "SuperAdmin,Admin")]
+    [Authorize]
+    //[Authorize(Roles = "SuperAdmin,Admin")]
     public class JobController : BaseApiController
     {
         // GET: api/<controller>
-        //[AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllJobsParameter filter)
         {
@@ -27,7 +27,6 @@ namespace Jobs.API.Controllers
         }
 
         // GET api/<controller>/5
-        //[AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {

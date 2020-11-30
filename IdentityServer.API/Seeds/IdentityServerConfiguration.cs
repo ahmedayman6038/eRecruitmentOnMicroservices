@@ -61,6 +61,14 @@ namespace IdentityServer.API.Seeds
                 }
                 await context.SaveChangesAsync();
             }
+            if (!context.ApiResources.Any())
+            {
+                foreach (var resource in Config.GetApiResources())
+                {
+                    context.ApiResources.Add(resource.ToEntity());
+                }
+                await context.SaveChangesAsync();
+            }
         }
     }
 }

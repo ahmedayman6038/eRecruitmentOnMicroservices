@@ -10,6 +10,7 @@ using Jobs.API.Application.Interfaces;
 using Jobs.API.Infrastructure.Contexts;
 using Jobs.API.Infrastructure.Repositories;
 using Jobs.API.Infrastructure.Services;
+using Jobs.API.Middlewares;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
@@ -121,7 +122,7 @@ namespace Jobs.API.Extensions
             }).AddJwtBearer(options =>
             {
                 options.Authority = identityUrl;
-                options.RequireHttpsMetadata = false;
+                //options.RequireHttpsMetadata = false;
                 options.Audience = "jobs";
                 options.Events = new JwtBearerEvents()
                 {
@@ -190,6 +191,7 @@ namespace Jobs.API.Extensions
                         }
                     }
                 });
+                options.OperationFilter<AuthorizeCheckOperationFilter>();
             });
             return services;
         }

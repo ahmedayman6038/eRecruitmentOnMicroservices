@@ -33,12 +33,6 @@ namespace IdentityServer.API.Seeds
                     await userManager.AddToRoleAsync(defaultUser, Roles.Moderator.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.SuperAdmin.ToString());
-                    await userManager.AddClaimsAsync(defaultUser, new Claim[]{
-                            new Claim(JwtClaimTypes.Name, "Ahmed Ayman"),
-                            new Claim(JwtClaimTypes.GivenName, "Ahmed"),
-                            new Claim(JwtClaimTypes.FamilyName, "Ayman"),
-                            new Claim(JwtClaimTypes.WebSite, "https://www.linkedin.com/in/ahmedayman6038/")
-                        });
                 }
 
             }

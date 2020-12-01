@@ -1,4 +1,5 @@
-﻿using IdentityServer4;
+﻿using IdentityModel;
+using IdentityServer4;
 using IdentityServer4.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace IdentityServer.API.Configuration
                    {
                         new IdentityResources.OpenId(),
                         new IdentityResources.Profile(),
+                        //new IdentityResource("roles", "User roles", new[] { JwtClaimTypes.Role })
                    };
 
         public static IEnumerable<ApiResource> GetApiResources() =>
@@ -70,6 +72,7 @@ namespace IdentityServer.API.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
+                        //"roles",
                         "jobs.read",
                         "jobs.write",
                         "jobs.post",
@@ -89,6 +92,7 @@ namespace IdentityServer.API.Configuration
 
                     AllowedScopes =
                     {
+                        //"roles",
                         "jobs.read",
                         "jobs.write",
                         "jobs.post",
@@ -107,6 +111,7 @@ namespace IdentityServer.API.Configuration
 
                     AllowedScopes =
                     {
+                        //"roles",
                         "applying.read",
                         "applying.write",
                         "manage"

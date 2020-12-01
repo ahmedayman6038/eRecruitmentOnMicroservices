@@ -1,6 +1,8 @@
 ﻿using IdentityServer.API.Contexts;
 using IdentityServer.API.Models;
+using IdentityServer.API.Services;
 using IdentityServer4;
+using IdentityServer4.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -47,6 +49,8 @@ namespace IdentityServer.API.Extensions
                  options.EnableTokenCleanup = true;
              })
              .AddAspNetIdentity<ApplicationUser>();
+
+            services.AddScoped<IProfileService, ProfileService>();
 
             builder.AddDeveloperSigningCredential();
 

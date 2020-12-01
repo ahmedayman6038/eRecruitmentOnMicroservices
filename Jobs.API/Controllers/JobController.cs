@@ -11,7 +11,7 @@ namespace Jobs.API.Controllers
 {
 
     //[Authorize(Roles = "SuperAdmin,Admin")]
-    [Authorize("manage")]
+    [Authorize(Policy = "manage", Roles = "SuperAdmin,Admin")]
     public class JobController : BaseApiController
     {
         // GET: api/<controller>
@@ -37,7 +37,7 @@ namespace Jobs.API.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        [Authorize("jobs.write")]
+        [Authorize("jobs.write", Roles = "SuperAdmin,Admin")]
         public async Task<IActionResult> Post(CreateJobCommand command)
         {
             return Ok(await Mediator.Send(command));

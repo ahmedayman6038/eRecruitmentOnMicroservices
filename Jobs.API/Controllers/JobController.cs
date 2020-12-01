@@ -9,12 +9,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jobs.API.Controllers
 {
-    [Authorize]
+
     //[Authorize(Roles = "SuperAdmin,Admin")]
+    [Authorize("manage")]
     public class JobController : BaseApiController
     {
         // GET: api/<controller>
         [HttpGet]
+        [Authorize("jobs.read")]
         public async Task<IActionResult> Get([FromQuery] GetAllJobsParameter filter)
         {
             return Ok(await Mediator.Send(
@@ -35,6 +37,7 @@ namespace Jobs.API.Controllers
 
         // POST api/<controller>
         [HttpPost]
+        [Authorize("jobs.write")]
         public async Task<IActionResult> Post(CreateJobCommand command)
         {
             return Ok(await Mediator.Send(command));
@@ -53,12 +56,14 @@ namespace Jobs.API.Controllers
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
+        [Authorize("jobs.write")]
         public async Task<IActionResult> Delete(int id)
         {
             return Ok(await Mediator.Send(new DeleteJobByIdCommand { Id = id }));
         }
 
         [HttpPost("Apply")]
+        [Authorize("jobs.post")]
         public async Task<IActionResult> Apply(ApplyJobCommand command)
         {
             return Ok(await Mediator.Send(command));

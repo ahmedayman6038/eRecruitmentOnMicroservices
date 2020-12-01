@@ -7,12 +7,14 @@ using FluentValidation;
 using Jobs.API.Application.Behaviors;
 using Jobs.API.Application.IntegrationEvents;
 using Jobs.API.Application.Interfaces;
+using Jobs.API.Application.Models;
 using Jobs.API.Infrastructure.Contexts;
 using Jobs.API.Infrastructure.Repositories;
 using Jobs.API.Infrastructure.Services;
 using Jobs.API.Middlewares;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +29,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -60,56 +63,6 @@ namespace Jobs.API.Extensions
 
         public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(o =>
-            //{
-            //    o.RequireHttpsMetadata = false;
-            //    o.SaveToken = false;
-            //    o.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateIssuerSigningKey = true,
-            //        ValidateIssuer = true,
-            //        ValidateAudience = true,
-            //        ValidateLifetime = true,
-            //        ClockSkew = TimeSpan.Zero,
-            //        ValidIssuer = configuration["JWTSettings:Issuer"],
-            //        ValidAudience = configuration["JWTSettings:Audience"],
-            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWTSettings:Key"]))
-            //    };
-            //    o.Events = new JwtBearerEvents()
-            //    {
-            //        OnAuthenticationFailed = context =>
-            //        {
-            //            context.Response.OnStarting(async () =>
-            //            {
-            //                context.NoResult();
-            //                context.Response.StatusCode = 500;
-            //                context.Response.ContentType = "text/plain";
-            //                await context.Response.WriteAsync(context.Exception.ToString());
-            //            });
-
-            //            return Task.CompletedTask;
-            //        },
-            //        OnChallenge = context =>
-            //        {
-            //            context.HandleResponse();
-            //            context.Response.StatusCode = 401;
-            //            context.Response.ContentType = "application/json";
-            //            var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
-            //            return context.Response.WriteAsync(result);
-            //        },
-            //        OnForbidden = context =>
-            //        {
-            //            context.Response.StatusCode = 403;
-            //            context.Response.ContentType = "application/json";
-            //            var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not authorized to access this resource"));
-            //            return context.Response.WriteAsync(result);
-            //        },
-            //    };
-            //});
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 
             var identityUrl = configuration.GetValue<string>("IdentityUrl");
@@ -122,40 +75,45 @@ namespace Jobs.API.Extensions
             }).AddJwtBearer(options =>
             {
                 options.Authority = identityUrl;
-                //options.RequireHttpsMetadata = false;
+                options.RequireHttpsMetadata = false;
                 options.Audience = "jobs";
                 options.Events = new JwtBearerEvents()
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        context.Response.OnStarting(async () =>
-                        {
-                            context.NoResult();
-                            context.Response.StatusCode = 500;
-                            context.Response.ContentType = "text/plain";
-                            await context.Response.WriteAsync(context.Exception.ToString());
-                        });
-
-                        return Task.CompletedTask;
+                        context.NoResult();
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        context.Response.ContentType = "application/json";
+                        var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>(context.Exception.ToString()));
+                        return context.Response.WriteAsync(result);
                     },
                     OnChallenge = context =>
                     {
                         context.HandleResponse();
-                        context.Response.StatusCode = 401;
+                        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
                         return context.Response.WriteAsync(result);
                     },
                     OnForbidden = context =>
                     {
-                        context.Response.StatusCode = 403;
+                        context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not authorized to access this resource"));
                         return context.Response.WriteAsync(result);
                     },
                 };
             });
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("full_access", policy => policy.Requirements.Add(new HasScopeRequirement("jobs.full_access", identityUrl)));
+            //    options.AddPolicy("read_only", policy => policy.Requirements.Add(new HasScopeRequirement("jobs.read_only", identityUrl)));
+            //});
+
             services.AddScoped<IIdentityService, IdentityService>();
+            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
+            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
             return services;
         }
 
@@ -186,7 +144,10 @@ namespace Jobs.API.Extensions
                             TokenUrl = new Uri($"{configuration.GetValue<string>("IdentityUrl")}/connect/token"),
                             Scopes = new Dictionary<string, string>()
                             {
-                                { "jobs", "Jobs API" }
+                                { "manage", "Provides all access to jobs service" },
+                                { "jobs.read", "Read data from jobs service" },
+                                { "jobs.write", "Write data to jobs service" },
+                                { "jobs.post", "Post jobs to jobs service" }
                             }
                         }
                     }

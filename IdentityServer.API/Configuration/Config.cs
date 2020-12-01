@@ -19,31 +19,25 @@ namespace IdentityServer.API.Configuration
         public static IEnumerable<ApiResource> GetApiResources() =>
           new ApiResource[]
           {
-              new ApiResource
+              new ApiResource("jobs", "Jobs API")
               {
-                  Name = "jobs",
-                  DisplayName = "Jobs Service",
-                  Scopes =
-                  {
-                      "jobs",
-                  }
+                  Scopes = { "jobs.read", "jobs.write", "jobs.post", "manage" }
               },
-              new ApiResource
+              new ApiResource("applying", "Applying API")
               {
-                  Name = "applying",
-                  DisplayName = "Applying Service",
-                  Scopes =
-                  {
-                      "applying",
-                  }
+                  Scopes = { "applying.read", "applying.write", "manage" }
               }
           };
 
         public static IEnumerable<ApiScope> GetApiScopes() =>
            new ApiScope[]
            {
-                new ApiScope("jobs", "Jobs Service"),
-                new ApiScope("applying", "Applying Service"),
+                new ApiScope("jobs.read", "Read data from jobs service"),
+                new ApiScope("jobs.write", "Write data to jobs service"),
+                new ApiScope("jobs.post", "Post jobs to jobs service"),
+                new ApiScope("applying.read", "Read data from applying service"),
+                new ApiScope("applying.write", "Write data to applying service"),
+                new ApiScope("manage", "Provides administrative access to all services")
            };      
 
         public static IEnumerable<Client> GetClients(Dictionary<string, string> clientsUrl) =>
@@ -60,7 +54,7 @@ namespace IdentityServer.API.Configuration
                     ClientUri = $"{clientsUrl["Mvc"]}",
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     AllowAccessTokensViaBrowser = false,
-                    RequireConsent = false,
+                    //RequireConsent = false,
                     AllowOfflineAccess = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     RedirectUris = new List<string>
@@ -76,11 +70,12 @@ namespace IdentityServer.API.Configuration
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
-                        "jobs",
-                        "applying"
-                    },
-                    AccessTokenLifetime = 60*60*2, // 2 hours
-                    IdentityTokenLifetime= 60*60*2 // 2 hours
+                        "jobs.read",
+                        "jobs.write",
+                        "jobs.post",
+                        "applying.read",
+                        "applying.write"
+                    }
                 },
                 new Client
                 {
@@ -94,7 +89,10 @@ namespace IdentityServer.API.Configuration
 
                     AllowedScopes =
                     {
-                        "jobs"
+                        "jobs.read",
+                        "jobs.write",
+                        "jobs.post",
+                        "manage"
                     }
                 },
                 new Client
@@ -109,7 +107,9 @@ namespace IdentityServer.API.Configuration
 
                     AllowedScopes =
                     {
-                        "applying"
+                        "applying.read",
+                        "applying.write",
+                        "manage"
                     }
                 }
             };

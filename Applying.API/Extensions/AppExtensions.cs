@@ -16,9 +16,11 @@ namespace Applying.API.Extensions
         public static IApplicationBuilder UseSwaggerExtension(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI(setup =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.Appling.API");
+                setup.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.Appling.API");
+                setup.OAuthClientId("applyingswaggerui");
+                setup.OAuthAppName("Appling Swagger UI");
             });
             return app;
         }

@@ -4,12 +4,14 @@ using Applying.API.Application.Interfaces;
 using Applying.API.Infrastructure.Contexts;
 using Applying.API.Infrastructure.Repositories;
 using Applying.API.Infrastructure.Services;
+using Applying.API.Middlewares;
 using AutoMapper;
 using EventBusRabbitMQ.Extensions;
 using EventBusRabbitMQ.Options;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,7 +21,9 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,66 +55,60 @@ namespace Applying.API.Extensions
         }
 
         public static IServiceCollection AddIdentityInfrastructure(this IServiceCollection services, IConfiguration configuration)
-        {
+        {         
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+
+            var identityUrl = configuration.GetValue<string>("IdentityUrl");
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(o =>
+
+            }).AddJwtBearer(options =>
             {
-                o.RequireHttpsMetadata = false;
-                o.SaveToken = false;
-                o.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.Zero,
-                    ValidIssuer = configuration["JWTSettings:Issuer"],
-                    ValidAudience = configuration["JWTSettings:Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWTSettings:Key"]))
-                };
-                o.Events = new JwtBearerEvents()
+                options.Authority = identityUrl;
+                options.RequireHttpsMetadata = false;
+                options.Audience = "applying";
+                options.Events = new JwtBearerEvents()
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        context.Response.OnStarting(async () =>
-                        {
-                            context.NoResult();
-                            context.Response.StatusCode = 500;
-                            context.Response.ContentType = "text/plain";
-                            await context.Response.WriteAsync(context.Exception.ToString());
-                        });
-
-                        return Task.CompletedTask;
+                        context.NoResult();
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        context.Response.ContentType = "application/json";
+                        var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>(context.Exception.ToString()));
+                        return context.Response.WriteAsync(result);
                     },
                     OnChallenge = context =>
                     {
                         context.HandleResponse();
-                        context.Response.StatusCode = 401;
+                        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
                         return context.Response.WriteAsync(result);
                     },
                     OnForbidden = context =>
                     {
-                        context.Response.StatusCode = 403;
+                        context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
                         context.Response.ContentType = "application/json";
                         var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not authorized to access this resource"));
                         return context.Response.WriteAsync(result);
                     },
                 };
             });
+
             services.AddScoped<IIdentityService, IdentityService>();
+            services.AddSingleton<IAuthorizationPolicyProvider, AuthorizationPolicyProvider>();
+            services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
             return services;
         }
 
-        public static IServiceCollection AddSwaggerExtension(this IServiceCollection services)
+        public static IServiceCollection AddSwaggerExtension(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSwaggerGen(c =>
+            services.AddSwaggerGen(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
+                options.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
                     Title = "eRecruitmentOnMicroservices - Applying.API",
@@ -122,31 +120,25 @@ namespace Applying.API.Extensions
                         Url = new Uri("https://www.linkedin.com/in/ahmedayman6038/"),
                     }
                 });
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
-                    Name = "Authorization",
-                    In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer",
-                    BearerFormat = "JWT",
-                    Description = "Input your Bearer token in this format - Bearer {your token here} to access this API",
-                });
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
+                    Type = SecuritySchemeType.OAuth2,
+                    Flows = new OpenApiOAuthFlows()
                     {
-                        new OpenApiSecurityScheme
+                        Implicit = new OpenApiOAuthFlow()
                         {
-                            Reference = new OpenApiReference
+                            AuthorizationUrl = new Uri($"{configuration.GetValue<string>("IdentityUrl")}/connect/authorize"),
+                            TokenUrl = new Uri($"{configuration.GetValue<string>("IdentityUrl")}/connect/token"),
+                            Scopes = new Dictionary<string, string>()
                             {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer",
-                            },
-                            Scheme = "Bearer",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header,
-                        }, new List<string>()
-                    },
+                                { "manage", "Provides all access to applying service" },
+                                { "applying.read", "Read data from applying service" },
+                                { "applying.write", "Write data to applying service" }
+                            }
+                        }
+                    }
                 });
+                options.OperationFilter<AuthorizeCheckOperationFilter>();
             });
             return services;
         }

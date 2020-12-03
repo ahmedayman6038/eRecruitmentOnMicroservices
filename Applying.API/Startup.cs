@@ -21,7 +21,7 @@ namespace Applying.API
         {
             services.AddPersistenceInfrastructure(Configuration);
             services.AddApplicationServices(Configuration);
-            services.AddSwaggerExtension();
+            services.AddSwaggerExtension(Configuration);
             services.AddIdentityInfrastructure(Configuration);
             services.AddEventBusHandling();
             services.AddHealthChecks();

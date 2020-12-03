@@ -10,8 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Jobs.API.Controllers
 {
 
-    //[Authorize(Roles = "SuperAdmin,Admin")]
-    [Authorize(Policy = "manage", Roles = "SuperAdmin,Admin")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class JobController : BaseApiController
     {
         // GET: api/<controller>
@@ -30,6 +29,7 @@ namespace Jobs.API.Controllers
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
+        [Authorize("jobs.read")]
         public async Task<IActionResult> Get(int id)
         {
             return Ok(await Mediator.Send(new GetJobByIdQuery { Id = id }));
@@ -37,7 +37,7 @@ namespace Jobs.API.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        [Authorize("jobs.write", Roles = "SuperAdmin,Admin")]
+        [Authorize("jobs.write")]
         public async Task<IActionResult> Post(CreateJobCommand command)
         {
             return Ok(await Mediator.Send(command));
@@ -45,6 +45,7 @@ namespace Jobs.API.Controllers
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
+        [Authorize("jobs.write")]
         public async Task<IActionResult> Put(int id, UpdateJobCommand command)
         {
             if (id != command.Id)

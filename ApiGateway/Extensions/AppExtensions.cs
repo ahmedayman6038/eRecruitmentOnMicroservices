@@ -12,9 +12,11 @@ namespace ApiGateway.Extensions
         public static void UseSwaggerExtension(this IApplicationBuilder app)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseSwaggerUI(setup =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.ApiGateway");
+                setup.SwaggerEndpoint("/swagger/v1/swagger.json", "eRecruitmentOnMicroservices.ApiGateway");
+                setup.OAuthClientId("apigatewayswaggerui");
+                setup.OAuthAppName("Apigateway Swagger UI");
             });
         }
 

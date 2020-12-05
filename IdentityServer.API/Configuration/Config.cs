@@ -112,6 +112,22 @@ namespace IdentityServer.API.Configuration
                         "applying.write",
                         "manage"
                     }
+                },
+                new Client
+                {
+                    ClientId = "apigatewayswaggerui",
+                    ClientName = "Api gateway Swagger UI",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris = { $"{clientsUrl["ApiGateway"]}/swagger/oauth2-redirect.html" },
+                    PostLogoutRedirectUris = { $"{clientsUrl["ApiGateway"]}/swagger/" },
+
+                    AllowedScopes =
+                    {
+
+                        "manage"
+                    }
                 }
             };
     }

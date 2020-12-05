@@ -19,6 +19,7 @@ namespace IdentityServer.API.Seeds
             clientUrls.Add("Mvc", configuration.GetValue<string>("ClientsUrls:MvcClient"));
             clientUrls.Add("JobsApi", configuration.GetValue<string>("ClientsUrls:JobsApiClient"));
             clientUrls.Add("ApplyingApi", configuration.GetValue<string>("ClientsUrls:ApplyingApiClient"));
+            clientUrls.Add("ApiGateway", configuration.GetValue<string>("ClientsUrls:ApiGatewayClient"));
 
             if (!context.Clients.Any())
             {

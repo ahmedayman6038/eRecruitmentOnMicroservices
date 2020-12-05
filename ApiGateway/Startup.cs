@@ -38,7 +38,7 @@ namespace ApiGateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOcelot();
-            services.AddSwaggerExtension();
+            services.AddSwaggerExtension(Configuration);
             services.AddIdentityInfrastructure(Configuration);
             services.AddApplicationServices(Configuration);
             services.AddHealthChecks();

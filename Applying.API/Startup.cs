@@ -48,7 +48,7 @@ namespace Applying.API
             app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
-            app.SubscribeToEvents();
+            //app.SubscribeToEvents();
             app.UseSwaggerExtension();
             app.UseErrorHandlingMiddleware();
             app.UseHealthChecks("/health");

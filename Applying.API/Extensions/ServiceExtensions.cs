@@ -39,8 +39,8 @@ namespace Applying.API.Extensions
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
-            services.AddRabbitMQConnection(rabbitMQOptions);
-            services.AddRabbitMQRegistration(rabbitMQOptions);
+            //services.AddRabbitMQConnection(rabbitMQOptions);
+            //services.AddRabbitMQRegistration(rabbitMQOptions);
             return services;
         }
 

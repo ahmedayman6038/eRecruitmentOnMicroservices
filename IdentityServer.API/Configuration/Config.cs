@@ -27,6 +27,10 @@ namespace IdentityServer.API.Configuration
               new ApiResource("applying", "Applying API")
               {
                   Scopes = { "applying.read", "applying.write", "manage" }
+              },
+              new ApiResource("gatewayagg", "Gateway Agg")
+              {
+                  Scopes = { "agg.stat", "manage" }
               }
           };
 
@@ -38,6 +42,7 @@ namespace IdentityServer.API.Configuration
                 new ApiScope("jobs.post", "Post jobs to jobs service"),
                 new ApiScope("applying.read", "Read data from applying service"),
                 new ApiScope("applying.write", "Write data to applying service"),
+                new ApiScope("agg.stat", "Provides access to statistics services"),
                 new ApiScope("manage", "Provides administrative access to all services")
            };      
 
@@ -75,7 +80,9 @@ namespace IdentityServer.API.Configuration
                         "jobs.write",
                         "jobs.post",
                         "applying.read",
-                        "applying.write"
+                        "applying.write",
+                        "agg.stat",
+                        "manage"
                     }
                 },
                 new Client
@@ -126,6 +133,35 @@ namespace IdentityServer.API.Configuration
                     AllowedScopes =
                     {
 
+                        "manage",
+                        "agg.stat"
+                    }
+                },
+                new Client
+                {
+                    ClientId = "js",
+                    ClientName = "JavaScript Client",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowOfflineAccess = true,
+                    ClientSecrets = new List<Secret>
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    RedirectUris =           { $"{clientsUrl["Mvc"]}/Home/Callback" },
+                    PostLogoutRedirectUris = { $"{clientsUrl["Mvc"]}/Home/Charts" },
+                    AllowedCorsOrigins =     { $"{clientsUrl["Mvc"]}" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
+                        "jobs.read",
+                        "jobs.write",
+                        "jobs.post",
+                        "applying.read",
+                        "applying.write",
+                        "agg.stat",
                         "manage"
                     }
                 }

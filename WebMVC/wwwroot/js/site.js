@@ -57,3 +57,59 @@ function BuildPieChart(element, labels, values, chartTitle, dataLabel) {
         }
     });
 }
+
+
+document.getElementById("login").addEventListener("click", login, false);
+document.getElementById("api").addEventListener("click", api, false);
+document.getElementById("logout").addEventListener("click", logout, false);
+
+var config = {
+    authority: "https://localhost:9001",
+    client_id: "js",
+    client_secret: "secret",
+    redirect_uri: "https://localhost:6001/Home/Callback",
+    response_type: "code",
+    scope: "openid profile manage agg.stat",
+    post_logout_redirect_uri: "https://localhost:6001/Home/Charts",
+};
+
+var mgr = new Oidc.UserManager(config);
+
+mgr.getUser().then(function (user) {
+    if (user) {
+        console.log("User logged in");
+    }
+    else {
+        console.log("User not logged in");
+    }
+});
+
+function login() {
+    mgr.signinRedirect();
+}
+
+function api() {
+    mgr.getUser().then(function (user) {
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:7001/api/Statistics/getJobAppliedCount",
+            dataType: 'json',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + user.access_token)
+            },
+            success: function (data, status, xhr) {
+                debugger;
+                BuildBarChart('jobs-statistics-chart1', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Bar Chart', 'Applier')
+                BuildPieChart('jobs-statistics-chart2', data["data"].jobsName, data["data"].applierCount, 'Top 5 Applied Jobs Pie Chart', 'Applier')
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                debugger;
+                alert("An error occured while loading the data");
+            }
+        });
+    });
+}
+
+function logout() {
+    mgr.signoutRedirect();
+}

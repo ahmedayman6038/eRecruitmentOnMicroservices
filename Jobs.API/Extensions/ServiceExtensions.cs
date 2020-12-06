@@ -46,8 +46,8 @@ namespace Jobs.API.Extensions
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
-            services.AddRabbitMQConnection(rabbitMQOptions);
-            services.AddRabbitMQRegistration(rabbitMQOptions);
+            //services.AddRabbitMQConnection(rabbitMQOptions);
+            //services.AddRabbitMQRegistration(rabbitMQOptions);
             return services;
         }
 
@@ -87,14 +87,14 @@ namespace Jobs.API.Extensions
                         var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>(context.Exception.ToString()));
                         return context.Response.WriteAsync(result);
                     },
-                    OnChallenge = context =>
-                    {
-                        context.HandleResponse();
-                        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                        context.Response.ContentType = "application/json";
-                        var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
-                        return context.Response.WriteAsync(result);
-                    },
+                    //OnChallenge = context =>
+                    //{
+                    //    context.HandleResponse();
+                    //    context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                    //    context.Response.ContentType = "application/json";
+                    //    var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
+                    //    return context.Response.WriteAsync(result);
+                    //},
                     OnForbidden = context =>
                     {
                         context.Response.StatusCode = (int)HttpStatusCode.Forbidden;

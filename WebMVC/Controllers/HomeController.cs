@@ -18,6 +18,11 @@ namespace WebMVC.Controllers
             return View();
         }
 
+        public IActionResult Callback()
+        {
+            return View();
+        }
+
         public IActionResult Jobs()
         {
             return View();

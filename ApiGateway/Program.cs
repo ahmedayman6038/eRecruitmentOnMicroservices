@@ -22,12 +22,11 @@ namespace ApiGateway
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
 
-            var host = CreateHostBuilder(args)
-              .Build();
-
             Log.Information("Starting host...");
 
-            host.Run();
+            CreateHostBuilder(args)
+              .Build()
+              .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

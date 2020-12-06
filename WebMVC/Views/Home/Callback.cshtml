@@ -1,0 +1,9 @@
+﻿@section Scripts{
+    <script>
+        new Oidc.UserManager({ response_mode: "query" }).signinRedirectCallback().then(function () {
+            window.location = "/Home/Charts";
+        }).catch(function (e) {
+            console.error(e);
+        });
+    </script>
+}

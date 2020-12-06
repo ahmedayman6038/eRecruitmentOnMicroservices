@@ -21,6 +21,7 @@ namespace ApiGateway.Controllers
             _statisticsService = statisticsService;
         }
 
+        [Authorize("agg.stat")]
         [HttpGet("getJobAppliedCount")]
         public async Task<IActionResult> GetJobAppliedCount()
         {           

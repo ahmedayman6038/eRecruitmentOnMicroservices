@@ -718,3 +718,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Web
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.genruntimeconfig.cache
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Callback.cshtml.g.cs

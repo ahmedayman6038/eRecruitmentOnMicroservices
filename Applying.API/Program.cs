@@ -22,13 +22,12 @@ namespace Applying.API
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
 
-            var host = CreateHostBuilder(args)
-              .Build()
-              .MigrateAndSeedDb();
-
             Log.Information("Starting host...");
 
-            host.Run();
+            CreateHostBuilder(args)
+              .Build()
+              .MigrateAndSeedDb()
+              .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

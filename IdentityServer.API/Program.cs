@@ -23,13 +23,12 @@ namespace IdentityServer.API
                 .ReadFrom.Configuration(config)
                 .CreateLogger();
 
-            var host = CreateHostBuilder(args)
-                .Build()
-                .MigrateAndSeedDb(config);
-
             Log.Information("Starting host...");
 
-            host.Run();
+            CreateHostBuilder(args)
+              .Build()
+              .MigrateAndSeedDb(config)
+              .Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

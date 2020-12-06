@@ -38,7 +38,7 @@ namespace ApiGateway.Extensions
             {
                 options.Authority = identityUrl;
                 options.RequireHttpsMetadata = false;
-                options.Audience = "apigateway";
+                options.Audience = "gatewayagg";
                 options.Events = new JwtBearerEvents()
                 {
                     OnAuthenticationFailed = context =>
@@ -100,7 +100,8 @@ namespace ApiGateway.Extensions
                             TokenUrl = new Uri($"{configuration.GetValue<string>("IdentityUrl")}/connect/token"),
                             Scopes = new Dictionary<string, string>()
                             {
-                                { "manage", "Provides all access to jobs service" }
+                                { "manage", "Provides all access to jobs service" },
+                                { "agg.stat", "Provides access to statistics services" }
                             }
                         }
                     }

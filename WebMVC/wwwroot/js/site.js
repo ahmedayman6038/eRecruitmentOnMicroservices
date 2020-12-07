@@ -69,7 +69,7 @@ var config = {
     client_secret: "secret",
     redirect_uri: "https://localhost:6001/Home/Callback",
     response_type: "code",
-    scope: "openid profile manage agg.stat",
+    scope: "openid profile offline_access manage agg.stat",
     post_logout_redirect_uri: "https://localhost:6001/Home/Charts",
 };
 

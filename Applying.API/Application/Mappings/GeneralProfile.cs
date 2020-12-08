@@ -16,7 +16,7 @@ namespace Applying.API.Application.Mappings
         {
             CreateMap<CreateApplyCommand, Apply>();
 
-            CreateMap<Apply, GetAllAppliesViewModel>()
+            CreateMap<Apply, ApplyViewModel>()
                .ForMember(dest => dest.Status, source => source.MapFrom(source => ((ApplyStatus)source.Status).ToString()));
 
             CreateMap<GetAllAppliesQuery, GetAllAppliesParameter>();

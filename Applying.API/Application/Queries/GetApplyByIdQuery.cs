@@ -8,24 +8,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Applying.API.Application.Queries
 {
-    public class GetApplyByIdQuery : IRequest<Response<Apply>>
+    public class GetApplyByIdQuery : IRequest<Response<ApplyViewModel>>
     {
         public int Id { get; set; }
-        public class GetApplyByIdQueryHandler : IRequestHandler<GetApplyByIdQuery, Response<Apply>>
+        public class GetApplyByIdQueryHandler : IRequestHandler<GetApplyByIdQuery, Response<ApplyViewModel>>
         {
             private readonly IApplyRepository _applyRepository;
-            public GetApplyByIdQueryHandler(IApplyRepository applyRepository)
+            private readonly IMapper _mapper;
+
+            public GetApplyByIdQueryHandler(IApplyRepository applyRepository, IMapper mapper)
             {
                 _applyRepository = applyRepository;
+                _mapper = mapper;
             }
-            public async Task<Response<Apply>> Handle(GetApplyByIdQuery query, CancellationToken cancellationToken)
+            public async Task<Response<ApplyViewModel>> Handle(GetApplyByIdQuery query, CancellationToken cancellationToken)
             {
                 var apply = await _applyRepository.GetApplyByIdAsync(query.Id);
                 if (apply == null) throw new ApiException($"Apply Not Found.");
-                return new Response<Apply>(apply);
+                var applyViewModel = _mapper.Map<ApplyViewModel>(apply);
+                return new Response<ApplyViewModel>(applyViewModel);
             }
         }
     }

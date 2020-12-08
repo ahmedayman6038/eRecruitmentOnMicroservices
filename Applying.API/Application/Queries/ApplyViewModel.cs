@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Applying.API.Application.Queries
 {
-    public class GetAllAppliesViewModel
+    public class ApplyViewModel
     {
         public int Id { get; set; }
         public int JobId { get; set; }

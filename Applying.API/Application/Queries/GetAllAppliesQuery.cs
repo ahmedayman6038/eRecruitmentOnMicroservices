@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace Applying.API.Application.Queries
 {
-    public class GetAllAppliesQuery : IRequest<PagedResponse<IEnumerable<GetAllAppliesViewModel>>>
+    public class GetAllAppliesQuery : IRequest<PagedResponse<IEnumerable<ApplyViewModel>>>
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
         public int StatusId { get; set; }
     }
 
-    public class GetAllAppliesQueryHandler : IRequestHandler<GetAllAppliesQuery, PagedResponse<IEnumerable<GetAllAppliesViewModel>>>
+    public class GetAllAppliesQueryHandler : IRequestHandler<GetAllAppliesQuery, PagedResponse<IEnumerable<ApplyViewModel>>>
     {
         private readonly IApplyRepository _applyRepository;
         private readonly IMapper _mapper;
@@ -27,12 +27,12 @@ namespace Applying.API.Application.Queries
             _mapper = mapper;
         }
 
-        public async Task<PagedResponse<IEnumerable<GetAllAppliesViewModel>>> Handle(GetAllAppliesQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResponse<IEnumerable<ApplyViewModel>>> Handle(GetAllAppliesQuery request, CancellationToken cancellationToken)
         {
             var validFilter = _mapper.Map<GetAllAppliesParameter>(request);
             var apply = await _applyRepository.GetPagedReponseWithStatusAsync(validFilter.PageNumber, validFilter.PageSize, validFilter.StatusId);
-            var applyViewModel = _mapper.Map<IEnumerable<GetAllAppliesViewModel>>(apply);
-            return new PagedResponse<IEnumerable<GetAllAppliesViewModel>>(applyViewModel, validFilter.PageNumber, validFilter.PageSize);
+            var applyViewModel = _mapper.Map<IEnumerable<ApplyViewModel>>(apply);
+            return new PagedResponse<IEnumerable<ApplyViewModel>>(applyViewModel, validFilter.PageNumber, validFilter.PageSize);
         }
     }
 

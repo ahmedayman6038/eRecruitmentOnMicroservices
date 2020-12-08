@@ -87,14 +87,14 @@ namespace Jobs.API.Extensions
                         var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>(context.Exception.ToString()));
                         return context.Response.WriteAsync(result);
                     },
-                    //OnChallenge = context =>
-                    //{
-                    //    context.HandleResponse();
-                    //    context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
-                    //    context.Response.ContentType = "application/json";
-                    //    var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
-                    //    return context.Response.WriteAsync(result);
-                    //},
+                    OnChallenge = context =>
+                    {
+                        context.HandleResponse();
+                        context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+                        context.Response.ContentType = "application/json";
+                        var result = JsonConvert.SerializeObject(new Application.Wrappers.Response<string>("You are not Authorized"));
+                        return context.Response.WriteAsync(result);
+                    },
                     OnForbidden = context =>
                     {
                         context.Response.StatusCode = (int)HttpStatusCode.Forbidden;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using ApiGateway.Interfaces;
 using ApiGateway.Models;
@@ -23,6 +24,7 @@ namespace ApiGateway.Controllers
 
         [Authorize("agg.stat")]
         [HttpGet("getJobAppliedCount")]
+        [ProducesResponseType(typeof(Response<JobsStatisticsViewModel>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetJobAppliedCount()
         {           
             return Ok(await _statisticsService.GetTopJobApplied());

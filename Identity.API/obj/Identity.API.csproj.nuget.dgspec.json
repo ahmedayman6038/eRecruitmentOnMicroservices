@@ -43,26 +43,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "IdentityServer4": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "IdentityServer4.AspNetIdentity": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "IdentityServer4.EntityFramework": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "IdentityServer4.EntityFramework.Storage": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "IdentityServer4.Storage": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
             "MailKit": {
               "target": "Package",
               "version": "[2.9.0, )"

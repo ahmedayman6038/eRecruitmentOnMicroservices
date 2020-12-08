@@ -13,7 +13,7 @@ namespace Jobs.API.Application.Mappings
     {
         public GeneralProfile()
         {
-            CreateMap<Job, GetAllJobsViewModel>()
+            CreateMap<Job, JobViewModel>()
                 .ForMember(dest => dest.City, source => source.MapFrom(source => source.City.Name))
                 .ForMember(dest => dest.Country, source => source.MapFrom(source => source.City.Country.Name));
 

@@ -34,34 +34,6 @@ namespace Identity.API.Extensions
 
             services.AddTransient<IAccountService, AccountService>();
 
-            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
-
-            services.AddIdentityServer(x =>
-            {
-                x.Authentication.CookieLifetime = TimeSpan.FromHours(2);
-            }).AddDeveloperSigningCredential()
-                .AddAspNetIdentity<ApplicationUser>()
-              .AddConfigurationStore(options =>
-              {
-                  options.ConfigureDbContext = builder => builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                      sqlServerOptionsAction: sqlOptions =>
-                      {
-                          sqlOptions.MigrationsAssembly(migrationsAssembly);
-                          //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency 
-                          sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
-                      });
-              })
-              .AddOperationalStore(options =>
-              {
-                  options.ConfigureDbContext = builder => builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                      sqlServerOptionsAction: sqlOptions =>
-                      {
-                          sqlOptions.MigrationsAssembly(migrationsAssembly);
-                          //Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency 
-                          sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
-                      });
-              }).Services.AddTransient<IProfileService, ProfileService>();
-
             services.Configure<JWTSettings>(configuration.GetSection("JWTSettings"));
             services.AddAuthentication(options =>
             {

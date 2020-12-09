@@ -12,7 +12,7 @@ namespace Applying.API.Infrastructure.Services
     {
         public IdentityService(IHttpContextAccessor httpContextAccessor)
         {
-            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue("uid");
+            UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue("sub");
         }
         public string UserId { get; }
     }

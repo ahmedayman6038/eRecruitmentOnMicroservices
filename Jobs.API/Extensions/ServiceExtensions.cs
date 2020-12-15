@@ -46,8 +46,8 @@ namespace Jobs.API.Extensions
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IDateTimeService, DateTimeService>();
             var rabbitMQOptions = configuration.GetSection("RabbitMQ").Get<RabbitMQOptions>();
-            //services.AddRabbitMQConnection(rabbitMQOptions);
-            //services.AddRabbitMQRegistration(rabbitMQOptions);
+            services.AddRabbitMQConnection(rabbitMQOptions);
+            services.AddRabbitMQRegistration(rabbitMQOptions);
             return services;
         }
 

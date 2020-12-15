@@ -186,10 +186,8 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer4.EntityFr
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Ocelot.dll
-E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.Bcl.HashCode.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\System.Collections.Immutable.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.Extensions.Logging.dll
@@ -260,3 +258,12 @@ D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Authenticati
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.pdb
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.Views.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.Views.pdb
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.exe
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\System.ComponentModel.Annotations.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Authentication.Google.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.pdb

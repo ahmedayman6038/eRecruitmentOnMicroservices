@@ -16,6 +16,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=JobDb;User=sa;Password=Admin123
       - RabbitMq__Host=rabbitmq
       - RabbitMq__Username=guest
       - RabbitMq__Password=guest
@@ -31,6 +32,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=IdentityDb;User=sa;Password=Admin123
     ports:
       - "4003:80"
       - "5003:443"
@@ -42,6 +44,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=ApplyingDb;User=sa;Password=Admin123
       - RabbitMq__Host=rabbitmq
       - RabbitMq__Username=guest
       - RabbitMq__Password=guest
@@ -84,10 +87,11 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:443;http://+:80
-      - ClientsUrls__MvcClient=https://localhost:5001
-      - ClientsUrls__JobsApiClient=https://localhost:5002
-      - ClientsUrls__ApplyingApiClient=https://localhost:5004
-      - ClientsUrls__ApiGatewayClient=https://localhost:5005
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=IdentityServerDb;User=sa;Password=Admin123
+      - Urls__Mvc=https://localhost:5001
+      - Urls__Jobs=https://localhost:5002
+      - Urls__Applying=https://localhost:5004
+      - Urls__ApiGateway=https://localhost:5005
     ports:
       - "4006:80"
       - "5006:443"

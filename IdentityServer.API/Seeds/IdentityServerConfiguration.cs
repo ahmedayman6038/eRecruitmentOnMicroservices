@@ -4,6 +4,7 @@ using IdentityServer4.EntityFramework.Entities;
 using IdentityServer4.EntityFramework.Mappers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,12 @@ namespace IdentityServer.API.Seeds
     {
         public static async Task SeedAsync(ConfigurationDbContext context, IConfiguration configuration)
         {
+            var urlsConfig = configuration.GetSection("Urls").Get<UrlsConfig>();
             var clientUrls = new Dictionary<string, string>();
-            clientUrls.Add("Mvc", configuration.GetValue<string>("ClientsUrls:MvcClient"));
-            clientUrls.Add("JobsApi", configuration.GetValue<string>("ClientsUrls:JobsApiClient"));
-            clientUrls.Add("ApplyingApi", configuration.GetValue<string>("ClientsUrls:ApplyingApiClient"));
-            clientUrls.Add("ApiGateway", configuration.GetValue<string>("ClientsUrls:ApiGatewayClient"));
+            clientUrls.Add("Mvc", urlsConfig.Mvc);
+            clientUrls.Add("JobsApi", urlsConfig.Jobs);
+            clientUrls.Add("ApplyingApi", urlsConfig.Applying);
+            clientUrls.Add("ApiGateway", urlsConfig.ApiGateway);
 
             if (!context.Clients.Any())
             {

@@ -1,4 +1,5 @@
-﻿using IdentityServer.API.Contexts;
+﻿using IdentityServer.API.Configuration;
+using IdentityServer.API.Contexts;
 using IdentityServer.API.Models;
 using IdentityServer.API.Services;
 using IdentityServer4;

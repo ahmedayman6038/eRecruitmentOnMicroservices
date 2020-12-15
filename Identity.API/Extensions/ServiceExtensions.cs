@@ -2,7 +2,6 @@
 using Identity.API.Interfaces;
 using Identity.API.Models;
 using Identity.API.Services;
-using IdentityServer4.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;

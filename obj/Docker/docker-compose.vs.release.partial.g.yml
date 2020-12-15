@@ -60,6 +60,26 @@ services:
       com.microsoft.visual-studio.project-name: "Identity.API"
     tty: true
 
+  identityserver.api:
+    container_name: IdentityServer.API
+    build:
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "IdentityServer.API"
+    volumes:
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_identityserver.api$ \"/app/IdentityServer.API.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+      com.microsoft.visual-studio.project-name: "IdentityServer.API"
+    tty: true
+
   jobs.api:
     container_name: Jobs.API
     build:

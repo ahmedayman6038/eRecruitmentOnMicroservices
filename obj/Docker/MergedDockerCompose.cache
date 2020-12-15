@@ -6,6 +6,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      IdentityUrl: https://localhost:5006
       Urls__applying: http://applying.api
       Urls__identity: http://identity.api
       Urls__jobs: http://jobs.api
@@ -30,6 +31,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      IdentityUrl: https://localhost:5006
       RabbitMq__Host: rabbitmq
       RabbitMq__Password: guest
       RabbitMq__Username: guest
@@ -61,6 +63,29 @@ services:
     volumes:
     - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
     - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  identityserver.api:
+    build:
+      context: D:\Codes\eRecruitmentOnMicroservices
+      dockerfile: IdentityServer.API/Dockerfile
+    depends_on:
+      mssql:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ClientsUrls__ApiGatewayClient: https://localhost:5005
+      ClientsUrls__ApplyingApiClient: https://localhost:5004
+      ClientsUrls__JobsApiClient: https://localhost:5002
+      ClientsUrls__MvcClient: https://localhost:5001
+    image: identityserverapi
+    ports:
+    - published: 4006
+      target: 80
+    - published: 5006
+      target: 443
+    volumes:
+    - C:\Users\AhmedAH\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\AhmedAH\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
   jobs.api:
     build:
       context: D:\Codes\eRecruitmentOnMicroservices
@@ -73,6 +98,7 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
+      IdentityUrl: https://localhost:5006
       RabbitMq__Host: rabbitmq
       RabbitMq__Password: guest
       RabbitMq__Username: guest
@@ -89,7 +115,7 @@ services:
     environment:
       ACCEPT_EULA: "Y"
       SA_PASSWORD: Admin123
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/mssql/server:2017-latest
     ports:
     - published: 5433
       target: 1433

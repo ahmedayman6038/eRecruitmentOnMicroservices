@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   mssql:
-    image: mcr.microsoft.com/mssql/server:2019-latest
+    image: mcr.microsoft.com/mssql/server:2017-latest
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
@@ -45,3 +45,11 @@ services:
       context: .
       dockerfile: ApiGateway/Dockerfile
 
+
+  identityserver.api:
+    image: ${DOCKER_REGISTRY-}identityserverapi
+    build:
+      context: .
+      dockerfile: IdentityServer.API/Dockerfile
+    depends_on:
+      - mssql

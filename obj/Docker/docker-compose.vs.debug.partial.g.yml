@@ -84,6 +84,34 @@ services:
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true
 
+  identityserver.api:
+    image: identityserverapi:dev
+    container_name: IdentityServer.API
+    build:
+      target: base
+      labels:
+        com.microsoft.created-by: "visual-studio"
+        com.microsoft.visual-studio.project-name: "IdentityServer.API"
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_identityserver.api$
+    volumes:
+      - D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API:/app
+      - D:\Codes\eRecruitmentOnMicroservices:/src
+      - C:\Users\AhmedAH\vsdbg\vs2017u5:/remote_debugger:rw
+#$nuget_volume_mapping_identityserver.api$
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_identityserver.api$ \"/app/bin/Debug/netcoreapp3.1/IdentityServer.API.dll\""
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
+    tty: true
+
   jobs.api:
     image: jobsapi:dev
     container_name: Jobs.API

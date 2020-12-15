@@ -7,16 +7,8 @@ D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identi
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.runtimeconfig.dev.json
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.pdb
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityModel.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.AspNetIdentity.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.EntityFramework.Storage.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\IdentityServer4.Storage.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\MailKit.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

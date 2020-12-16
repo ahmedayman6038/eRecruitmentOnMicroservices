@@ -23,6 +23,8 @@ namespace IdentityServer.API.Extensions
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
+            services.Configure<UrlsConfig>(configuration.GetSection("Urls"));
+
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(connectionString));
 
@@ -32,6 +34,7 @@ namespace IdentityServer.API.Extensions
 
             var builder = services.AddIdentityServer(options =>
             {
+                //options.IssuerUri = "null";
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;

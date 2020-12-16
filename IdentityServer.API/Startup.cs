@@ -9,6 +9,7 @@ using IdentityServer.API.Models;
 using IdentityServer4;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -49,7 +50,7 @@ namespace IdentityServer.API
                 app.UseHsts();
             }
             app.UseStaticFiles();
-
+            app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
             app.UseRouting();
             app.UseIdentityServer();
             app.UseAuthorization();

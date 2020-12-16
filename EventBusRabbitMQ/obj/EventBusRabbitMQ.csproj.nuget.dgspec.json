@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {}
+    "D:\\Codes\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {}
   },
   "projects": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
+    "D:\\Codes\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
         "projectName": "EventBusRabbitMQ",
-        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\obj\\",
+        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\EventBusRabbitMQ.csproj",
+        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
+        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBusRabbitMQ\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -31,10 +31,9 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj": {
-                "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj"
+              "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj": {
+                "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj"
               }
             }
           }
@@ -47,7 +46,6 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Autofac": {
               "target": "Package",
@@ -90,25 +88,25 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj": {
+    "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj",
+        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj",
         "projectName": "EventBus",
-        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\EventBus\\obj\\",
+        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\EventBus.csproj",
+        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
+        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\EventBus\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -121,7 +119,6 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -133,7 +130,6 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
           "dependencies": {
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -156,7 +152,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

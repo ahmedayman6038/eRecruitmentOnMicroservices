@@ -20,7 +20,8 @@ services:
       - RabbitMq__Host=rabbitmq
       - RabbitMq__Username=guest
       - RabbitMq__Password=guest
-      - IdentityUrl=https://localhost:5006
+      - IdentityUrl=http://identityserver.api
+      - IdentityUrlExternal=http://localhost:4006
     ports:
       - "4002:80"
       - "5002:443"
@@ -48,7 +49,8 @@ services:
       - RabbitMq__Host=rabbitmq
       - RabbitMq__Username=guest
       - RabbitMq__Password=guest
-      - IdentityUrl=https://localhost:5006
+      - IdentityUrl=http://identityserver.api
+      - IdentityUrlExternal=http://localhost:4006
     ports:
       - "4004:80"
       - "5004:443"
@@ -63,7 +65,8 @@ services:
       - Urls__applying=http://applying.api
       - Urls__jobs=http://jobs.api
       - Urls__identity=http://identity.api
-      - IdentityUrl=https://localhost:5006
+      - IdentityUrl=http://identityserver.api
+      - IdentityUrlExternal=http://localhost:4006
     ports:
       - "4005:80"
       - "5005:443"

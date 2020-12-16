@@ -1,4 +1,5 @@
-﻿using IdentityServer.API.Contexts;
+﻿using IdentityServer.API.Configuration;
+using IdentityServer.API.Contexts;
 using IdentityServer.API.Models;
 using IdentityServer.API.Seeds;
 using IdentityServer4.EntityFramework.DbContexts;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -17,7 +19,7 @@ namespace IdentityServer.API.Extensions
 {
     public static class HostExtensions
     {
-        public static IHost MigrateAndSeedDb(this IHost webHost, IConfiguration configuration)
+        public static IHost MigrateAndSeedDb(this IHost webHost)
         {
             using (var scope = webHost.Services.CreateScope())
             {
@@ -29,6 +31,7 @@ namespace IdentityServer.API.Extensions
                     var applicationDbContext = services.GetRequiredService<ApplicationDbContext>();
                     var persistedGrantDbContext = services.GetRequiredService<PersistedGrantDbContext>();
                     var configurationDbContext = services.GetRequiredService<ConfigurationDbContext>();
+                    var urlConfig = services.GetRequiredService<IOptions<UrlsConfig>>().Value;
 
                     applicationDbContext.Database.MigrateAsync().Wait();
                     persistedGrantDbContext.Database.MigrateAsync().Wait();
@@ -37,7 +40,7 @@ namespace IdentityServer.API.Extensions
                     DefaultRoles.SeedAsync(roleManager).Wait();
                     DefaultSuperAdmin.SeedAsync(userManager).Wait();
                     DefaultBasicUser.SeedAsync(userManager).Wait();
-                    IdentityServerConfiguration.SeedAsync(configurationDbContext, configuration).Wait();
+                    IdentityServerConfiguration.SeedAsync(configurationDbContext, urlConfig).Wait();
 
                     Log.Information("Finished Database Migration And Seeding");
                 }

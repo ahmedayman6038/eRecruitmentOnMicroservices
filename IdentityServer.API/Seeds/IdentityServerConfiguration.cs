@@ -14,9 +14,8 @@ namespace IdentityServer.API.Seeds
 {
     public class IdentityServerConfiguration
     {
-        public static async Task SeedAsync(ConfigurationDbContext context, IConfiguration configuration)
+        public static async Task SeedAsync(ConfigurationDbContext context, UrlsConfig urlsConfig)
         {
-            var urlsConfig = configuration.GetSection("Urls").Get<UrlsConfig>();
             var clientUrls = new Dictionary<string, string>();
             clientUrls.Add("Mvc", urlsConfig.Mvc);
             clientUrls.Add("JobsApi", urlsConfig.Jobs);

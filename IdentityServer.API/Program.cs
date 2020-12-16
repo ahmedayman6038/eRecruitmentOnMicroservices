@@ -27,7 +27,7 @@ namespace IdentityServer.API
 
             CreateHostBuilder(args)
               .Build()
-              .MigrateAndSeedDb(config)
+              .MigrateAndSeedDb()
               .Run();
         }
 

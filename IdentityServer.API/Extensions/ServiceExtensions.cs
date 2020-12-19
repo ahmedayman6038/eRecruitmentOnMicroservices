@@ -34,7 +34,7 @@ namespace IdentityServer.API.Extensions
 
             var builder = services.AddIdentityServer(options =>
             {
-                //options.IssuerUri = "null";
+                options.IssuerUri = "null";
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
                 options.Events.RaiseFailureEvents = true;

@@ -13,12 +13,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace Jobs.API.Controllers
 {
 
-    [Authorize(Roles = "SuperAdmin,Admin")]
+    //[Authorize(Roles = "SuperAdmin,Admin")]
     public class JobController : BaseApiController
     {
         // GET: api/<controller>
         [HttpGet]
-        [Authorize("jobs.read")]
+        //[Authorize("jobs.read")]
         [ProducesResponseType(typeof(PagedResponse<IEnumerable<JobViewModel>>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Get([FromQuery] GetAllJobsParameter filter)
         {

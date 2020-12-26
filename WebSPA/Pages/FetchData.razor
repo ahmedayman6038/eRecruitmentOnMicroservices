@@ -1,0 +1,68 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+@attribute [Authorize(Roles = "Admin,SuperAdmin")]
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (jobs == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Requirements</th>
+                <th>Country</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in jobs)
+            {
+                <tr>
+                    <td>@job.Name</td>
+                    <td>@job.Description</td>
+                    <td>@job.Requirements</td>
+                    <td>@job.Country</td>
+                    <td>@job.City</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Job[] jobs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var response = await Http.GetFromJsonAsync<Response<Job[]>>("job");
+            if (response.Succeeded)
+            {
+                jobs = response.Data;
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    public class Job
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Requirements { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+    }
+}

@@ -15,7 +15,6 @@ namespace Applying.API.Controllers
     [Authorize(Roles = "SuperAdmin,Admin")]
     public class ApplyController : BaseApiController
     {
-        // GET: api/<controller>
         [HttpGet]
         [Authorize("applying.read")]
         [ProducesResponseType(typeof(PagedResponse<IEnumerable<ApplyViewModel>>), (int)HttpStatusCode.OK)]
@@ -30,7 +29,6 @@ namespace Applying.API.Controllers
                 }));
         }
 
-        // GET api/<controller>/5
         [HttpGet("{id}")]
         [Authorize("applying.read")]
         [ProducesResponseType(typeof(Response<ApplyViewModel>), (int)HttpStatusCode.OK)]
@@ -39,7 +37,6 @@ namespace Applying.API.Controllers
             return Ok(await Mediator.Send(new GetApplyByIdQuery { Id = id }));
         }
 
-        // POST api/<controller>
         [HttpPost]
         [Authorize("applying.write")]
         [ProducesResponseType(typeof(Response<int>), (int)HttpStatusCode.OK)]
@@ -48,7 +45,6 @@ namespace Applying.API.Controllers
             return Ok(await Mediator.Send(command));
         }
 
-        // PUT api/<controller>/5
         [HttpPut("{id}")]
         [Authorize("applying.write")]
         [ProducesResponseType(typeof(Response<int>), (int)HttpStatusCode.OK)]
@@ -61,7 +57,6 @@ namespace Applying.API.Controllers
             return Ok(await Mediator.Send(command));
         }
 
-        // DELETE api/<controller>/5
         [HttpDelete("{id}")]
         [Authorize("applying.write")]
         [ProducesResponseType(typeof(Response<int>), (int)HttpStatusCode.OK)]

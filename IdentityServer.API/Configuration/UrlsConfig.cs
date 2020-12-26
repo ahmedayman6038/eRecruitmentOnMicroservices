@@ -11,5 +11,6 @@ namespace IdentityServer.API.Configuration
         public string Jobs { get; set; }
         public string Applying { get; set; }
         public string ApiGateway { get; set; }
+        public string Spa { get; set; }
     }
 }

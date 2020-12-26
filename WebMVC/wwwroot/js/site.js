@@ -64,13 +64,13 @@ document.getElementById("api").addEventListener("click", api, false);
 document.getElementById("logout").addEventListener("click", logout, false);
 
 var config = {
-    authority: "https://localhost:9001",
+    authority: "https://localhost:6004",
     client_id: "js",
     client_secret: "secret",
-    redirect_uri: "https://localhost:6001/Home/Callback",
+    redirect_uri: "https://localhost:6006/Home/Callback",
     response_type: "code",
     scope: "openid profile offline_access manage agg.stat",
-    post_logout_redirect_uri: "https://localhost:6001/Home/Charts",
+    post_logout_redirect_uri: "https://localhost:6006/Home/Charts",
 };
 
 var mgr = new Oidc.UserManager(config);
@@ -92,7 +92,7 @@ function api() {
     mgr.getUser().then(function (user) {
         $.ajax({
             type: "GET",
-            url: "https://localhost:7001/api/Statistics/getJobAppliedCount",
+            url: "https://localhost:6001/api/Statistics/getJobAppliedCount",
             dataType: 'json',
             beforeSend: function (xhr) {
                 xhr.setRequestHeader("Authorization", "Bearer " + user.access_token)

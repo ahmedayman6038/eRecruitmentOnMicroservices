@@ -60,7 +60,6 @@ namespace IdentityServer.API.Configuration
                     ClientUri = $"{clientsUrl["Mvc"]}",
                     AllowedGrantTypes = GrantTypes.Hybrid,
                     AllowAccessTokensViaBrowser = false,
-                    //RequireConsent = false,
                     AllowOfflineAccess = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
                     RedirectUris = new List<string>
@@ -109,10 +108,8 @@ namespace IdentityServer.API.Configuration
                     ClientName = "Applying Swagger UI",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-
                     RedirectUris = { $"{clientsUrl["ApplyingApi"]}/swagger/oauth2-redirect.html" },
                     PostLogoutRedirectUris = { $"{clientsUrl["ApplyingApi"]}/swagger/" },
-
                     AllowedScopes =
                     {
                         "applying.read",
@@ -126,10 +123,8 @@ namespace IdentityServer.API.Configuration
                     ClientName = "Api gateway Swagger UI",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
-
                     RedirectUris = { $"{clientsUrl["ApiGateway"]}/swagger/oauth2-redirect.html" },
                     PostLogoutRedirectUris = { $"{clientsUrl["ApiGateway"]}/swagger/" },
-
                     AllowedScopes =
                     {
 
@@ -143,6 +138,7 @@ namespace IdentityServer.API.Configuration
                     ClientName = "JavaScript Client",
                     AllowedGrantTypes = GrantTypes.Code,
                     AllowOfflineAccess = true,
+                    RequireConsent = true,
                     ClientSecrets = new List<Secret>
                     {
                         new Secret("secret".Sha256())
@@ -150,12 +146,33 @@ namespace IdentityServer.API.Configuration
                     RedirectUris =           { $"{clientsUrl["Mvc"]}/Home/Callback" },
                     PostLogoutRedirectUris = { $"{clientsUrl["Mvc"]}/Home/Charts" },
                     AllowedCorsOrigins =     { $"{clientsUrl["Mvc"]}" },
-
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
+                        "jobs.read",
+                        "jobs.write",
+                        "jobs.post",
+                        "applying.read",
+                        "applying.write",
+                        "agg.stat",
+                        "manage"
+                    }
+                },
+                new Client
+                {
+                    ClientId = "blazor",
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+                    RequireClientSecret = false,
+                    AllowedCorsOrigins = { $"{clientsUrl["Spa"]}" },
+                    RedirectUris = { $"{clientsUrl["Spa"]}/authentication/login-callback" },
+                    PostLogoutRedirectUris = { $"{clientsUrl["Spa"]}/authentication/logout-callback" },
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
                         "jobs.read",
                         "jobs.write",
                         "jobs.post",

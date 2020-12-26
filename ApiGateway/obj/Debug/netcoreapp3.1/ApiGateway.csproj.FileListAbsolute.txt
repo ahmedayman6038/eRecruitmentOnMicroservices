@@ -128,3 +128,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.genruntimeconfig.cache
+E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\libman.json

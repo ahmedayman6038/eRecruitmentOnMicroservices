@@ -21,6 +21,7 @@ namespace IdentityServer.API.Seeds
             clientUrls.Add("JobsApi", urlsConfig.Jobs);
             clientUrls.Add("ApplyingApi", urlsConfig.Applying);
             clientUrls.Add("ApiGateway", urlsConfig.ApiGateway);
+            clientUrls.Add("Spa", urlsConfig.Spa);
 
             if (!context.Clients.Any())
             {

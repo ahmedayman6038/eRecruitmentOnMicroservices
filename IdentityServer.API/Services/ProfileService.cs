@@ -66,6 +66,7 @@ namespace IdentityServer.API.Services
             {
                 new Claim(JwtClaimTypes.Subject, user.Id),
                 new Claim(JwtClaimTypes.PreferredUserName, user.UserName),
+                new Claim(JwtClaimTypes.Name, user.UserName),
                 new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
             };
 

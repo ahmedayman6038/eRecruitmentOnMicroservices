@@ -5,11 +5,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jobs.api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 7005
         }
       ],
-      "UpstreamPathTemplate": "/job",
+      "UpstreamPathTemplate": "/api/job",
       "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
@@ -17,11 +17,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jobs.api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 7005
         }
       ],
-      "UpstreamPathTemplate": "/job/{id}",
+      "UpstreamPathTemplate": "/api/job/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET" ]
     },
     {

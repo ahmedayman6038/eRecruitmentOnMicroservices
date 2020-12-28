@@ -1,5 +1,6 @@
-﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\ahmed\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.0\build\..\staticwebassets\" />
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="/src//WebSPA/bin/Debug/net5.0/wwwroot/" />
+  <ContentRoot BasePath="/" Path="/src//WebSPA/obj/Debug/net5.0/scopedcss/bundle/" />
+  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="/root/.nuget/fallbackpackages3/microsoft.aspnetcore.components.webassembly.authentication/5.0.0/staticwebassets/" />
 </StaticWebAssets>

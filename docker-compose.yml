@@ -54,9 +54,3 @@ services:
     depends_on:
       - mssql
 
-  webspa:
-    image: ${DOCKER_REGISTRY-}webspa
-    build:
-      context: .
-      dockerfile: WebSPA/Dockerfile
-

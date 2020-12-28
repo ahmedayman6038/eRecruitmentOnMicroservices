@@ -1,6 +1,5 @@
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.exe
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.deps.json
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\bin\Debug\netcoreapp3.1\WebMVC.runtimeconfig.json
@@ -720,3 +719,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Web
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\WebMVC.genruntimeconfig.cache
 D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Callback.cshtml.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Callback.cshtml.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebMVC\obj\Debug\netcoreapp3.1\scopedcss\bundle\WebMVC.styles.css

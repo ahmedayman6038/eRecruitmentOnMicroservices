@@ -1,6 +1,5 @@
 D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\bin\Debug\netcoreapp3.1\IdentityServer.API.exe
 D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netcoreapp3.1\IdentityServer.API.AssemblyInfoInputs.cache
 D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netcoreapp3.1\IdentityServer.API.AssemblyInfo.cs
@@ -238,3 +237,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netco
 E:\DotNetProjects\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netcoreapp3.1\IdentityServer.API.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netcoreapp3.1\IdentityServer.API.genruntimeconfig.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netcoreapp3.1\IdentityServer.API.csprojAssemblyReference.cache
+D:\Codes\eRecruitmentOnMicroservices\IdentityServer.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\IdentityServer.API.styles.css

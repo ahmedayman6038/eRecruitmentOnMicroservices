@@ -1,6 +1,5 @@
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Applying.API.exe
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Applying.API.deps.json
 D:\Codes\eRecruitmentOnMicroservices\Applying.API\bin\Debug\netcoreapp3.1\Applying.API.runtimeconfig.json
@@ -192,3 +191,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\Applying.API.genruntimeconfig.cache
+D:\Codes\eRecruitmentOnMicroservices\Applying.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Applying.API.styles.css

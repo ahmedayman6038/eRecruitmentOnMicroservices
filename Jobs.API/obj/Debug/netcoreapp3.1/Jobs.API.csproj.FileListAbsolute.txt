@@ -1,6 +1,5 @@
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Jobs.API.exe
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Jobs.API.deps.json
 D:\Codes\eRecruitmentOnMicroservices\Jobs.API\bin\Debug\netcoreapp3.1\Jobs.API.runtimeconfig.json
@@ -192,3 +191,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\J
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\Jobs.API.genruntimeconfig.cache
+D:\Codes\eRecruitmentOnMicroservices\Jobs.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Jobs.API.styles.css

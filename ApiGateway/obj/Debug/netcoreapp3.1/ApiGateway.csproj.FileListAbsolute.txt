@@ -1,7 +1,6 @@
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\configuration.json
-D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.exe
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.deps.json
 D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\ApiGateway.runtimeconfig.json
@@ -129,3 +128,5 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\ApiGateway.genruntimeconfig.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\libman.json
+D:\Codes\eRecruitmentOnMicroservices\ApiGateway\bin\Debug\netcoreapp3.1\libman.json
+D:\Codes\eRecruitmentOnMicroservices\ApiGateway\obj\Debug\netcoreapp3.1\scopedcss\bundle\ApiGateway.styles.css

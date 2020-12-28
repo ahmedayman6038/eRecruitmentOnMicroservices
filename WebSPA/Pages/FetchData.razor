@@ -38,13 +38,13 @@ else
 }
 
 @code {
-    private Job[] jobs;
+    private JobModel[] jobs;
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            var response = await Http.GetFromJsonAsync<Response<Job[]>>("job");
+            var response = await Http.GetFromJsonAsync<Response<JobModel[]>>("job");
             if (response.Succeeded)
             {
                 jobs = response.Data;
@@ -54,15 +54,5 @@ else
         {
             exception.Redirect();
         }
-    }
-
-    public class Job
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Requirements { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
     }
 }

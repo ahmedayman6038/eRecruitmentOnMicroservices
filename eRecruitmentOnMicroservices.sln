@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "EventBu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer.API", "IdentityServer.API\IdentityServer.API.csproj", "{587663D8-CD17-4A31-AF20-6EA0AE645F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSPA", "WebSPA\WebSPA.csproj", "{EA636E00-6956-40E6-B4D4-060E7BBD45E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSPA", "WebSPA\WebSPA.csproj", "{EA636E00-6956-40E6-B4D4-060E7BBD45E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

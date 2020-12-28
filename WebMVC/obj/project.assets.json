@@ -757,25 +757,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AhmedAH\\.nuget\\packages\\": {},
+    "C:\\Users\\ahmed\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\WebMVC\\WebMVC.csproj",
+      "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebMVC\\WebMVC.csproj",
       "projectName": "WebMVC",
-      "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\WebMVC\\WebMVC.csproj",
-      "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
-      "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\WebMVC\\obj\\",
+      "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebMVC\\WebMVC.csproj",
+      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+      "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -833,7 +833,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

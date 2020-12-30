@@ -9,6 +9,10 @@ namespace Jobs.API.Application.Interfaces
     {
         IJobRepository Jobs { get; }
 
+        ICountryRepository Countries { get; }
+
+        ICityRepository Cities { get; }
+
         void Commit();
 
         Task CommitAsync();

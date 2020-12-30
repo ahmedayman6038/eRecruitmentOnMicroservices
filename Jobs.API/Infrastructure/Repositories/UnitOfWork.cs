@@ -13,12 +13,18 @@ namespace Jobs.API.Infrastructure.Repositories
         private readonly JobContext _dbContext;
 
         public IJobRepository Jobs { get; }
+        public ICountryRepository Countries { get; }
+        public ICityRepository Cities { get; }
 
         public UnitOfWork(JobContext dbContext,
-            IJobRepository jobRepository)
+            IJobRepository jobRepository,
+            ICountryRepository countryRepository,
+            ICityRepository cityRepository)
         {
             this._dbContext = dbContext;
             this.Jobs = jobRepository;
+            this.Countries = countryRepository;
+            this.Cities = cityRepository;
         }
 
         public async Task CommitAsync()

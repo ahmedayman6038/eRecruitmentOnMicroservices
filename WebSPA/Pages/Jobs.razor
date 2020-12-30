@@ -1,7 +1,7 @@
 ﻿@page "/job"
 <h3>Job</h3>
 
-<EditForm Model="@job" OnValidSubmit="@HandleValidSubmit">
+@*<EditForm Model="@job" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
@@ -54,7 +54,7 @@
     </p>
 
     <button type="submit">Submit</button>
-</EditForm>
+</EditForm>*@
 @code {
     private JobModel job = new JobModel();
 

@@ -29,10 +29,6 @@ namespace Applying.API.Extensions
                 {
                     Log.Warning(ex, "An error occurred while seeding and migrate the DB");
                 }
-                finally
-                {
-                    Log.CloseAndFlush();
-                }
             }
             return webHost;
         }

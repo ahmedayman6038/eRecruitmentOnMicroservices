@@ -20,6 +20,10 @@ namespace Jobs.API.Application.Mappings
             CreateMap<CreateJobCommand, Job>();
 
             CreateMap<GetAllJobsQuery, GetAllJobsParameter>();
+
+            CreateMap<GetAllCountriesQuery, GetAllCountriesParameter>();
+
+            CreateMap<GetAllCitiesQuery, GetAllCitiesParameter>();
         }
     }
 }

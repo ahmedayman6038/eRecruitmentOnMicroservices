@@ -25,6 +25,30 @@
       "UpstreamHttpMethod": [ "PUT", "GET" ]
     },
     {
+      "DownstreamPathTemplate": "/api/country",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/country",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/city",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/city",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/apply",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -33,7 +57,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/apply",
+      "UpstreamPathTemplate": "/api/apply",
       "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
@@ -45,7 +69,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/apply/{id}",
+      "UpstreamPathTemplate": "/api/apply/{id}",
       "UpstreamHttpMethod": [ "PUT", "GET" ]
     },
     {
@@ -57,7 +81,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/job/apply",
+      "UpstreamPathTemplate": "/api/job/apply",
       "UpstreamHttpMethod": [ "POST" ]
     }
   ]

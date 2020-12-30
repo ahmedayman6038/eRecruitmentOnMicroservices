@@ -44,7 +44,7 @@ else
     {
         try
         {
-            var response = await Http.GetFromJsonAsync<Response<JobModel[]>>("job");
+            var response = await Http.GetFromJsonAsync<PagedResponse<JobModel[]>>("job");
             if (response.Succeeded)
             {
                 jobs = response.Data;

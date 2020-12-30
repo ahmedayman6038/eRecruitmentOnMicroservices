@@ -57,6 +57,8 @@ namespace Jobs.API.Extensions
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddTransient<IJobRepository, JobRepository>();
+            services.AddTransient<ICountryRepository, CountryRepository>();
+            services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }

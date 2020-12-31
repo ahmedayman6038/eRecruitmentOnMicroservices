@@ -5,7 +5,7 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     },
     {
-      "hash": "sha256-hijgIyfLkMNQI8tk1REn+FFsSlKv2oUJKUtofuYtDVI=",
+      "hash": "sha256-caw8VhWigWioKWk\/7qa18YxOhH8dVpamyDn7VWWZFL8=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -801,11 +801,11 @@
       "url": "_framework\/dotnet.5.0.1.js"
     },
     {
-      "hash": "sha256-4A5iL2muT5fC3bmu7LAPkbllIcwXUhqov\/DjYMhcpZo=",
+      "hash": "sha256-+yvlRkqTuH06\/i6Tvq+Qs36gsQvD+xQkun2xw9T55vo=",
       "url": "_framework\/WebSPA.dll"
     },
     {
-      "hash": "sha256-EAK8V9856eRO4KXX7LTAKPBSLClsRRRi3VeTE0I8qQU=",
+      "hash": "sha256-1Bucpqq27+72KsHjYR28NMd7I+zdlV6SCWSAddm37U4=",
       "url": "_framework\/WebSPA.pdb"
     },
     {
@@ -1661,7 +1661,7 @@
       "url": "css\/open-iconic\/README.md"
     },
     {
-      "hash": "sha256-vtvvXviANnOff1qnc+EAfqYFFogKKi1pVhxy6hDdvVY=",
+      "hash": "sha256-gB3dmLpBGB3xkPM+8mDe2I0BH9vvExu5k+ob\/oPson4=",
       "url": "debug.log"
     },
     {
@@ -1693,5 +1693,5 @@
       "url": "WebSPA.bundle.scp.css"
     }
   ],
-  "version": "mFbwTees"
+  "version": "yAMsNERM"
 };

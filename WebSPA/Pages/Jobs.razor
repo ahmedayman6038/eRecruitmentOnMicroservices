@@ -1,65 +1,126 @@
 ﻿@page "/job"
-<h3>Job</h3>
+@inject HttpClient Http
+@attribute [Authorize(Roles = "Admin,SuperAdmin")]
 
-@*<EditForm Model="@job" OnValidSubmit="@HandleValidSubmit">
+<h3>Create</h3>
+
+<EditForm Model="@job" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <p>
-        <label>
-            Name:
-            <InputText @bind-Value="job.Name" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Description:
-            <InputTextArea @bind-Value="job.Description" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Requirements:
-            <InputTextArea @bind-Value="job.Requirements" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Primary Classification:
-            <InputSelect @bind-Value="starship.Classification">
-                <option value="">Select classification ...</option>
-                <option value="Exploration">Exploration</option>
-                <option value="Diplomacy">Diplomacy</option>
-                <option value="Defense">Defense</option>
-            </InputSelect>
-        </label>
-    </p>
-    <p>
-        <label>
-            Maximum Accommodation:
-            <InputNumber @bind-Value="starship.MaximumAccommodation" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Engineering Approval:
-            <InputCheckbox @bind-Value="starship.IsValidatedDesign" />
-        </label>
-    </p>
-    <p>
-        <label>
-            Production Date:
-            <InputDate @bind-Value="starship.ProductionDate" />
-        </label>
-    </p>
+    <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <InputText class="form-control" id="name" @bind-Value="job.Name" />
+        </div>
+    </div>
 
-    <button type="submit">Submit</button>
-</EditForm>*@
+    <div class="form-group row">
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+            <InputTextArea class="form-control" id="description" @bind-Value="job.Description" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="requirements" class="col-sm-2 col-form-label">Requirements</label>
+        <div class="col-sm-10">
+            <InputTextArea class="form-control" id="requirements" @bind-Value="job.Requirements" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="country" class="col-sm-2 col-form-label">Country</label>
+        <div class="col-sm-10">
+            <InputSelect class="form-control" id="country" ValueExpression="@(()=>job.CountryId)" Value="@job.CountryId" ValueChanged="@((int? value) => OnValueChanged(value))">
+                <option value="">Select country...</option>
+                @foreach (var item in countries)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="city" class="col-sm-2 col-form-label">City</label>
+        <div class="col-sm-10">
+            <InputSelect class="form-control" id="city" @bind-Value="job.CityId">
+                <option value="">Select city...</option>
+                @foreach (var item in cities)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+</EditForm>
+<br />
+<JobsList />
+
 @code {
     private JobModel job = new JobModel();
+    private List<CountryModel> countries = new List<CountryModel>();
+    private List<CityModel> cities = new List<CityModel>();
 
-    private void HandleValidSubmit()
+    protected override async Task OnInitializedAsync()
     {
-       
+        try
+        {
+            var response = await Http.GetFromJsonAsync<PagedResponse<List<CountryModel>>>("country");
+            if (response.Succeeded)
+            {
+                countries = response.Data;
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    private async Task OnValueChanged(int? value)
+    {
+        try
+        {
+            Console.WriteLine(value);
+
+            job.CityId = null;
+            job.CountryId = value;
+            var response = await Http.GetFromJsonAsync<PagedResponse<List<CityModel>>>($"city?CountryId={value??0}");
+            if (response.Succeeded)
+            {
+                cities = response.Data;
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    private async void HandleValidSubmit()
+    {
+        Console.WriteLine("Submitted");
+        Console.WriteLine($"Country: {job.CountryId}, City: {job.CityId}");
+        try
+        {
+            var responseMessage = await Http.PostAsJsonAsync("job", job);
+            var response = await responseMessage.Content.ReadAsStringAsync();
+
+            var jobResponse = JsonSerializer.Deserialize<Response<JobModel>>(response);
+            if (jobResponse.Succeeded)
+            {
+                job = new JobModel();
+                Console.WriteLine("Succeed");
+                StateHasChanged();
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
     }
 }

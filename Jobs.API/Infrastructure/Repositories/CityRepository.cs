@@ -20,14 +20,8 @@ namespace Jobs.API.Infrastructure.Repositories
 
         public async Task<IReadOnlyList<City>> GetPagedReponseAsync(int pageNumber, int pageSize, int countryId)
         {
-            var cities = _cities.AsQueryable();
-
-            if (countryId != 0)
-            {
-                cities = cities.Where(j => j.CountryId == countryId);
-            }
-
-            return await cities
+            return await _cities
+                .Where(j => j.CountryId == countryId)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .AsNoTracking()

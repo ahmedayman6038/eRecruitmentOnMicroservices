@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebSPA.Pages
+namespace WebSPA.Components
 {
     #line hidden
     using System;
@@ -111,14 +111,20 @@ using WebSPA.Wrappers;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\FetchData.razor"
-           [Authorize(Roles = "Admin,SuperAdmin")]
+#line 15 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using WebSPA.Components;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 16 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class JobsList : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -126,7 +132,7 @@ using WebSPA.Wrappers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\FetchData.razor"
+#line 36 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Components\JobsList.razor"
        
     private JobModel[] jobs;
 

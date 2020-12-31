@@ -97,6 +97,20 @@ using WebSPA.Wrappers;
 #line hidden
 #nullable disable
 #nullable restore
+#line 15 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using WebSPA.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 1 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Shared\LoginDisplay.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 

@@ -110,6 +110,27 @@ using WebSPA.Wrappers;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 15 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using WebSPA.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
+           [Authorize(Roles = "Admin,SuperAdmin")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/job")]
     public partial class Jobs : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -119,18 +140,75 @@ using WebSPA.Wrappers;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 58 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
+#line 63 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
        
     private JobModel job = new JobModel();
+    private List<CountryModel> countries = new List<CountryModel>();
+    private List<CityModel> cities = new List<CityModel>();
 
-    private void HandleValidSubmit()
+    protected override async Task OnInitializedAsync()
     {
-       
+        try
+        {
+            var response = await Http.GetFromJsonAsync<PagedResponse<List<CountryModel>>>("country");
+            if (response.Succeeded)
+            {
+                countries = response.Data;
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    private async Task OnValueChanged(int? value)
+    {
+        try
+        {
+            Console.WriteLine(value);
+
+            job.CityId = null;
+            job.CountryId = value;
+            var response = await Http.GetFromJsonAsync<PagedResponse<List<CityModel>>>($"city?CountryId={value??0}");
+            if (response.Succeeded)
+            {
+                cities = response.Data;
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    private async void HandleValidSubmit()
+    {
+        Console.WriteLine("Submitted");
+        Console.WriteLine($"Country: {job.CountryId}, City: {job.CityId}");
+        try
+        {
+            var responseMessage = await Http.PostAsJsonAsync("job", job);
+            var response = await responseMessage.Content.ReadAsStringAsync();
+
+            var jobResponse = JsonSerializer.Deserialize<Response<JobModel>>(response);
+            if (jobResponse.Succeeded)
+            {
+                job = new JobModel();
+                Console.WriteLine("Succeed");
+                StateHasChanged();
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }
 #pragma warning restore 1591

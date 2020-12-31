@@ -107,6 +107,20 @@ using WebSPA.Wrappers;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 15 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using WebSPA.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
     public partial class SurveyPrompt : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

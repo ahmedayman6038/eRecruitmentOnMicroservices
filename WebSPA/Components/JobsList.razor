@@ -2,7 +2,7 @@
 
 <h3>Jobs</h3>
 
-@if (jobs == null)
+@if (Jobs == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -16,10 +16,11 @@ else
                 <th>Requirements</th>
                 <th>Country</th>
                 <th>City</th>
+                <th>Operations</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var job in jobs)
+            @foreach (var job in Jobs)
             {
                 <tr>
                     <td>@job.Name</td>
@@ -27,6 +28,10 @@ else
                     <td>@job.Requirements</td>
                     <td>@job.Country</td>
                     <td>@job.City</td>
+                    <td>
+                        <button class="btn btn-secondary" @onclick="async () => await OnItemEdited.InvokeAsync(job)">Edit</button>
+                        <button class="btn btn-danger" @onclick="async () => await OnItemDeleted.InvokeAsync(job)">Delete</button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -34,21 +39,12 @@ else
 }
 
 @code {
-    private JobModel[] jobs;
+    [Parameter]
+    public List<JobModel> Jobs { get; set; }
 
-    protected override async Task OnInitializedAsync()
-    {
-        try
-        {
-            var response = await Http.GetFromJsonAsync<PagedResponse<JobModel[]>>("job");
-            if (response.Succeeded)
-            {
-                jobs = response.Data;
-            }
-        }
-        catch (AccessTokenNotAvailableException exception)
-        {
-            exception.Redirect();
-        }
-    }
+    [Parameter]
+    public EventCallback<JobModel> OnItemDeleted { get; set; }
+
+    [Parameter]
+    public EventCallback<JobModel> OnItemEdited { get; set; }
 }

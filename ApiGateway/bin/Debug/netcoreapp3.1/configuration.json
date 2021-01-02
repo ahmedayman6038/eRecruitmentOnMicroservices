@@ -22,7 +22,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/job/{id}",
-      "UpstreamHttpMethod": [ "PUT", "GET" ]
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
     },
     {
       "DownstreamPathTemplate": "/api/country",
@@ -70,7 +70,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/apply/{id}",
-      "UpstreamHttpMethod": [ "PUT", "GET" ]
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE"]
     },
     {
       "DownstreamPathTemplate": "/api/job/apply",

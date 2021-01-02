@@ -12,7 +12,9 @@ namespace Jobs.API.Application.Queries
         public string Description { get; set; }
         public string Requirements { get; set; }
         public string Country { get; set; }
+        public int CountryId { get; set; }
         public string City { get; set; }
+        public int CityId { get; set; }
         public string CreatedBy { get; set; }
         public DateTime Created { get; set; }
         public string LastModifiedBy { get; set; }

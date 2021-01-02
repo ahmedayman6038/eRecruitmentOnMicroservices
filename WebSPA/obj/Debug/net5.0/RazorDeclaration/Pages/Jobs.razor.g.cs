@@ -13,119 +13,119 @@ namespace WebSPA.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 1 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 2 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 3 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 4 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 5 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 6 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 7 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 8 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 9 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 10 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 11 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using WebSPA.Models;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 12 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using WebSPA.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 13 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 14 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using WebSPA.Wrappers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 15 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using WebSPA.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 16 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
+#line 16 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\_Imports.razor"
 using System.Text.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
+#line 3 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
            [Authorize(Roles = "Admin,SuperAdmin")]
 
 #line default
@@ -140,11 +140,12 @@ using System.Text.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 63 "D:\Codes\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
+#line 63 "E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\Pages\Jobs.razor"
        
-    private JobModel job = new JobModel();
+    private JobModel jobModel = new JobModel();
     private List<CountryModel> countries = new List<CountryModel>();
     private List<CityModel> cities = new List<CityModel>();
+    private List<JobModel> jobs;
 
     protected override async Task OnInitializedAsync()
     {
@@ -155,6 +156,12 @@ using System.Text.Json;
             {
                 countries = response.Data;
             }
+            var response2 = await Http.GetFromJsonAsync<PagedResponse<List<JobModel>>>("job");
+            if (response2.Succeeded)
+            {
+                jobs = response2.Data;
+
+            }
         }
         catch (AccessTokenNotAvailableException exception)
         {
@@ -162,19 +169,17 @@ using System.Text.Json;
         }
     }
 
-    private async Task OnValueChanged(int? value)
+    private async Task OnCountryChanged(int? countryId, int? cityId)
     {
         try
         {
-            Console.WriteLine(value);
-
-            job.CityId = null;
-            job.CountryId = value;
-            var response = await Http.GetFromJsonAsync<PagedResponse<List<CityModel>>>($"city?CountryId={value??0}");
+            jobModel.CountryId = countryId;
+            var response = await Http.GetFromJsonAsync<PagedResponse<List<CityModel>>>($"city?CountryId={countryId ?? 0}");
             if (response.Succeeded)
             {
                 cities = response.Data;
             }
+            jobModel.CityId = cityId;
         }
         catch (AccessTokenNotAvailableException exception)
         {
@@ -184,18 +189,65 @@ using System.Text.Json;
 
     private async void HandleValidSubmit()
     {
-        Console.WriteLine("Submitted");
-        Console.WriteLine($"Country: {job.CountryId}, City: {job.CityId}");
         try
         {
-            var responseMessage = await Http.PostAsJsonAsync("job", job);
+            if(jobModel.Id != 0)
+            {
+                var responseMessage = await Http.PutAsJsonAsync($"job/{jobModel.Id}", jobModel);
+                var response = await responseMessage.Content.ReadAsStringAsync();
+
+                var jobResponse = JsonSerializer.Deserialize<Response<int>>(response, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+                if (jobResponse.Succeeded)
+                {
+                    jobModel.Country = countries.Find(c => c.Id == jobModel.CountryId).Name;
+                    jobModel.City = cities.Find(c => c.Id == jobModel.CityId).Name;
+                    jobModel = new JobModel();
+                    StateHasChanged();
+                }
+            }
+            else
+            {
+                var responseMessage = await Http.PostAsJsonAsync("job", jobModel);
+                var response = await responseMessage.Content.ReadAsStringAsync();
+
+                var jobResponse = JsonSerializer.Deserialize<Response<int>>(response, new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+                if (jobResponse.Succeeded)
+                {
+                    jobModel.Id = jobResponse.Data;
+                    jobModel.Country = countries.Find(c => c.Id == jobModel.CountryId).Name;
+                    jobModel.City = cities.Find(c => c.Id == jobModel.CityId).Name;
+                    jobs.Add(jobModel);
+                    jobModel = new JobModel();
+                    StateHasChanged();
+                }
+            }
+        }
+        catch (AccessTokenNotAvailableException exception)
+        {
+            exception.Redirect();
+        }
+    }
+
+    private async void DeleteHandler(JobModel job)
+    {
+        try
+        {
+            var responseMessage = await Http.DeleteAsync($"job/{job.Id}");
             var response = await responseMessage.Content.ReadAsStringAsync();
 
-            var jobResponse = JsonSerializer.Deserialize<Response<JobModel>>(response);
+            var jobResponse = JsonSerializer.Deserialize<Response<int>>(response, new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            });
             if (jobResponse.Succeeded)
             {
-                job = new JobModel();
-                Console.WriteLine("Succeed");
+                jobs.Remove(job);
                 StateHasChanged();
             }
         }
@@ -203,6 +255,13 @@ using System.Text.Json;
         {
             exception.Redirect();
         }
+    }
+
+    private async void EditHandler(JobModel job)
+    {
+        jobModel = job;
+        await OnCountryChanged(job.CountryId, job.CityId);
+        //StateHasChanged();
     }
 
 #line default

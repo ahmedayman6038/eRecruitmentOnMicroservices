@@ -1,6 +1,6 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="_content/AntDesign" Path="C:\Users\AhmedAH\.nuget\packages\antdesign\0.4.1\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\AhmedAH\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/AntDesign" Path="C:\Users\ahmed\.nuget\packages\antdesign\0.4.1\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\ahmed\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.0\build\..\staticwebassets\" />
 </StaticWebAssets>

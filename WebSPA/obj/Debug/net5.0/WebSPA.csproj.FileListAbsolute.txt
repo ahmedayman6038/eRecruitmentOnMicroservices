@@ -1067,7 +1067,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.csp
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.MvcApplicationPartsAssemblyInfo.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.RazorComponent.input.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Components\JobsList.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Pages\Authentication.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Pages\Claims.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
@@ -1085,7 +1084,6 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.Tag
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.TagHelpers.output.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.RazorCoreGenerate.cache
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\App.razor.g.cs
-E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Components\JobsList.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Pages\Authentication.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Pages\Claims.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
@@ -1322,3 +1320,19 @@ D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\6App4bls.g
 D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\rOsEZ2Ug.gz
 D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\wO8oHIhI.gz
 D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\3rp+cAvs.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\AntDesign.dll.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\OneOf.dll.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Toolbelt.Blazor.HttpClientInterceptor.dll.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\AntDesign.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\OneOf.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Toolbelt.Blazor.HttpClientInterceptor.dll
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Components\Grid.razor.g.cs
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Shared\Error.razor.g.cs
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Components\Grid.razor.g.cs
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Shared\Error.razor.g.cs
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\aMZN569A.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\pdzBm14E.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\xxKeAWpm.gz
+E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\A9ElYwS3.gz

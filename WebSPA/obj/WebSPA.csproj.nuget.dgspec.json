@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj": {}
+    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj": {
+    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj",
+        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj",
         "projectName": "WebSPA",
-        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj",
-        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\WebSPA\\obj\\",
+        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebSPA\\WebSPA.csproj",
+        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\WebSPA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -92,7 +92,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-              "version": "[5.0.1, 5.0.1]"
+              "version": "[5.0.0, 5.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

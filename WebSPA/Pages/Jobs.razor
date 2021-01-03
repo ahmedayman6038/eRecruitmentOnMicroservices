@@ -55,4 +55,30 @@
     <button type="submit" class="btn btn-primary">Add</button>
 </EditForm>
 <br />
-<JobsList Jobs="jobs" OnItemDeleted="DeleteHandler" OnItemEdited="EditHandler" />
+<Grid Items="jobs" TItem="JobModel" OnItemDeleted="DeleteHandler" OnItemEdited="EditHandler">
+    <HeaderTemplate>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Requirements</th>
+        <th>Country</th>
+        <th>City</th>
+    </HeaderTemplate>
+    <RowTemplate>
+        <td>@context.Name</td>
+        <td>@context.Description</td>
+        <td>@context.Requirements</td>
+        <td>@context.Country</td>
+        <td>@context.City</td>
+    </RowTemplate>
+</Grid>
+
+<Grid Items="countries" Context="country" ShowDelete="false" ShowEdit="false">
+    <HeaderTemplate>
+        <th>Id</th>
+        <th>Name</th>
+    </HeaderTemplate>
+    <RowTemplate>
+        <td>@country.Id</td>
+        <td>@country.Name</td>
+    </RowTemplate>
+</Grid>

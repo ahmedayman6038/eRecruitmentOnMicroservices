@@ -1,6 +1,5 @@
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\appsettings.json
-D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Applying.API.exe
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\Jobs.API.exe
 D:\Codes\eRecruitmentOnMicroservices\bin\Debug\WebMVC.Views.dll
@@ -267,3 +266,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Aut
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\bin\Debug\IdentityServer.API.pdb
+D:\Codes\eRecruitmentOnMicroservices\bin\Debug\libman.json

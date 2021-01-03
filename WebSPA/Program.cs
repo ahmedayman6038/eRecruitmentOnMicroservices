@@ -9,6 +9,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using WebSPA.Security;
+using Toolbelt.Blazor.Extensions.DependencyInjection;
+using WebSPA.Interfaces;
+using WebSPA.Services;
 
 namespace WebSPA
 {
@@ -19,9 +22,10 @@ namespace WebSPA
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddHttpClient("JobsAPI", client =>
+            builder.Services.AddHttpClient("JobsAPI", (sp,client) =>
             {
                 client.BaseAddress = new Uri("https://localhost:6001/api/");
+                client.EnableIntercept(sp);
             })
             .AddHttpMessageHandler(sp =>
             {
@@ -35,6 +39,12 @@ namespace WebSPA
 
             builder.Services.AddScoped(
                 sp => sp.GetService<IHttpClientFactory>().CreateClient("JobsAPI"));
+
+            builder.Services.AddHttpClientInterceptor();
+
+            builder.Services.AddScoped<HttpInterceptorService>();
+
+            builder.Services.AddScoped<IJobService, JobService>();
 
             builder.Services.AddOidcAuthentication(options =>
             {

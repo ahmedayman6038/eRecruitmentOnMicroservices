@@ -5,11 +5,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jobs.api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 7005
         }
       ],
-      "UpstreamPathTemplate": "/job",
+      "UpstreamPathTemplate": "/api/job",
       "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
@@ -17,12 +17,36 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jobs.api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 7005
         }
       ],
-      "UpstreamPathTemplate": "/job/{id}",
-      "UpstreamHttpMethod": [ "PUT", "GET" ]
+      "UpstreamPathTemplate": "/api/job/{id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/country",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/country",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/city",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7005
+        }
+      ],
+      "UpstreamPathTemplate": "/api/city",
+      "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
       "DownstreamPathTemplate": "/api/apply",
@@ -33,7 +57,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/apply",
+      "UpstreamPathTemplate": "/api/apply",
       "UpstreamHttpMethod": [ "POST", "GET" ]
     },
     {
@@ -45,8 +69,8 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/apply/{id}",
-      "UpstreamHttpMethod": [ "PUT", "GET" ]
+      "UpstreamPathTemplate": "/api/apply/{id}",
+      "UpstreamHttpMethod": [ "PUT", "GET", "DELETE"]
     },
     {
       "DownstreamPathTemplate": "/api/job/apply",
@@ -57,7 +81,7 @@
           "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/job/apply",
+      "UpstreamPathTemplate": "/api/job/apply",
       "UpstreamHttpMethod": [ "POST" ]
     }
   ]

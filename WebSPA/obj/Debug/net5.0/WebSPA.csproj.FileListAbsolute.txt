@@ -1308,3 +1308,17 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\ref\WebSPA
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\serviceworkers\wwwroot\service-worker.js
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\service-worker-assets.js
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\AntDesign.dll.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\OneOf.dll.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Toolbelt.Blazor.HttpClientInterceptor.dll.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\AntDesign.dll
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\OneOf.dll
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\Toolbelt.Blazor.HttpClientInterceptor.dll
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Shared\Error.razor.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Shared\Error.razor.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\6App4bls.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\rOsEZ2Ug.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\wO8oHIhI.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\3rp+cAvs.gz

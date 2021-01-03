@@ -1,6 +1,5 @@
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.exe
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.deps.json
 D:\Codes\eRecruitmentOnMicroservices\Identity.API\bin\Debug\netcoreapp3.1\Identity.API.runtimeconfig.json
@@ -176,3 +175,4 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.dll
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.pdb
 E:\DotNetProjects\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\Identity.API.genruntimeconfig.cache
+D:\Codes\eRecruitmentOnMicroservices\Identity.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Identity.API.styles.css

@@ -651,8 +651,6 @@ D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\ref\WebSPA.dll
 D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\WebSPA.pdb
 D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\serviceworkers\wwwroot\service-worker.js
 D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\service-worker-assets.js
-D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Components\JobsList.razor.g.cs
-D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Components\JobsList.razor.g.cs
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\wwwroot\_framework\blazor.boot.json
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\WebSPA.StaticWebAssets.xml
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\bin\Debug\net5.0\WebSPA.dll
@@ -1336,3 +1334,8 @@ E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\a
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\pdzBm14E.gz
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\xxKeAWpm.gz
 E:\DotNetProjects\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\build-gz\A9ElYwS3.gz
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Components\Grid.razor.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Components\Grid.razor.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\RazorDeclaration\Shared\BasicLayout.razor.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\Razor\Shared\BasicLayout.razor.g.cs
+D:\Codes\eRecruitmentOnMicroservices\WebSPA\obj\Debug\net5.0\scopedcss\Shared\BasicLayout.razor.rz.scp.css

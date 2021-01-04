@@ -55,6 +55,8 @@ namespace WebSPA
             })
             .AddAccountClaimsPrincipalFactory<ArrayClaimsPrincipalFactory<RemoteUserAccount>>();
 
+            builder.Services.AddAntDesign();
+
             await builder.Build().RunAsync();
         }
     }

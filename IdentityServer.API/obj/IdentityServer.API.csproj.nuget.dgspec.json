@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj": {}
+    "D:\\Codes\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj": {}
   },
   "projects": {
-    "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj": {
+    "D:\\Codes\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj",
+        "projectUniqueName": "D:\\Codes\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj",
         "projectName": "IdentityServer.API",
-        "projectPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "E:\\DotNetProjects\\eRecruitmentOnMicroservices\\IdentityServer.API\\obj\\",
+        "projectPath": "D:\\Codes\\eRecruitmentOnMicroservices\\IdentityServer.API\\IdentityServer.API.csproj",
+        "packagesPath": "C:\\Users\\AhmedAH\\.nuget\\packages\\",
+        "outputPath": "D:\\Codes\\eRecruitmentOnMicroservices\\IdentityServer.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AhmedAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -118,7 +118,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

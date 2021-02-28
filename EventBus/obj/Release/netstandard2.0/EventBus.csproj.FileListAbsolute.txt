@@ -1,0 +1,9 @@
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Release\netstandard2.0\EventBus.deps.json
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Release\netstandard2.0\EventBus.dll
+D:\Codes\eRecruitmentOnMicroservices\EventBus\bin\Release\netstandard2.0\EventBus.pdb
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Release\netstandard2.0\EventBus.csprojAssemblyReference.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Release\netstandard2.0\EventBus.AssemblyInfoInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Release\netstandard2.0\EventBus.AssemblyInfo.cs
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Release\netstandard2.0\EventBus.csproj.CoreCompileInputs.cache
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Release\netstandard2.0\EventBus.dll
+D:\Codes\eRecruitmentOnMicroservices\EventBus\obj\Release\netstandard2.0\EventBus.pdb
